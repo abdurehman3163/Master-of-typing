@@ -63,3 +63,4 @@ struct TypingStats {
     
     var totalSessions: Int = 0
 }
+

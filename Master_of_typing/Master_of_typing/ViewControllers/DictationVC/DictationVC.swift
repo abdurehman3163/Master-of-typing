@@ -7,12 +7,14 @@
 
 import Cocoa
 
+
 class DictationVC: NSViewController {
     
-    @IBOutlet weak var collectionView: NSCollectionView!
+    @IBOutlet weak var dictationCollectionView: NSCollectionView!
     @IBOutlet weak var mainTitle: NSTextField!
     @IBOutlet weak var backBtn: NSButton!
     
+    var selectedIndexPath: IndexPath?
     var mainTitleText: String?
     let array: [[String: String]] = [ ["title": "Write dictations and memorize with AI", "image" : "imgDictationAI"],
                                       ["title": "Dictate the text and than type it", "image" : "imgDictationSpeak"],
@@ -24,23 +26,35 @@ class DictationVC: NSViewController {
     var exercises: [Exercise] = [] // Exercises to be displayed in the collection view
     var chapterTitle: String?
     var isFromLesson: Bool = false
+    var isFromPractice: Bool = false
+    var isFromTest: Bool = false
+    private let dataManager = DataManager.shared
+    private var singleChapter: Chapter?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        dictationCollectionView.dataSource = self
+        dictationCollectionView.delegate = self
         
         if let selectedLesson = lesson {
             exercises = selectedLesson.exercises
         }
-        
+                
         let title = NSAttributedString(string: "\(chapterTitle ?? ""): lesson \(lesson?.lessonNumber ?? 0)", attributes: [NSAttributedString.Key.font: NSFont.systemFont(ofSize: 16, weight: .semibold) ])
         if isFromLesson {
             backBtn.isHidden = false
             mainTitle.attributedStringValue = title
+        }else if isFromPractice{
+            mainTitle.attributedStringValue = NSAttributedString(string: "Practice", attributes: [NSAttributedString.Key.font: NSFont.systemFont(ofSize: 24, weight: .bold) ])
+            exercises = dataManager.exercises(forChapter: "Practice")
+        }else if isFromTest{
+            mainTitle.attributedStringValue = NSAttributedString(string: "Test Session", attributes: [NSAttributedString.Key.font: NSFont.systemFont(ofSize: 24, weight: .bold) ])
+            exercises = dataManager.exercises(forChapter: "Test")
         }else{
             mainTitle.attributedStringValue = NSAttributedString(string: "Dictation", attributes: [NSAttributedString.Key.font: NSFont.systemFont(ofSize: 24, weight: .bold) ])
 
         }
+        
     }
     
     @IBAction func backBtnAction(_ sender: Any) {
@@ -59,7 +73,7 @@ class DictationVC: NSViewController {
 
 extension DictationVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        if isFromLesson {
+        if isFromLesson || isFromPractice || isFromTest{
             return exercises.count
         }else{
             return array.count
@@ -68,7 +82,7 @@ extension DictationVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSC
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         guard let cell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier("DictationCVC"), for: indexPath) as? DictationCVC else {return NSCollectionViewItem()}
-        if isFromLesson{
+        if isFromLesson || isFromPractice || isFromTest{
             let data = exercises[indexPath.item]
             cell.titleLabel.stringValue = data.title
             cell.image.image = nil
@@ -90,23 +104,28 @@ extension DictationVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSC
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
         guard let index = indexPaths.first else {return}
-        
-        if isFromLesson{
+        let item = index.item
+        if isFromLesson || isFromPractice || isFromTest{
             let data = exercises[index.item]
             let isFirst = index.item == 0
             let previousCompleted = !isFirst && exercises[index.item - 1].isCompleted
 //            let goodAccuracy = (data.exerciseStats?.accuracy ?? 0) >= 80
 
-            if isFirst || previousCompleted {
+//            if isFirst || previousCompleted {
                 let vc = PracticeVC(nibName: "PracticeVC", bundle: nil)
                 vc.exercise = data
                 vc.chapter = chapter
+//                vc.chapterTitle = chapterTitle
+//                vc.lesson = lesson
                 addChildToNavigation(vc)
-            } else {
-                showAlert(title: "", message: "Finish the previous exercise first or achieve at least 80% accuracy.")
-            }
+//            } else {
+//                showAlert(title: "", message: "Finish the previous exercise first")
+//            }
         }else{
-            
+        if item == 0 {
+                let vc = AiDictationVC(nibName: "AiDictationVC", bundle: nil)
+                addChildToNavigation(vc)
+            }
         }
         selectedIndex = index
         collectionView.deselectItems(at: indexPaths)

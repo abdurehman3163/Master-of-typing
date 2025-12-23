@@ -10,7 +10,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="DictationVC" customModule="Master_of_typing" customModuleProvider="target">
             <connections>
                 <outlet property="backBtn" destination="h1t-hU-ldo" id="tH5-xi-50p"/>
-                <outlet property="collectionView" destination="bIH-aC-Gux" id="Ftb-QF-OhQ"/>
+                <outlet property="dictationCollectionView" destination="bIH-aC-Gux" id="hXi-D5-JiD"/>
                 <outlet property="mainTitle" destination="5EA-jw-D6F" id="lin-yS-QFx"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -72,7 +72,7 @@
                                             <action selector="backBtnAction:" target="-2" id="vPg-vm-oIK"/>
                                         </connections>
                                     </button>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5EA-jw-D6F">
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5EA-jw-D6F">
                                         <rect key="frame" x="-2" y="0.0" width="37" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="zna-UY-jo8">
                                             <font key="font" usesAppearanceFont="YES"/>

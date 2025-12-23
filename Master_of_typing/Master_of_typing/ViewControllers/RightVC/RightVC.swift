@@ -22,9 +22,13 @@ extension RightVC{
     func registerTabView(){
         let vc1 = NSTabViewItem(viewController: LessonVC())
         let vc2 = NSTabViewItem(viewController: StatsVC())
-        let vc3 = NSTabViewItem(viewController: PracticeVC())
+        let d3 = DictationVC()
+        d3.isFromPractice = true
+        let vc3 = NSTabViewItem(viewController: d3)
         let vc4 = NSTabViewItem(viewController: DictationVC())
-        let vc5 = NSTabViewItem(viewController: TestVC())
+        let d5 = DictationVC()
+        d5.isFromTest = true
+        let vc5 = NSTabViewItem(viewController: d5)
         tabView.addTabViewItem(vc1)
         tabView.addTabViewItem(vc2)
         tabView.addTabViewItem(vc3)

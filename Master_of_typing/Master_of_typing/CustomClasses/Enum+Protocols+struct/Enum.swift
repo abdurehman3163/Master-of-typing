@@ -12,3 +12,8 @@ enum Appearance: String, CaseIterable {
     case Light
     case Dark
 }
+
+enum DictationMode {
+    case practice
+    case test
+}

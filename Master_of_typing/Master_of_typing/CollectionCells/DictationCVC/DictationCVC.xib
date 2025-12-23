@@ -78,7 +78,7 @@
                             </stackView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="EAp-MH-rnw">
                                 <rect key="frame" x="442" y="15" width="24" height="27"/>
-                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="arrow.forward" catalog="system" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="NiU-vo-4qu">
+                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="arrow.forward" catalog="system" imagePosition="right" alignment="center" imageScaling="proportionallyDown" inset="2" id="NiU-vo-4qu">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -87,6 +87,9 @@
                                     <constraint firstAttribute="height" constant="24" id="J4Y-sF-vu1"/>
                                     <constraint firstAttribute="width" constant="24" id="Yc5-qk-80S"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="btnMenuAction:" target="VUt-az-FfM" id="IHq-Tl-dik"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -115,6 +118,7 @@
                 <outlet property="image" destination="C0m-o2-ngu" id="L8X-Vc-lcq"/>
                 <outlet property="titleLabel" destination="8qJ-9P-dF7" id="O56-u0-W0o"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="PcF-FQ-EJG"/>
+                <outlet property="weidth" destination="Yc5-qk-80S" id="5ks-g5-2pD"/>
             </connections>
         </customObject>
     </objects>

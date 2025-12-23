@@ -107,3 +107,9 @@ class Localize: NSObject {
         return String()
     }
 }
+
+extension String {
+    var isNotEmpty: Bool {
+        return !isEmpty
+    }
+}

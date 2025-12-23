@@ -44,6 +44,13 @@ class DataManager {
         }
     }
 
+    func exercises(forChapter title: String) -> [Exercise] {
+        guard let chapter = chapters.first(where: { $0.title == title }) else {
+            return []
+        }
+        return chapter.lessons.flatMap { $0.exercises }
+    }
+
     func calculateStats() {
         var totalCPM = 0
         var totalAccuracy = 0
@@ -78,7 +85,6 @@ class DataManager {
             bestAccuracy: bestAccuracy
         )
     }
-
 }
 
 private extension DataManager {

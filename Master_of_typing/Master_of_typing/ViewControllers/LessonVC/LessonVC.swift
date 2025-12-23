@@ -22,7 +22,7 @@ class LessonVC: NSViewController {
     
     private var chaptersByTitle: [String: Chapter] = [:]
     private let dataManager = DataManager.shared
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         [CollectionViewDR,CollectionViewFKR,CollectionViewBR,CollectionViewTR,CollectionViewHR].forEach{ [weak self] cv in
