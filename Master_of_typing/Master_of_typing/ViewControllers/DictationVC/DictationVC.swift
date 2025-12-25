@@ -109,21 +109,29 @@ extension DictationVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSC
             let data = exercises[index.item]
             let isFirst = index.item == 0
             let previousCompleted = !isFirst && exercises[index.item - 1].isCompleted
-//            let goodAccuracy = (data.exerciseStats?.accuracy ?? 0) >= 80
-
-//            if isFirst || previousCompleted {
-                let vc = PracticeVC(nibName: "PracticeVC", bundle: nil)
-                vc.exercise = data
-                vc.chapter = chapter
-//                vc.chapterTitle = chapterTitle
-//                vc.lesson = lesson
-                addChildToNavigation(vc)
-//            } else {
-//                showAlert(title: "", message: "Finish the previous exercise first")
-//            }
+            //            let goodAccuracy = (data.exerciseStats?.accuracy ?? 0) >= 80
+            
+            //            if isFirst || previousCompleted {
+            let vc = PracticeVC(nibName: "PracticeVC", bundle: nil)
+            vc.exercise = data
+            vc.chapter = chapter
+            //                vc.chapterTitle = chapterTitle
+            //                vc.lesson = lesson
+            addChildToNavigation(vc)
+            //            } else {
+            //                showAlert(title: "", message: "Finish the previous exercise first")
+            //            }
         }else{
-        if item == 0 {
+            if item == 0 {
                 let vc = AiDictationVC(nibName: "AiDictationVC", bundle: nil)
+                addChildToNavigation(vc)
+            }else if item == 1{
+                let vc = PracticeVC(nibName: "PracticeVC", bundle: nil)
+                vc.isfromDictationVC2ndIndex = true
+                addChildToNavigation(vc)
+            }else if item == 2{
+                let vc = PracticeVC(nibName: "PracticeVC", bundle: nil)
+                vc.isfromDictationVC3rdIndex = true
                 addChildToNavigation(vc)
             }
         }

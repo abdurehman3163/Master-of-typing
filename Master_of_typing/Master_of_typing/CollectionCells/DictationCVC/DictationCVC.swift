@@ -66,18 +66,17 @@ private func setupVoiceMenu(into menu: NSMenu) {
 
 private func setupSpeedMenu(into menu: NSMenu) {
         let speeds: [(Float, String)] = [
-            (0.5, "0.5x"),
-            (0.75, "0.75x"),
-            (1.0, "1.0x"),
-            (1.25, "1.25x"),
-            (1.5, "1.5x"),
-            (2.0, "2.0x")
+            (AVSpeechUtteranceMinimumSpeechRate + 0.05, "0.5x"),
+            (0.35, "0.75x"),
+            (0.5, "1.0x"),
+            (0.6, "1.25x"),
+            (0.75, "1.5x"),
+            (AVSpeechUtteranceMaximumSpeechRate, "2.0x")
         ]
         
         for (index, (value, title)) in speeds.enumerated() {
             let item = NSMenuItem(title: title, action: #selector(speedSelected(_:)), keyEquivalent: "")
             item.target = self
-            item.tag = index
             item.representedObject = value
             menu.addItem(item)
         }

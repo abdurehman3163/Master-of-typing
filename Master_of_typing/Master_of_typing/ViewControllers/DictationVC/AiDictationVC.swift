@@ -12,33 +12,52 @@ class AiDictationVC: NSCollectionViewItem {
 //    @IBOutlet weak var label: NSTextField!
     @IBOutlet weak var CollectionView: NSCollectionView!
     @IBOutlet weak var textView: NSTextView!
+    @IBOutlet weak var characterCountLabel: NSTextField!
     @IBOutlet weak var btnStart: NSButton!
     @IBOutlet weak var btnStartBox: NSBox!
     
     let array = ["Voice Type","Dictation Speed"]
     var selectedIndex: IndexPath?
-    var speechSpeed: Float = 1.0
+    var speechSpeed: Float = 0.5
     var VoiceType: String = "com.apple.ttsbundle.siri_aaron_en-US_compact"
+    private let maxCharacters = 300
     
     override func viewDidLoad() {
         super.viewDidLoad()
         CollectionView.delegate = self
         CollectionView.dataSource = self
         textView.delegate = self
-        updateStartButtonState()
+//        updateStartButtonState()
+        updateCharacterCountAndStyle()
     }
     
-    private func updateStartButtonState() {
-            let text = textView.string.trimmingCharacters(in: .whitespacesAndNewlines)
-            let isEmpty = text.isEmpty
-            
-            // Animate the changes for a smooth feel
-            NSAnimationContext.runAnimationGroup { context in
-                context.duration = 0.25
-                context.allowsImplicitAnimation = true
+    private func updateCharacterCountAndStyle() {
+            let text = textView.string
+            let characterCount = text.count  // Includes spaces and newlines
+        characterCountLabel.stringValue = "\(characterCount)/\(maxCharacters)"
+
+            // Update label
+            if characterCount > maxCharacters {
+                characterCountLabel.stringValue = "\(characterCount)/\(maxCharacters)"
+                characterCountLabel.textColor = NSColor.systemRed
                 
-                self.btnStartBox.alphaValue = isEmpty ? 0.5 : 1.0
-                self.btnStart.isEnabled = !isEmpty
+                // Turn all text red
+                textView.textColor = NSColor.systemRed
+                
+                // Disable Start button
+                btnStartBox.alphaValue = 0.5
+                btnStart.isEnabled = false
+            } else {
+                characterCountLabel.stringValue = "\(characterCount)/\(maxCharacters)"
+                characterCountLabel.textColor = NSColor.black
+                
+                // Normal black text
+                textView.textColor = NSColor.black  // or .black
+                
+                // Enable Start button only if not empty
+                let isEmpty = text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                btnStartBox.alphaValue = isEmpty ? 0.5 : 1.0
+                btnStart.isEnabled = !isEmpty
             }
         }
     
@@ -47,7 +66,14 @@ class AiDictationVC: NSCollectionViewItem {
         vc.speechSpeed = speechSpeed
         vc.VoiceType = VoiceType
         vc.isfromAiDictationVC = true
-        vc.text = textView.string
+        let cleanedText = textView.string
+            .replacingOccurrences(of: "\n", with: " ")
+            .replacingOccurrences(of: "\r", with: " ")    // Also handles Windows newlines
+            .trimmingCharacters(in: .whitespacesAndNewlines)  // Clean start/end
+
+        // Optional: collapse multiple spaces into one
+        let finalText = cleanedText.replacingOccurrences(of: "\\s+", with: " ", options: .regularExpression)
+        vc.text = finalText
         addChildToNavigation(vc)
     }
     
@@ -101,12 +127,12 @@ extension AiDictationVC: SpeechSpeedDelegate, NSTextViewDelegate {
     
     func textDidChange(_ notification: Notification) {
             // This is called every time the text changes
-            updateStartButtonState()
-        }
+        updateCharacterCountAndStyle()
+    }
         
         // Optional: Also handle paste, drag-drop, etc.
         func textDidEndEditing(_ notification: Notification) {
-            updateStartButtonState()
+            updateCharacterCountAndStyle()
         }
     
 }

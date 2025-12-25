@@ -1,101 +1,156 @@
-//
-//  SpeakerManager.swift
-//  ChatGPTmacAR
-//
-//  Created by Macbook Pro on 2/2/25.
-//
-
 import Foundation
-import AppKit
 import AVFoundation
-import NaturalLanguage
 
-class SpeakerManager: NSObject, AVSpeechSynthesizerDelegate {
-    static let shared: SpeakerManager = SpeakerManager()
-    private var synthesizer: AVSpeechSynthesizer
-    private var isPlaying: Bool = false
-    private var stateChangeCallbacks: [((Bool, Int?) -> Void)] = []
-    var activeCellIndex: Int? // Tracks the index of the currently playing cell
+final class SpeakerManager: NSObject {
     
-    var isSpeaking: Bool {
-        return isPlaying
+    // MARK: - Shared Instance (or inject if preferred)
+    static let shared = SpeakerManager()
+    
+    // MARK: - Public Properties
+    var speechSpeed: Float = 0.5 { // Default normal speed
+        didSet {
+            if speechSpeed != oldValue && isSpeaking {
+                restartCurrentUtteranceIfNeeded()
+            }
+        }
     }
-
+    
+    var voiceIdentifier: String = "en-US" {
+        didSet {
+            if voiceIdentifier != oldValue && isSpeaking {
+                restartCurrentUtteranceIfNeeded()
+            }
+        }
+    }
+    
+    var isSpeaking: Bool = false
+    var isPaused: Bool = false
+    
+    // MARK: - Delegates & Callbacks
+    weak var delegate: SpeakerManagerDelegate?
+    
+    // MARK: - Private Properties
+    private let synthesizer = AVSpeechSynthesizer()
+    private var currentUtterance: AVSpeechUtterance?
+    private var currentText: String = ""
+    
+    // MARK: - Init
     private override init() {
-        synthesizer = AVSpeechSynthesizer()
         super.init()
         synthesizer.delegate = self
-        // No audio session configuration needed on macOS
-    }
-
-    private func resetSynthesizer() {
-        synthesizer.stopSpeaking(at: .immediate)
-        synthesizer.delegate = nil
-        synthesizer = AVSpeechSynthesizer()
-        synthesizer.delegate = self
-        print("SpeakerManager: Synthesizer reset")
-    }
-
-    func addStateChangeCallback(_ callback: @escaping (Bool, Int?) -> Void) {
-        stateChangeCallbacks.append(callback)
     }
     
-    func removeStateChangeCallback(_ callback: (Bool, Int?) -> Void) {
-        stateChangeCallbacks.removeAll { $0 as AnyObject === callback as AnyObject }
-    }
+    // MARK: - Public Methods
     
-    func removeAllCallbacks() {
-        stateChangeCallbacks.removeAll()
-    }
-
-    func speak(_ text: String, cellIndex: Int) {
-        if isPlaying {
-            stopSpeaking()
-        }
-        resetSynthesizer()
-        isPlaying = true
-        activeCellIndex = cellIndex
-        notifyStateChange()
+    /// Speak the given text from the beginning (or restart if already speaking)
+    func speak(_ text: String, fromStart: Bool = true) {
+        stopSpeaking() // Always stop any ongoing speech first
+        
+        guard !text.isEmpty else { return }
+        
+        currentText = text
         
         let utterance = AVSpeechUtterance(string: text)
-        let voice = AVSpeechSynthesisVoice(language: detectLanguage(text))
-        utterance.voice = voice
-        utterance.rate = 0.5
-        print("SpeakerManager: Speaking text '\(text.prefix(50))...' in language: \(detectLanguage(text)), voice: \(String(describing: voice?.name))")
+        
+        // Apply voice
+        if let voice = AVSpeechSynthesisVoice(identifier: voiceIdentifier) {
+            utterance.voice = voice
+        } else {
+            utterance.voice = AVSpeechSynthesisVoice(language: voiceIdentifier) ??
+                             AVSpeechSynthesisVoice(language: "en-US")
+        }
+        
+        // Apply rate
+        utterance.rate = speechSpeed
+        
+        currentUtterance = utterance
         synthesizer.speak(utterance)
+        
+        isSpeaking = true
+        isPaused = false
+        delegate?.speakerManagerDidStartSpeaking()
     }
-
-    func stopSpeaking() {
-        synthesizer.stopSpeaking(at: .immediate)
-        isPlaying = false
-        activeCellIndex = nil
-        notifyStateChange()
-        print("SpeakerManager: Speech stopped")
-    }
-
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        isPlaying = false
-        activeCellIndex = nil
-        notifyStateChange()
-        print("SpeakerManager: Speech finished")
-    }
-
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
-        isPlaying = false
-        activeCellIndex = nil
-        notifyStateChange()
-        print("SpeakerManager: Speech cancelled")
-    }
-
-    private func notifyStateChange() {
-        stateChangeCallbacks.forEach { callback in
-            callback(isPlaying, activeCellIndex)
+    
+    /// Pause or resume current speech
+    func pauseOrResume() {
+        if isPaused {
+            synthesizer.continueSpeaking()
+        } else if isSpeaking {
+            synthesizer.pauseSpeaking(at: .immediate)
         }
     }
     
-    func detectLanguage(_ text: String) -> String {
-        let recognizer = NLLanguageRecognizer()
-        recognizer.processString(text)
-        return recognizer.dominantLanguage?.rawValue ?? "en-US"
+    /// Stop speaking immediately and reset state
+    func stopSpeaking() {
+        if isSpeaking || isPaused {
+            synthesizer.stopSpeaking(at: .immediate)
+            isSpeaking = false
+            isPaused = false
+            currentUtterance = nil
+            delegate?.speakerManagerDidStopSpeaking()
+        }
+    }
+    
+    /// Restart current text with updated speed/voice (preserves text, doesn't reset typing)
+    private func restartCurrentUtteranceIfNeeded() {
+        guard isSpeaking || isPaused, !currentText.isEmpty else { return }
+        
+        let wasPaused = isPaused
+        let range = synthesizer.pauseSpeaking(at: .word) // Try graceful pause first
+        
+        // Fallback to immediate stop if needed
+        if !range {
+            synthesizer.stopSpeaking(at: .immediate)
+        }
+        
+        // Re-speak the same text with new settings
+        speak(currentText, fromStart: false)
+        
+        if wasPaused {
+            pauseOrResume() // Re-apply pause state
+        }
+    }
+}
+
+// MARK: - Delegate Protocol
+protocol SpeakerManagerDelegate: AnyObject {
+    func speakerManagerDidStartSpeaking()
+    func speakerManagerDidFinishSpeaking()
+    func speakerManagerDidPauseSpeaking()
+    func speakerManagerDidResumeSpeaking()
+    func speakerManagerDidStopSpeaking()
+}
+
+// MARK: - AVSpeechSynthesizerDelegate
+extension SpeakerManager: AVSpeechSynthesizerDelegate {
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
+        isSpeaking = true
+        isPaused = false
+        delegate?.speakerManagerDidStartSpeaking()
+    }
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        isSpeaking = false
+        isPaused = false
+        currentUtterance = nil
+        delegate?.speakerManagerDidFinishSpeaking()
+    }
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didPause utterance: AVSpeechUtterance) {
+        isPaused = true
+        delegate?.speakerManagerDidPauseSpeaking()
+    }
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didContinue utterance: AVSpeechUtterance) {
+        isPaused = false
+        delegate?.speakerManagerDidResumeSpeaking()
+    }
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
+        isSpeaking = false
+        isPaused = false
+        currentUtterance = nil
+        delegate?.speakerManagerDidStopSpeaking()
     }
 }

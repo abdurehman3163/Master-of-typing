@@ -31,7 +31,7 @@
                                 <rect key="frame" x="217" y="0.0" width="47" height="19"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="a2H-sw-5es">
                                     <font key="font" metaFont="systemBold" size="16"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="WhiteColor"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>

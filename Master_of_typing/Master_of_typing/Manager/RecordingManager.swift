@@ -1,3 +1,11 @@
+//
+//  RecordingManager.swift
+//  Master_of_typing
+//
+//  Created by Macbook Pro on 24/12/2025.
+//
+
+
 
 import Cocoa
 import AVFoundation
@@ -49,15 +57,15 @@ extension RecordingManager {
         Task {
             guard await microphoneAuhtorized() else {
                 DispatchQueue.main.async { [weak self] in
-                    guard let self = self else {return}
-                    let isYes = Utility.dialogOKCancel(question: "Please allow".localized() + AppConstants.appName.localized() + "to access your Microphone from device settings".localized(), yesButtonText: "Settings".localized(), noButtonText: "Cancel".localized())
+                    guard let self else { return }
+                 
+                    let isYes = Utility.dialogOKCancel(question: "Please allow" + "AppConstants.appName.localized()" + "to access your Microphone from device settings", yesButtonText: "Settings", noButtonText: "Cancel")
                     if isYes {
                         if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Microphone") {
                             NSWorkspace.shared.open(url)
                         }
                     }
                     isRecording = false
-                    return
                 }
                 return
             }
@@ -65,7 +73,7 @@ extension RecordingManager {
             guard await speechReconitionAuthorized() else {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
-                    let isYes = Utility.dialogOKCancel(question: "Please allow".localized() + AppConstants.appName.localized() + "to access your Speech Recognition from device settings".localized(), yesButtonText: "Settings".localized(), noButtonText: "Cancel".localized())
+                    let isYes = Utility.dialogOKCancel(question: "Please allow" + "AppConstants.appName.localized()" + "to access your Speech Recognition from device settings", yesButtonText: "Settings", noButtonText: "Cancel")
                     
                     if isYes {
                         if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_SpeechRecognition") {
@@ -76,14 +84,13 @@ extension RecordingManager {
                 }
                 
                 DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
-                    let isYes = Utility.dialogOKCancel(question: "Please allow".localized() + AppConstants.appName.localized() + "to access your Microphone from device settings".localized(), yesButtonText: "Settings".localized(), noButtonText: "Cancel".localized())
+                    let isYes = Utility.dialogOKCancel(question: "Please allow" + "AppConstants.appName" + "to access your Microphone from device settings", yesButtonText: "Settings", noButtonText: "Cancel")
                     if isYes {
                         if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Microphone") {
                             NSWorkspace.shared.open(url)
                         }
                     }
-                    isRecording = false
+                    self?.isRecording = false
                     return
                 }
                 return
@@ -114,8 +121,7 @@ extension RecordingManager {
             // Start audio engine
             inputNode = audioEngine.inputNode
             let recordingFormat = inputNode?.outputFormat(forBus: 0)
-            inputNode?.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { [weak self] buffer, _ in
-                guard let self else { return }
+            inputNode?.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
                 recognitionRequest.append(buffer)
             }
             

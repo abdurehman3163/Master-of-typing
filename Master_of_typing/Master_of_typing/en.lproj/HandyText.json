@@ -2594,14 +2594,14 @@
                         "id": "exercise 11",
                         "title": "inference",
                         "isCompleted": false,
-                        "text": "inference inference inference inference inference inference inference inference",
+                        "text": "inference inference inference inference inference inference inference inference inference inference inference inference inference inference",
                         "exerciseStats": null,
                         "allowedKeys": [34, 45, 3, 14, 15, 8, 49]
                     },{
                         "id": "exercise 12",
                         "title": "justification",
                         "isCompleted": false,
-                        "text": "justification justification justification justification justification justification",
+                        "text": "justification justification justification justification justification justification justification justification justification justification justification",
                         "exerciseStats": null,
                         "allowedKeys": [38, 32, 1, 17, 34, 3, 8, 0, 31, 45, 49]
                     }
