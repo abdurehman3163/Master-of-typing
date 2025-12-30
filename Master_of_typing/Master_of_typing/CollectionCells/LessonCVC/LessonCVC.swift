@@ -8,7 +8,7 @@
 import Cocoa
 
 class LessonCVC: NSCollectionViewItem {
-
+    
     @IBOutlet weak var lblTitle: NSTextField!
     @IBOutlet weak var Box: NSBox!
     @IBOutlet weak var img: NSImageView!
@@ -17,17 +17,25 @@ class LessonCVC: NSCollectionViewItem {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        separator.wantsLayer = true
-                separator.layer?.backgroundColor = NSColor.stroke.cgColor
-                view.addSubview(separator)
-        
-        separator.translatesAutoresizingMaskIntoConstraints = false
-                NSLayoutConstraint.activate([
-                    separator.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-                    separator.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
-                    separator.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-                    separator.heightAnchor.constraint(equalToConstant: 1)
-                ])
+        setupSeparator()
     }
     
+    private func setupSeparator() {
+        separator.wantsLayer = true
+        separator.layer?.backgroundColor = NSColor.stroke.cgColor  // default color
+        view.addSubview(separator)
+        
+        separator.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            separator.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            separator.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+            separator.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            separator.heightAnchor.constraint(equalToConstant: 1)
+        ])
+    }
+    
+    /// Public function to set separator color from outside
+    func setSeparatorColor(_ color: NSColor) {
+        separator.layer?.backgroundColor = color.cgColor
+    }
 }

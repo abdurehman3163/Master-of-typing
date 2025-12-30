@@ -17,7 +17,7 @@ final class StoreManager {
             "com.rs.typing.master.lifetime"
         ]
     )
-    static let nonConsumable_ids = Set(["com.app.ai.suite.ml.mac.lifetime"])
+    static let nonConsumable_ids = Set(["com.rs.typing.master.lifetime"])
     static let shared_secret = "cc50bea698754b5eae7650b3a0644ba5"
     @Published private(set) var products = [ProductInfo]()
 

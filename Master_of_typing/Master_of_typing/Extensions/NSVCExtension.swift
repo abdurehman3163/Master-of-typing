@@ -71,4 +71,9 @@ extension NSViewController {
             removeFromParent()
         })
     }
+    
+    func removeChild() {
+        view.removeFromSuperview()
+        removeFromParent()
+    }
 }

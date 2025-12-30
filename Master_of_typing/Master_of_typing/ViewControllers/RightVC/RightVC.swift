@@ -54,6 +54,11 @@ extension RightVC{
 extension RightVC: GetSelectedViewControllerProtocol{
     func getSelectedIndex(index: Int) {
         Task{ @MainActor in
+            
+            let tab = tabView.tabViewItems[index]
+            if let vc = tab.viewController as? BaseVC {
+                vc.removePushedViewController()
+            }
             tabView.selectTabViewItem(at: index)
         }
     }

@@ -143,7 +143,7 @@ extension ProVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSCollect
             threeDayFreeTrialLabel.stringValue = string
 
         }  else if index == 3 {
-            cell.configure(lifetime: storeManager.yearly)
+            cell.configure(lifetime: storeManager.lifetime)
             let string = "\(cell.basicPlaneLabel.stringValue), than \(cell.perWeekPriceLabel.stringValue)"
             threeDayFreeTrialLabel.stringValue = string
 

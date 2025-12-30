@@ -8,7 +8,7 @@
 import Cocoa
 
 
-class DictationVC: NSViewController {
+class DictationVC: BaseVC {
     
     @IBOutlet weak var dictationCollectionView: NSCollectionView!
     @IBOutlet weak var mainTitle: NSTextField!
@@ -61,7 +61,7 @@ class DictationVC: NSViewController {
         removeChildFromNavigation()
     }
     
-    func showAlert(title: String, message: String) {
+    override func showAlert(title: String, message: String) {
             let alert = NSAlert()
         alert.messageText = title
         alert.informativeText = message
@@ -88,12 +88,33 @@ extension DictationVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSC
             cell.image.image = nil
             cell.image.isHidden = true
             cell.boxLabel.isHidden = true
+            
+            let isFirst = indexPath.item < 3
+            let isProUser = App.isPro
+            // ← Your existing Pro check
+            if isFromPractice || isFromTest {
+                if isFirst || isProUser {
+                    // No lock for first exercise or Pro users
+                    cell.button.image = NSImage(systemSymbolName: "arrow.forward", accessibilityDescription: "")
+                } else {
+                    cell.button.image = .imgLessonLock
+                }
+            }
         }else {
+            let isFirst = indexPath.item == 0
+            let isProUser = App.isPro
             let data = array[indexPath.item]
             cell.titleLabel.stringValue = data["title"] ?? ""
             cell.image.image = NSImage(named: data["image"] ?? "")
-            cell.button.image = NSImage(systemSymbolName: "arrow.forward", accessibilityDescription: "")
             cell.boxLabel.isHidden = !(indexPath.item == 0)
+            
+            if isFirst || isProUser {
+                // No lock for first exercise or Pro users
+                cell.button.image = NSImage(systemSymbolName: "arrow.forward", accessibilityDescription: "")
+            } else {
+                cell.button.image = .imgLessonLock
+            }
+
         }
         return cell
     }
@@ -105,36 +126,56 @@ extension DictationVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSC
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
         guard let index = indexPaths.first else {return}
         let item = index.item
+        let isProUser = App.isPro
         if isFromLesson || isFromPractice || isFromTest{
             let data = exercises[index.item]
-            let isFirst = index.item == 0
+            let isFirst = index.item < 3
             let previousCompleted: Bool = !isFirst ?
-                        (exercises[item - 1].isCompleted &&
-                         (exercises[item - 1].exerciseStats?.accuracy ?? 0) >= 80) : true
+            (exercises[item - 1].isCompleted &&
+             (exercises[item - 1].exerciseStats?.accuracy ?? 0) >= 80) : true
             //            let goodAccuracy = (data.exerciseStats?.accuracy ?? 0) >= 80
             
-                        if isFirst || previousCompleted {
-            let vc = PracticeVC(nibName: "PracticeVC", bundle: nil)
-            vc.exercise = data
-            vc.chapter = chapter
-            //                vc.chapterTitle = chapterTitle
-            //                vc.lesson = lesson
-            addChildToNavigation(vc)
-                        } else {
-                            showAlert(title: "", message: "Finish the previous exercise first")
-                        }
+            if isFromPractice || isFromTest{
+                if !isFirst && !isProUser {
+                    Utility.showProScreen(caller: self)
+                    collectionView.deselectItems(at: indexPaths)
+                    return
+                }
+            }
+            if isFirst || previousCompleted {
+                let vc = PracticeVC(nibName: "PracticeVC", bundle: nil)
+                vc.exercise = data
+                vc.chapter = chapter
+                //                vc.chapterTitle = chapterTitle
+                //                vc.lesson = lesson
+                addChildToNavigation(vc)
+                pushedViewController = vc
+            } else {
+                showAlert(title: "", message: "Finish the previous exercise first")
+            }
         }else{
             if item == 0 {
                 let vc = AiDictationVC(nibName: "AiDictationVC", bundle: nil)
                 addChildToNavigation(vc)
+                pushedViewController = vc
             }else if item == 1{
+                if !isProUser {
+                    Utility.showProScreen(caller: self)
+                    return
+                }
                 let vc = PracticeVC(nibName: "PracticeVC", bundle: nil)
                 vc.isfromDictationVC2ndIndex = true
                 addChildToNavigation(vc)
+                pushedViewController = vc
             }else if item == 2{
+                if !isProUser {
+                    Utility.showProScreen(caller: self)
+                    return
+                }
                 let vc = PracticeVC(nibName: "PracticeVC", bundle: nil)
                 vc.isfromDictationVC3rdIndex = true
                 addChildToNavigation(vc)
+                pushedViewController = vc
             }
         }
         selectedIndex = index

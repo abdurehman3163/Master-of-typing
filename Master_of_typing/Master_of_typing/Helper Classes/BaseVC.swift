@@ -7,6 +7,7 @@ import StoreKit
 
 class BaseVC: NSViewController {
     
+    weak var pushedViewController: NSViewController?
     var hud: MBProgressHUD!
     var isNetConnected: Bool {
         return ReachabilityManager.shared.netConnected
@@ -24,6 +25,10 @@ class BaseVC: NSViewController {
         languageDidChange()
         NotificationCenter.default.addObserver(self, selector: #selector(languageDidChange), name: Notification.Name(rawValue: LCLLanguageChangeNotification), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appProStatusDidChange), name: .appProStatusDidChange, object: nil)
+    }
+    
+    func removePushedViewController() {
+        pushedViewController?.removeChild()
     }
     
     func showPremiumScreen() {

@@ -12,7 +12,8 @@ class App {
     private static let defaults: UserDefaults = .standard
     
     static var isPro: Bool {
-        get { defaults.bool(forKey: "isPremium") }
+        get {return true
+            defaults.bool(forKey: "isPremium") }
         set {
             defaults.set(newValue, forKey: "isPremium")
 //            NotificationCenter.default.post(name: .appProStatusDidChange, object: nil)
@@ -58,100 +59,100 @@ class App {
     }
     
     static var isFree: Bool {
-        return freeCount < 2
+        return freeCount < 1
     }
     
     static var canSendQuery: Bool {
         isFree || isPro
     }
     
-    private static var freeCountPrint: Int {
-        get { defaults.integer(forKey: "freeCountPrint") }
-        set { defaults.set(newValue, forKey: "freeCountPrint") }
-    }
-    
-    static func incrementFreeCountPrint() {
-        guard App.isNotPro else { return }
-        freeCountPrint += 1
-    }
-    
-    static var isFreePrint: Bool {
-        return freeCountPrint < 1
-    }
-    
-    static var canSendQueryPrint: Bool {
-        isFreePrint || isPro
-    }
-    
-    private static var freeCountExport: Int {
-        get { defaults.integer(forKey: "freeCountExport") }
-        set { defaults.set(newValue, forKey: "freeCountExport") }
-    }
-    
-    static func incrementFreeCountExport() {
-        guard App.isNotPro else { return }
-        freeCountExport += 1
-    }
-    
-    static var isFreeExport: Bool {
-        return freeCountExport < 1
-    }
-    
-    static var canSendQueryExport: Bool {
-        isFreeExport || isPro
-    }
-    
-    private static var freeCountShare: Int {
-        get { defaults.integer(forKey: "freeCountShare") }
-        set { defaults.set(newValue, forKey: "freeCountShare") }
-    }
-    
-    static func incrementFreeCountShare() {
-        guard App.isNotPro else { return }
-        freeCountShare += 1
-    }
-    
-    static var isFreeShare: Bool {
-        return freeCountShare < 1
-    }
-    
-    static var canSendQueryShare: Bool {
-        isFreeShare || isPro
-    }
-    
-    private static var freeCountConvert: Int {
-        get { defaults.integer(forKey: "freeCountConvert") }
-        set { defaults.set(newValue, forKey: "freeCountConvert") }
-    }
-    
-    static func incrementFreeCountConvert() {
-        guard App.isNotPro else { return }
-        freeCountConvert += 1
-    }
-    
-    static var isFreeConvert: Bool {
-        return freeCountConvert < 1
-    }
-    
-    static var canSendQueryConvert: Bool {
-        isFreeConvert || isPro
-    }
-    
-    private static var freeCountCopy: Int {
-        get { defaults.integer(forKey: "freeCountCopy") }
-        set { defaults.set(newValue, forKey: "freeCountCopy") }
-    }
-    
-    static func incrementFreeCountCopy() {
-        guard App.isNotPro else { return }
-        freeCountCopy += 1
-    }
-    
-    static var isFreeCopy: Bool {
-        return freeCountCopy < 1
-    }
-    
-    static var canSendQueryCopy: Bool {
-        isFreeCopy || isPro
-    }
+//    private static var freeCountPrint: Int {
+//        get { defaults.integer(forKey: "freeCountPrint") }
+//        set { defaults.set(newValue, forKey: "freeCountPrint") }
+//    }
+//    
+//    static func incrementFreeCountPrint() {
+//        guard App.isNotPro else { return }
+//        freeCountPrint += 1
+//    }
+//    
+//    static var isFreePrint: Bool {
+//        return freeCountPrint < 1
+//    }
+//    
+//    static var canSendQueryPrint: Bool {
+//        isFreePrint || isPro
+//    }
+//    
+//    private static var freeCountExport: Int {
+//        get { defaults.integer(forKey: "freeCountExport") }
+//        set { defaults.set(newValue, forKey: "freeCountExport") }
+//    }
+//    
+//    static func incrementFreeCountExport() {
+//        guard App.isNotPro else { return }
+//        freeCountExport += 1
+//    }
+//    
+//    static var isFreeExport: Bool {
+//        return freeCountExport < 1
+//    }
+//    
+//    static var canSendQueryExport: Bool {
+//        isFreeExport || isPro
+//    }
+//    
+//    private static var freeCountShare: Int {
+//        get { defaults.integer(forKey: "freeCountShare") }
+//        set { defaults.set(newValue, forKey: "freeCountShare") }
+//    }
+//    
+//    static func incrementFreeCountShare() {
+//        guard App.isNotPro else { return }
+//        freeCountShare += 1
+//    }
+//    
+//    static var isFreeShare: Bool {
+//        return freeCountShare < 1
+//    }
+//    
+//    static var canSendQueryShare: Bool {
+//        isFreeShare || isPro
+//    }
+//    
+//    private static var freeCountConvert: Int {
+//        get { defaults.integer(forKey: "freeCountConvert") }
+//        set { defaults.set(newValue, forKey: "freeCountConvert") }
+//    }
+//    
+//    static func incrementFreeCountConvert() {
+//        guard App.isNotPro else { return }
+//        freeCountConvert += 1
+//    }
+//    
+//    static var isFreeConvert: Bool {
+//        return freeCountConvert < 1
+//    }
+//    
+//    static var canSendQueryConvert: Bool {
+//        isFreeConvert || isPro
+//    }
+//    
+//    private static var freeCountCopy: Int {
+//        get { defaults.integer(forKey: "freeCountCopy") }
+//        set { defaults.set(newValue, forKey: "freeCountCopy") }
+//    }
+//    
+//    static func incrementFreeCountCopy() {
+//        guard App.isNotPro else { return }
+//        freeCountCopy += 1
+//    }
+//    
+//    static var isFreeCopy: Bool {
+//        return freeCountCopy < 1
+//    }
+//    
+//    static var canSendQueryCopy: Bool {
+//        isFreeCopy || isPro
+//    }
 }

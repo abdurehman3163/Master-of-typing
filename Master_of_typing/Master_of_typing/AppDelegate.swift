@@ -85,6 +85,9 @@ func goToHomeScreen(contentVC: NSViewController) {
     mainAppWindow.makeKeyAndOrderFront(nil)
 //        addToolbar()
 }
-    
+
+    @IBAction func helpBtn(_ sender: Any?) {
+        Utility.openEmail(address: AppConstants.supportEmail, subject: AppConstants.AppName + "Support", body: "")
+    }
 }
 

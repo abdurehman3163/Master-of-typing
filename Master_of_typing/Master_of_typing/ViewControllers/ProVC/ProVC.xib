@@ -17,23 +17,23 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="1105" height="665"/>
+            <rect key="frame" x="0.0" y="0.0" width="1105" height="679"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <box boxType="custom" borderType="none" borderWidth="0.0" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="bcl-XV-jGm">
-                    <rect key="frame" x="0.0" y="0.0" width="1105" height="665"/>
+                    <rect key="frame" x="0.0" y="0.0" width="1105" height="679"/>
                     <view key="contentView" id="Zno-NQ-FjQ">
-                        <rect key="frame" x="0.0" y="0.0" width="1105" height="665"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1105" height="679"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <box boxType="custom" borderType="none" borderWidth="0.0" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="X9j-Cj-DnP">
-                                <rect key="frame" x="1" y="1" width="307" height="663"/>
+                                <rect key="frame" x="1" y="1" width="307" height="677"/>
                                 <view key="contentView" id="u2F-5l-PVs">
-                                    <rect key="frame" x="0.0" y="0.0" width="307" height="663"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="677"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TAv-x9-37E">
-                                            <rect key="frame" x="47" y="568" width="213" height="35"/>
+                                            <rect key="frame" x="47" y="582" width="213" height="35"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="AI Typo Master" id="0pb-D2-kEj">
                                                 <font key="font" metaFont="systemBold" size="30"/>
                                                 <color key="textColor" name="WhiteColor"/>
@@ -41,7 +41,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BQK-c1-iex">
-                                            <rect key="frame" x="61" y="537" width="185" height="19"/>
+                                            <rect key="frame" x="61" y="551" width="185" height="19"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="With advance AI Feature" id="I7K-QO-gvF">
                                                 <font key="font" metaFont="systemMedium" size="16"/>
                                                 <color key="textColor" name="WhiteColor"/>
@@ -49,7 +49,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zJt-6V-ABu">
-                                            <rect key="frame" x="33" y="186" width="242" height="292"/>
+                                            <rect key="frame" x="33" y="193" width="242" height="292"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="292" id="qJE-Oc-i6I"/>
                                                 <constraint firstAttribute="width" constant="242" id="xGS-Ew-DHl"/>
@@ -90,13 +90,13 @@ your progress.</string>
                                 <color key="fillColor" name="appMain"/>
                             </box>
                             <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="QMt-Rg-5Na">
-                                <rect key="frame" x="308" y="0.0" width="797" height="665"/>
+                                <rect key="frame" x="308" y="0.0" width="797" height="679"/>
                                 <view key="contentView" id="I4U-ai-vwO">
-                                    <rect key="frame" x="0.0" y="0.0" width="797" height="665"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="797" height="679"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RbH-Ev-07r">
-                                            <rect key="frame" x="249" y="584" width="300" height="47"/>
+                                            <rect key="frame" x="249" y="598" width="300" height="47"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Upgrade to PRO" id="9tn-bL-imH">
                                                 <font key="font" metaFont="systemBold" size="40"/>
                                                 <color key="textColor" name="BlackColor"/>
@@ -104,7 +104,7 @@ your progress.</string>
                                             </textFieldCell>
                                         </textField>
                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Da-m9-LuY">
-                                            <rect key="frame" x="274" y="559" width="250" height="19"/>
+                                            <rect key="frame" x="274" y="573" width="250" height="19"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Unlock all PRO lessons for typing" id="Fnq-xU-sVR">
                                                 <font key="font" metaFont="systemMedium" size="16"/>
                                                 <color key="textColor" name="BlackColor"/>
@@ -112,10 +112,10 @@ your progress.</string>
                                             </textFieldCell>
                                         </textField>
                                         <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W0w-Cb-j4d">
-                                            <rect key="frame" x="73" y="507" width="651" height="32"/>
+                                            <rect key="frame" x="73" y="507" width="651" height="46"/>
                                             <subviews>
                                                 <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="geg-yO-Le2">
-                                                    <rect key="frame" x="0.0" y="2" width="213" height="30"/>
+                                                    <rect key="frame" x="0.0" y="16" width="213" height="30"/>
                                                     <view key="contentView" id="8HM-is-Qx4">
                                                         <rect key="frame" x="0.0" y="0.0" width="213" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,7 +149,7 @@ your progress.</string>
                                                     <color key="fillColor" name="ClearColor"/>
                                                 </box>
                                                 <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="N22-Rm-LFV">
-                                                    <rect key="frame" x="233" y="2" width="185" height="30"/>
+                                                    <rect key="frame" x="233" y="16" width="185" height="30"/>
                                                     <view key="contentView" id="3mK-KI-rku">
                                                         <rect key="frame" x="0.0" y="0.0" width="185" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,7 +183,7 @@ your progress.</string>
                                                     <color key="fillColor" name="ClearColor"/>
                                                 </box>
                                                 <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="2c5-rq-L9L">
-                                                    <rect key="frame" x="438" y="2" width="213" height="30"/>
+                                                    <rect key="frame" x="438" y="16" width="213" height="30"/>
                                                     <view key="contentView" id="0I2-KX-lQM">
                                                         <rect key="frame" x="0.0" y="0.0" width="213" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -497,6 +497,10 @@ subscription period. Payment will be charged to your iTunes account at confirmat
                             <constraint firstItem="X9j-Cj-DnP" firstAttribute="top" secondItem="Zno-NQ-FjQ" secondAttribute="top" constant="1" id="cOR-NB-3va"/>
                         </constraints>
                     </view>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1105" id="3nH-xo-gDc"/>
+                        <constraint firstAttribute="height" constant="679" id="7ro-PX-cuC"/>
+                    </constraints>
                     <color key="borderColor" name="WhiteColor"/>
                     <color key="fillColor" name="WhiteColor"/>
                 </box>

@@ -2,10 +2,30 @@ import Cocoa
 
 class CircularProgressView: NSView {
     
+    var lowThreshold: Double = 0.4   // Below 40% → red
+    var mediumThreshold: Double = 0.7 // 40–70% → yellow
+    var highThreshold: Double = 1.0   // 70%+ → green
+
+    var lowColor: NSColor = .systemRed
+    var mediumColor: NSColor = .systemYellow
+    var highColor: NSColor = .systemGreen
+    
     var progress: Double = 0.0 {
         didSet {
             progress = max(0.0, min(1.0, progress))
-            // Use layer for fast updates instead of full redraw
+            
+            // Change color based on current progress
+            let newColor: NSColor
+            if progress < lowThreshold {
+                newColor = lowColor
+            } else if progress < mediumThreshold {
+                newColor = mediumColor
+            } else {
+                newColor = highColor
+            }
+            
+            progressColor = newColor  // This triggers updateProgressLayer()
+            
             updateProgressLayer()
         }
     }
@@ -14,7 +34,7 @@ class CircularProgressView: NSView {
     var trackColor: NSColor = NSColor.whiteColor2
     var progressColor: NSColor = NSColor.appMain
     var textColor: NSColor = NSColor.black
-    var lineWidth: CGFloat = 10.0
+    var lineWidth: CGFloat = 20.0
     var fontSize: CGFloat = 18.0
     
     // Private layers for performance
@@ -87,14 +107,14 @@ class CircularProgressView: NSView {
     }
     
     private func updateProgressLayer() {
-        // Only update strokeEnd — super fast!
         CATransaction.begin()
-        CATransaction.setDisableActions(true) // Prevent implicit animation flicker
-        progressLayer.strokeEnd = CGFloat(progress)
-        CATransaction.commit()
+        CATransaction.setDisableActions(true)
         
-        // Update text smoothly
+        progressLayer.strokeColor = progressColor.cgColor  // ← Use current color
+        progressLayer.strokeEnd = CGFloat(progress)
         textLayer.string = String(format: "%.0f%%", progress * 100)
+        
+        CATransaction.commit()
     }
     
     // Optional: Smooth animated progress

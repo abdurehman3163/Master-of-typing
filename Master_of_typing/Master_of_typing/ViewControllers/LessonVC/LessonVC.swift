@@ -157,11 +157,30 @@ class LessonVC: BaseVC {
         menu.popUp(positioning: nil, at: location, in: sender.superview)
     }
     
-    @objc  func upgradeToProTapped(){}
-    @objc  func restorePurchasesTapped(){}
-    @objc  func rateAppTapped(){}
-    @objc  func shareAppTapped(){}
-    @objc  func supportTapped(){}
+    @objc  func upgradeToProTapped(){
+        Utility.showProScreen(caller: self)
+    }
+    @objc  func restorePurchasesTapped(){
+        showHud(hudView: view)
+        Task {
+            do {
+                try await StoreManager.shared.restore()
+                hideHud()
+            } catch {
+                hideHud()
+                showAlert(title: "Error", message: "Failed to restore purchase, please try again later.")
+            }
+        }
+    }
+    @objc  func rateAppTapped(){
+        Utility.rateApp(appId: AppConstants.appIDForShowingApp) { _ in}
+    }
+    @objc  func shareAppTapped(){
+        Utility.shareApp(appId: AppConstants.appIDForShowingApp, sender: view)
+    }
+    @objc  func supportTapped(){
+        Utility.openEmail(address: AppConstants.supportEmail, subject: AppConstants.AppName + "Support", body: "")
+    }
 
 }
 
@@ -183,20 +202,35 @@ extension LessonVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSColl
         }
         
         let lesson = chapter.lessons[indexPath.item]
+        let isFirstLesson = indexPath.item == 0
+        let isProUser = App.isPro  // ← Your Pro check
+
         cell.lblTitle?.stringValue = "Lesson \(lesson.lessonNumber)"
         cell.Box.wantsLayer = true
         
         if collectionView == CollectionViewHR {
             cell.Box.layer?.backgroundColor = NSColor.homeRowColor1.cgColor
+            cell.img.contentTintColor = .homeRow
         } else if collectionView == CollectionViewTR {
             cell.Box.layer?.backgroundColor = NSColor.topRowColor1.cgColor
+            cell.img.contentTintColor = .topRow
         } else if collectionView == CollectionViewBR {
             cell.Box.layer?.backgroundColor = NSColor.bottomRowColor1.cgColor
+            cell.img.contentTintColor = .bottomRow
         } else if collectionView == CollectionViewFKR {
             cell.Box.layer?.backgroundColor = NSColor.fullKeyColor1.cgColor
+            cell.img.contentTintColor = .fullKey
         } else if collectionView == CollectionViewDR {
             cell.Box.layer?.backgroundColor = NSColor.differentRowColor1.cgColor
+            cell.img.contentTintColor = .differentRow
         }
+        
+        if isFirstLesson || isProUser {
+                cell.img.isHidden = true  // First lesson always unlocked + Pro users see no locks
+            } else {
+                cell.img.isHidden = false
+                cell.img.image = .imgLessonLock
+            }
         
         return cell
     }
@@ -217,6 +251,15 @@ extension LessonVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSColl
               let chapter = getChapter(for: collectionView),
               indexPath.item < chapter.lessons.count else { return }
         
+        let isFirstLesson = indexPath.item == 0
+            let isProUser = App.isPro  // ← Your Pro check
+        
+        if !isFirstLesson && !isProUser {
+                Utility.showProScreen(caller: self)  // ← Reuse your existing Pro screen
+                collectionView.deselectItems(at: indexPaths)
+                return
+            }
+        
         let selectedLesson = chapter.lessons[indexPath.item]
         
         let vc = DictationVC(nibName: "DictationVC", bundle: nil)
@@ -226,7 +269,7 @@ extension LessonVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSColl
         vc.isFromLesson = true
         
         addChildToNavigation(vc)
-        
+        pushedViewController = vc
         collectionView.deselectItems(at: indexPaths)
     }
 }

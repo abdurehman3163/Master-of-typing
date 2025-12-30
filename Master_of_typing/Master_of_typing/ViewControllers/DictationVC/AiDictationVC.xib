@@ -210,41 +210,11 @@
                                 </constraints>
                                 <color key="fillColor" name="appMain"/>
                             </box>
-                            <box boxType="custom" borderWidth="0.0" cornerRadius="6" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="msZ-jR-ed2">
-                                <rect key="frame" x="1029" y="696" width="36" height="36"/>
-                                <view key="contentView" id="L7M-wh-NwZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="LfF-w3-4Ex">
-                                            <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
-                                            <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="imgSpeaker" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="1br-0l-Gfp">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <color key="contentTintColor" name="BlackColor"/>
-                                        </button>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="LfF-w3-4Ex" firstAttribute="leading" secondItem="L7M-wh-NwZ" secondAttribute="leading" id="Ajc-Xm-gWJ"/>
-                                        <constraint firstAttribute="bottom" secondItem="LfF-w3-4Ex" secondAttribute="bottom" id="FNC-2j-UDG"/>
-                                        <constraint firstItem="LfF-w3-4Ex" firstAttribute="top" secondItem="L7M-wh-NwZ" secondAttribute="top" id="scu-O6-UN5"/>
-                                        <constraint firstAttribute="trailing" secondItem="LfF-w3-4Ex" secondAttribute="trailing" id="w7q-Wv-vgK"/>
-                                    </constraints>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="36" id="BPt-sa-mrK"/>
-                                    <constraint firstAttribute="height" constant="36" id="lIF-Gb-lUa"/>
-                                </constraints>
-                                <color key="fillColor" name="LightGrayColor"/>
-                            </box>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="hB7-9n-83m" secondAttribute="bottom" constant="20" id="4vn-b2-ZmO"/>
-                            <constraint firstItem="msZ-jR-ed2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fMe-8C-zbk" secondAttribute="top" constant="20" id="Bsg-bH-abD"/>
-                            <constraint firstItem="uYi-ev-cRj" firstAttribute="top" secondItem="msZ-jR-ed2" secondAttribute="bottom" constant="20" id="DCS-dK-U0E"/>
                             <constraint firstItem="hB7-9n-83m" firstAttribute="centerX" secondItem="fMe-8C-zbk" secondAttribute="centerX" id="FkQ-21-Zdy"/>
-                            <constraint firstItem="msZ-jR-ed2" firstAttribute="trailing" secondItem="uYi-ev-cRj" secondAttribute="trailing" id="WQV-x7-pag"/>
+                            <constraint firstItem="uYi-ev-cRj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fMe-8C-zbk" secondAttribute="top" constant="76" id="VMj-ot-ee9"/>
                             <constraint firstItem="R0d-pH-CIK" firstAttribute="top" secondItem="fMe-8C-zbk" secondAttribute="top" constant="25" id="YNk-af-SQW"/>
                             <constraint firstItem="uYi-ev-cRj" firstAttribute="centerX" secondItem="fMe-8C-zbk" secondAttribute="centerX" id="i8L-lZ-Vmw"/>
                             <constraint firstItem="uYi-ev-cRj" firstAttribute="centerY" secondItem="fMe-8C-zbk" secondAttribute="centerY" id="q4t-K2-eVp"/>
@@ -265,15 +235,11 @@
     </objects>
     <resources>
         <image name="arrow.backward" catalog="system" width="20" height="16"/>
-        <image name="imgSpeaker" width="24" height="24"/>
         <namedColor name="BlackColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ClearColor">
             <color red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="LightGrayColor">
-            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="WhiteColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

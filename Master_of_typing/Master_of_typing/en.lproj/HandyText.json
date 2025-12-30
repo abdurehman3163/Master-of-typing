@@ -7,7 +7,7 @@
                 "lessonNumber": 1,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "f j",
                         "isCompleted": false,
                         "text": "f j f j f j f j f j f j f j f j f j f j f j",
@@ -15,7 +15,7 @@
                         "allowedKeys": [3, 38, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "j f",
                         "isCompleted": false,
                         "text": "j f j f j f j f j f j f j f j f j f j f j f",
@@ -23,7 +23,7 @@
                         "allowedKeys": [3, 38, 49]
                     },
                     {
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "fj fj",
                         "isCompleted": false,
                         "text": "fj fj fj fj fj fj fj fj fj fj fj fj fj fj fj fj",
@@ -31,21 +31,21 @@
                         "allowedKeys": [3, 38, 49]
                     },
                     {
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "jf jf",
                         "isCompleted": false,
                         "text": "jf jf jf jf jf jf jf jf jf jf jf jf jf jf jf jf",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "fj jf",
                         "isCompleted": false,
                         "text": "fj jf fj jf fj jf fj jf fj jf fj jf fj jf fj jf",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "jf fj",
                         "isCompleted": false,
                         "text": "jf fj jf fj jf fj jf fj jf fj jf fj jf fj jf fj",
@@ -59,7 +59,7 @@
                 "lessonNumber": 2,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "d k",
                         "isCompleted": false,
                         "text": "d k d k d k d k d k d k d k d k d k d k d k d k",
@@ -67,35 +67,35 @@
                         "allowedKeys": [2, 40, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "k d",
                         "isCompleted": false,
                         "text": "k d k d k d k d k d k d k d k d k d k d k d k d",
                         "exerciseStats": null,
                         "allowedKeys": [2, 40, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "dk dk",
                         "isCompleted": false,
                         "text": "dk dk dk dk dk dk dk dk dk dk dk dk dk dk dk dk",
                         "exerciseStats": null,
                         "allowedKeys": [2, 40, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "kd kd",
                         "isCompleted": false,
                         "text": "kd kd kd kd kd kd kd kd kd kd kd kd kd kd kd kd",
                         "exerciseStats": null,
                         "allowedKeys": [2, 40, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "dk kd",
                         "isCompleted": false,
                         "text": "dk kd dk kd dk kd dk kd dk kd dk kd dk kd dk kd",
                         "exerciseStats": null,
                         "allowedKeys": [2, 40, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "kd dk",
                         "isCompleted": false,
                         "text": "kd dk kd dk kd dk kd dk kd dk kd dk kd dk kd dk",
@@ -109,7 +109,7 @@
                 "lessonNumber": 3,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "f j k",
                         "isCompleted": false,
                         "text": "f j k f j k f j k f j k f j k f j k f j k f j k f j k f j k",
@@ -117,35 +117,35 @@
                         "allowedKeys": [3, 38, 40, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "f j d",
                         "isCompleted": false,
                         "text": "f j d f j d f j d f j d f j d f j d f j d f j d f j d f j d",
                         "exerciseStats": null,
                         "allowedKeys": [2, 3, 38, 40, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "f j k d",
                         "isCompleted": false,
                         "text": "f j k d f j k d f j k d f j k d f j k d f j k d f j k d",
                         "exerciseStats": null,
                         "allowedKeys": [2, 3, 38, 40, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "fj dk",
                         "isCompleted": false,
                         "text": "fj dk fj dk fj dk fj dk fj dk fj dk fj dk fj dk fj dk",
                         "exerciseStats": null,
                         "allowedKeys": [2, 3, 38, 40, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "jf kd",
                         "isCompleted": false,
                         "text": "jf kd jf kd jf kd jf kd jf kd jf kd jf kd jf kd jf kd",
                         "exerciseStats": null,
                         "allowedKeys": [2, 3, 38, 40, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "fj jf dk",
                         "isCompleted": false,
                         "text": "fj jf dk fj jf dk fj jf dk fj jf dk fj jf dk fj jf dk",
@@ -153,7 +153,7 @@
                         "allowedKeys": [2, 3, 38, 40, 49]
                     },
                     {
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "fj jf kd",
                         "isCompleted": false,
                         "text": "fj jf kd fj jf kd fj jf kd fj jf kd fj jf kd fj jf kd",
@@ -161,7 +161,7 @@
                         "allowedKeys": [2, 3, 38, 40, 49]
                     },
                     {
-                        "id": "exercise 8",
+                        "id": "Exercise 8",
                         "title": "fj jf dk kd",
                         "isCompleted": false,
                         "text": "fj jf dk kd fj jf dk kd fj jf dk kd fj jf dk kd ",
@@ -175,7 +175,7 @@
                 "lessonNumber": 4,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "s l",
                         "isCompleted": false,
                         "text": "s l s l s l s l s l s l s l s l s l s l s l s l s l",
@@ -183,35 +183,35 @@
                         "allowedKeys": [1, 37, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "l s",
                         "isCompleted": false,
                         "text": "l s l s l s l s l s l s l s l s l s l s l s l s l s l s",
                         "exerciseStats": null,
                         "allowedKeys": [1, 37, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "sl sl",
                         "isCompleted": false,
                         "text": "sl sl sl sl sl sl sl sl sl sl sl sl sl sl sl sl sl sl sl sl",
                         "exerciseStats": null,
                         "allowedKeys": [1, 37, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "ls ls",
                         "isCompleted": false,
                         "text": "ls ls ls ls ls ls ls ls ls ls ls ls ls ls ls ls ls ls ls ls",
                         "exerciseStats": null,
                         "allowedKeys": [1, 37, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "sl ls",
                         "isCompleted": false,
                         "text": "sl ls sl ls sl ls sl ls sl ls sl ls sl ls sl ls sl ls sl ls sl ls",
                         "exerciseStats": null,
                         "allowedKeys": [1, 37, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "ls sl",
                         "isCompleted": false,
                         "text": "ls sl ls sl ls sl ls sl ls sl ls sl ls sl ls sl ls sl ls sl ls sl",
@@ -225,7 +225,7 @@
                 "lessonNumber": 5,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "f j k s",
                         "isCompleted": false,
                         "text": "f j k s f j k s f j k s f j k s f j k s f j k s f j k s f j k s",
@@ -233,35 +233,35 @@
                         "allowedKeys": [3, 38, 40, 1, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "f j d l",
                         "isCompleted": false,
                         "text": "f j d l f j d l f j d l f j d l f j d l f j d l f j d l f j d l",
                         "exerciseStats": null,
                         "allowedKeys": [3, 2, 38, 37, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "f j k d s l",
                         "isCompleted": false,
                         "text": "f j k d s l f j k d s l f j k d s l f j k d s l f j k d s l f j k d s l",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 40, 2, 1, 37, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "f l f k j s l",
                         "isCompleted": false,
                         "text": "f l f k j s l f l f k j s l f l f k j s l f l f k j s l f l f k j s l",
                         "exerciseStats": null,
                         "allowedKeys": [3, 37, 40, 38, 1, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "fj dk sl",
                         "isCompleted": false,
                         "text": "fj dk sl fj dk sl fj dk sl fj dk sl fj dk sl fj dk sl fj dk sl fj dk sl",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 2, 40, 1, 37, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "jf fj kd dk ls",
                         "isCompleted": false,
                         "text": "jf fj kd dk ls jf fj kd dk ls jf fj kd dk ls jf fj kd dk ls jf fj kd dk ls",
@@ -269,7 +269,7 @@
                         "allowedKeys": [38, 3, 40, 2, 37, 1, 49]
                     },
                     {
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "fj dk sl kd ls",
                         "isCompleted": false,
                         "text": "fj dk sl kd ls fj dk sl kd ls fj dk sl kd ls fj dk sl kd ls fj dk sl kd ls",
@@ -277,7 +277,7 @@
                         "allowedKeys": [3, 38, 2, 40, 1, 37, 49]
                     },
                     {
-                        "id": "exercise 8",
+                        "id": "Exercise 8",
                         "title": "jf fj kd dk ls sl",
                         "isCompleted": false,
                         "text": "jf fj kd dk ls sl jf fj kd dk ls sl jf fj kd dk ls sl jf fj kd dk ls sl jf fj kd dk ls sl",
@@ -285,7 +285,7 @@
                         "allowedKeys": [38, 3, 40, 2, 37, 1, 49]
                     },
                     {
-                        "id": "exercise 9",
+                        "id": "Exercise 9",
                         "title": "fj jf dk kd sl ls",
                         "isCompleted": false,
                         "text": "fj jf dk kd sl ls fj jf dk kd sl ls fj jf dk kd sl ls fj jf dk kd sl ls fj jf dk kd sl ls",
@@ -299,7 +299,7 @@
                 "lessonNumber": 6,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "a ;",
                         "isCompleted": false,
                         "text": "a ; a ; a ; a ; a ; a ; a ; a ; a ; a ; a ; a ;",
@@ -307,35 +307,35 @@
                         "allowedKeys": [0, 41, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "; a",
                         "isCompleted": false,
                         "text": "; a ; a ; a ; a ; a ; a ; a ; a ; a ; a ; a ; a ;",
                         "exerciseStats": null,
                         "allowedKeys": [0, 41, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "a; a;",
                         "isCompleted": false,
                         "text": "a; a; a; a; a; a; a; a; a; a; a; a; a; a; a; a; a;",
                         "exerciseStats": null,
                         "allowedKeys": [0, 41, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": ";a ;a",
                         "isCompleted": false,
                         "text": ";a ;a ;a ;a ;a ;a ;a ;a ;a ;a ;a ;a ;a ;a ;a ;a ;a ;a",
                         "exerciseStats": null,
                         "allowedKeys": [0, 41, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "a; ;a",
                         "isCompleted": false,
                         "text": "a; ;a a; ;a a; ;a a; ;a a; ;a a; ;a a; ;a a; ;a a; ;a",
                         "exerciseStats": null,
                         "allowedKeys": [0, 41, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": ";a a;",
                         "isCompleted": false,
                         "text": ";a a; ;a a; ;a a; ;a a; ;a a; ;a a; ;a a; ;a a; ;a a;",
@@ -349,7 +349,7 @@
                 "lessonNumber": 7,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "f j k d s l a",
                         "isCompleted": false,
                         "text": "f j k d s l a f j k d s l a f j k d s l a f j k d s l a f j k",
@@ -357,49 +357,49 @@
                         "allowedKeys": [3, 38, 40, 2, 1, 37, 0, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "f j k d s l ;",
                         "isCompleted": false,
                         "text": "f j k d s l ; f j k d s l ; f j k d s l ; f j k d s l ; f j k",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 40, 2, 1, 37, 41, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "f j k d s l a ;",
                         "isCompleted": false,
                         "text": "f j k d s l a ; f j k d s l a ; f j k d s l a ; f j k d s l a",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 40, 2, 1, 37, 0, 41, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "fj kd sl a;",
                         "isCompleted": false,
                         "text": "fj kd sl a; fj kd sl a; fj kd sl a; fj kd sl a; fj kd sl fj kd",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 40, 2, 1, 37, 0, 41, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "jf dk ls ;a",
                         "isCompleted": false,
                         "text": "jf dk ls ;a jf dk ls ;a jf dk ls ;a jf dk ls ;a jf dk ls ;a jf",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 40, 2, 1, 37, 0, 41, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "fj jf dk kd sl ls a;",
                         "isCompleted": false,
                         "text": "fj jf dk kd sl ls a; fj jf dk kd sl ls a; fj jf dk kd sl ls a;",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 40, 2, 1, 37, 0, 41, 49]
                     },{
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "fj jf dk kd sl ls ;a",
                         "isCompleted": false,
                         "text": "fj jf dk kd sl ls ;a fj jf dk kd sl ls ;a fj jf dk kd sl ls ;a",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 40, 2, 1, 37, 0, 41, 49]
                     },{
-                        "id": "exercise 8",
+                        "id": "Exercise 8",
                         "title": "fj jf dk kd sl ls a; ;a",
                         "isCompleted": false,
                         "text": "fj jf dk kd sl ls a; ;a fj jf dk kd sl ls a; ;a fj jf dk kd sl",
@@ -413,7 +413,7 @@
                 "lessonNumber": 8,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "g h",
                         "isCompleted": false,
                         "text": "g h g h g h g h g h g h g h g h g h g h g h g h g h g h g h",
@@ -421,77 +421,77 @@
                         "allowedKeys": [5, 4, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "h g",
                         "isCompleted": false,
                         "text": "h g h g h g h g h g h g h g h g h g h g h g h g h g h g h g",
                         "exerciseStats": null,
                         "allowedKeys": [5, 4, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "gh gh",
                         "isCompleted": false,
                         "text": "gh gh gh gh gh gh gh gh gh gh gh gh gh gh gh gh gh gh gh gh",
                         "exerciseStats": null,
                         "allowedKeys": [5, 4, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "hg hg",
                         "isCompleted": false,
                         "text": "hg hg hg hg hg hg hg hg hg hg hg hg hg hg hg hg hg hg hg hg",
                         "exerciseStats": null,
                         "allowedKeys": [5, 4, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "gh hg",
                         "isCompleted": false,
                         "text": "gh hg gh hg gh hg gh hg gh hg gh hg gh hg gh hg gh hg gh hg",
                         "exerciseStats": null,
                         "allowedKeys": [5, 4, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "hg gh",
                         "isCompleted": false,
                         "text": "hg gh hg gh hg gh hg gh hg gh hg gh hg gh hg gh hg gh hg gh",
                         "exerciseStats": null,
                         "allowedKeys": [5, 4, 49]
                     },{
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "f j k d s l a ; g",
                         "isCompleted": false,
                         "text": "f j k d s l a ; g f j k d s l a ; g f j k d s l a ; gf j k",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 40, 2, 1, 37, 0, 41, 5, 49]
                     },{
-                        "id": "exercise 8",
+                        "id": "Exercise 8",
                         "title": "f j k d s l a ; h",
                         "isCompleted": false,
                         "text": "f j k d s l a ; h f j k d s l a ; h f j k d s l a ; h f j ",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 40, 2, 1, 37, 0, 41, 4, 49]
                     },{
-                        "id": "exercise 9",
+                        "id": "Exercise 9",
                         "title": "f j k d s l a ; g h",
                         "isCompleted": false,
                         "text": "f j k d s l a ; g h f j k d s l a ; g h f j k d s l a ; g h",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 40, 2, 1, 37, 0, 41, 5, 4, 49]
                     },{
-                        "id": "exercise 10",
+                        "id": "Exercise 10",
                         "title": "fj dk sl a; gh",
                         "isCompleted": false,
                         "text": "fj dk sl a; gh fj dk sl a; gh fj dk sl a; gh fj dk sl a; gh",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 2, 40, 1, 37, 0, 41, 5, 4, 49]
                     },{
-                        "id": "exercise 11",
+                        "id": "Exercise 11",
                         "title": "fj jf dk kd sl ls a; ;a gh hg",
                         "isCompleted": false,
                         "text": "fj jf dk kd sl ls a; ;a gh hg fj jf dk kd sl ls a; ;a gh hg fj",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 2, 40, 1, 37, 0, 41, 5, 4, 49]
                     },{
-                        "id": "exercise 12",
+                        "id": "Exercise 12",
                         "title": "jf fj kd dk ls sl a; ;a hg gh",
                         "isCompleted": false,
                         "text": "jf fj kd dk ls sl a; ;a hg gh jf fj kd dk ls sl a; ;a hg gh jf fj",
@@ -510,7 +510,7 @@
                 "lessonNumber": 1,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "r u",
                         "isCompleted": false,
                         "text": "r u r u r u r u r u r u r u r u r u r u r u r u r u r u r u r u r u",
@@ -518,35 +518,35 @@
                         "allowedKeys": [15, 32, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "u r",
                         "isCompleted": false,
                         "text": "u r u r u r u r u r u r u r u r u r u r u r u r u r u r u r u r u r",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "ru ru",
                         "isCompleted": false,
                         "text": "ru ru ru ru ru ru ru ru ru ru ru ru ru ru ru ru ru ru ru ru ru ru ru ru",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "ur ur",
                         "isCompleted": false,
                         "text": "ur ur ur ur ur ur ur ur ur ur ur ur ur ur ur ur ur ur ur ur ur ur ur ur",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "ru ur",
                         "isCompleted": false,
                         "text": "ru ur ru ur ru ur ru ur ru ur ru ur ru ur ru ur ru ur ru ur ru ur ru ur",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "ur ru",
                         "isCompleted": false,
                         "text": "ur ru ur ru ur ru ur ru ur ru ur ru ur ru ur ru ur ru ur ru ur ru ur ru",
@@ -560,7 +560,7 @@
                 "lessonNumber": 2,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "e i",
                         "isCompleted": false,
                         "text": "e i e i e i e i e i e i e i e i e i e i e i e i e i e i e i e i e i e i",
@@ -568,35 +568,35 @@
                         "allowedKeys": [14, 34, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "i e",
                         "isCompleted": false,
                         "text": "i e i e i e i e i e i e i e i e i e i e i e i e i e i e i e i e i e i e",
                         "exerciseStats": null,
                         "allowedKeys": [14, 34, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "ei ei",
                         "isCompleted": false,
                         "text": "ei ei ei ei ei ei ei ei ei ei ei ei ei ei ei ei ei ei ei ei ei ei ei ei",
                         "exerciseStats": null,
                         "allowedKeys": [14, 34, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "ie ie",
                         "isCompleted": false,
                         "text": "ie ie ie ie ie ie ie ie ie ie ie ie ie ie ie ie ie ie ie ie ie ie ie ie",
                         "exerciseStats": null,
                         "allowedKeys": [14, 34, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "ei ie",
                         "isCompleted": false,
                         "text": "ei ie ei ie ei ie ei ie ei ie ei ie ei ie ei ie ei ie ei ie ei ie ei ie",
                         "exerciseStats": null,
                         "allowedKeys": [14, 34, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "ie ei",
                         "isCompleted": false,
                         "text": "ie ei ie ei ie ei ie ei ie ei ie ei ie ei ie ei ie ei ie ei ie ei ie ei",
@@ -610,7 +610,7 @@
                 "lessonNumber": 3,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "r u i",
                         "isCompleted": false,
                         "text": "r u i r u i r u i r u i r u i r u i r u i r u i r u i r u i r u i r u i",
@@ -618,63 +618,63 @@
                         "allowedKeys": [15, 32, 34, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "r u e",
                         "isCompleted": false,
                         "text": "r u e r u e r u e r u e r u e r u e r u e r u e r u e r u e r u e r u e",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 14, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "r u i e",
                         "isCompleted": false,
                         "text": "r u i e r u i e r u i e r u i e r u i e r u i e r u i e r u i e r u i e",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 34, 14, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "i u e r",
                         "isCompleted": false,
                         "text": "i u e r i u e r i u e r i u e r i u e r i u e r i u e r i u e r i u e r",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 34, 14, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "ru ei",
                         "isCompleted": false,
                         "text": "ru ei ru ei ru ei ru ei ru ei ru ei ru ei ru ei ru ei ru ei ru ei ru ei",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 34, 14, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "ur ie",
                         "isCompleted": false,
                         "text": "ur ie ur ie ur ie ur ie ur ie ur ie ur ie ur ie ur ie ur ie ur ie ur ie",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 34, 14, 49]
                     },{
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "ur ru ie",
                         "isCompleted": false,
                         "text": "ur ru ie ur ru ie ur ru ie ur ru ie ur ru ie ur ru ie ur ru ie ur ru ie",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 34, 14, 49]
                     },{
-                        "id": "exercise 8",
+                        "id": "Exercise 8",
                         "title": "ru ur ie",
                         "isCompleted": false,
                         "text": "ru ur ie ru ur ie ru ur ie ru ur ie ru ur ie ru ur ie ru ur ie ru ur ie",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 34, 14, 49]
                     },{
-                        "id": "exercise 9",
+                        "id": "Exercise 9",
                         "title": "ur ru ie ei",
                         "isCompleted": false,
                         "text": "ur ru ie ei ur ru ie ei ur ru ie ei ur ru ie ei ur ru ie ei ur ru ie ei",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 34, 14, 49]
                     },{
-                        "id": "exercise 10",
+                        "id": "Exercise 10",
                         "title": "ru ur ei ie",
                         "isCompleted": false,
                         "text": "ru ur ei ie ru ur ei ie ru ur ei ie ru ur ei ie ru ur ei ie ru ur ei ie",
@@ -688,7 +688,7 @@
                 "lessonNumber": 4,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "w o",
                         "isCompleted": false,
                         "text": "w o w o w o w o w o w o w o w o w o w o w o w o w o w o w o w o w o w o",
@@ -696,35 +696,35 @@
                         "allowedKeys": [13, 31, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "o w",
                         "isCompleted": false,
                         "text": "o w o w o w o w o w o w o w o w o w o w o w o w o w o w o w o w o w o w",
                         "exerciseStats": null,
                         "allowedKeys": [13, 31, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "wo wo",
                         "isCompleted": false,
                         "text": "wo wo wo wo wo wo wo wo wo wo wo wo wo wo wo wo wo wo wo wo wo wo wo wo",
                         "exerciseStats": null,
                         "allowedKeys": [13, 31, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "ow ow",
                         "isCompleted": false,
                         "text": "ow ow ow ow ow ow ow ow ow ow ow ow ow ow ow ow ow ow ow ow ow ow ow ow",
                         "exerciseStats": null,
                         "allowedKeys": [13, 31, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "wo ow",
                         "isCompleted": false,
                         "text": "wo ow wo ow wo ow wo ow wo ow wo ow wo ow wo ow wo ow wo ow wo ow wo ow",
                         "exerciseStats": null,
                         "allowedKeys": [13, 31, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "ow wo",
                         "isCompleted": false,
                         "text": "ow wo ow wo ow wo ow wo ow wo ow wo ow wo ow wo ow wo ow wo ow wo ow wo",
@@ -738,7 +738,7 @@
                 "lessonNumber": 5,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "r u e i w",
                         "isCompleted": false,
                         "text": "r u e i w r u e i w r u e i w r u e i w r u e i w r u e i w r u e i w r",
@@ -746,56 +746,56 @@
                         "allowedKeys": [15, 32, 14, 34, 13, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "r u e i o",
                         "isCompleted": false,
                         "text": "r u e i o r u e i o r u e i o r u e i o r u e i o r u e i o r u e i o r",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 14, 34, 13, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "r u e i w o",
                         "isCompleted": false,
                         "text": "r u e i w o r u e i w o r u e i w o r u e i w o r u e i w o r u e i w o",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 14, 34, 13, 31, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "ru ei wo",
                         "isCompleted": false,
                         "text": "ru ei wo ru ei wo ru ei wo ru ei wo ru ei wo ru ei wo ru ei wo ru ei wo",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 14, 34, 13, 31, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "ur ie wo",
                         "isCompleted": false,
                         "text": "ur ie wo ur ie wo ur ie wo ur ie wo ur ie wo ur ie wo ur ie wo ur ie wo",
                         "exerciseStats": null,
                         "allowedKeys": [32, 15, 34, 14, 13, 31, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "ru ei wo ie",
                         "isCompleted": false,
                         "text": "ru ei wo ie ru ei wo ie ru ei wo ie ru ei wo ie ru ei wo ie ru ei wo ie",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 14, 34, 13, 31, 49]
                     },{
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "ur ei ow ie ",
                         "isCompleted": false,
                         "text": "ur ei ow ie ur ei ow ie ur ei ow ie ur ei ow ie ur ei ow ie ur ei ow ie",
                         "exerciseStats": null,
                         "allowedKeys": [32, 15, 14, 34, 31, 13, 49]
                     },{
-                        "id": "exercise 8",
+                        "id": "Exercise 8",
                         "title": "ur ru ei ie ow wo ",
                         "isCompleted": false,
                         "text": "ur ru ei ie ow wo ur ru ei ie ow wo ur ru ei ie ow wo ur ru ei ie ow wo",
                         "exerciseStats": null,
                         "allowedKeys": [32, 15, 14, 34, 31, 13, 49]
                     },{
-                        "id": "exercise 9",
+                        "id": "Exercise 9",
                         "title": "ru ur ie ei wo ow ",
                         "isCompleted": false,
                         "text": "ru ur ie ei wo ow ru ur ie ei wo ow ru ur ie ei wo ow ru ur ie ei wo ow ",
@@ -809,7 +809,7 @@
                 "lessonNumber": 6,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "p q ",
                         "isCompleted": false,
                         "text": "p q p q p q p q p q p q p q p q p q p q p q p q p q p q p q p q p q p q p",
@@ -817,35 +817,35 @@
                         "allowedKeys": [12, 35, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "q p ",
                         "isCompleted": false,
                         "text": "q p q p q p q p q p q p q p q p q p q p q p q p q p q p q p q p q p q p q",
                         "exerciseStats": null,
                         "allowedKeys": [12, 35, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "pq pq ",
                         "isCompleted": false,
                         "text": "pq pq pq pq pq pq pq pq pq pq pq pq pq pq pq pq pq pq pq pq pq pq pq pq",
                         "exerciseStats": null,
                         "allowedKeys": [12, 35, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "qp qp ",
                         "isCompleted": false,
                         "text": "qp qp qp qp qp qp qp qp qp qp qp qp qp qp qp qp qp qp qp qp qp qp qp qp",
                         "exerciseStats": null,
                         "allowedKeys": [12, 35, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "pq qp ",
                         "isCompleted": false,
                         "text": "pq qp pq qp pq qp pq qp pq qp pq qp pq qp pq qp pq qp pq qp pq qp pq qp",
                         "exerciseStats": null,
                         "allowedKeys": [12, 35, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "qp pq ",
                         "isCompleted": false,
                         "text": "qp pq qp pq qp pq qp pq qp pq qp pq qp pq qp pq qp pq qp pq qp pq qp pq",
@@ -859,7 +859,7 @@
                 "lessonNumber": 7,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "r u e i w o q ",
                         "isCompleted": false,
                         "text": "r u e i w o q r u e i w o q r u e i w o q r u e i w o q r u e i w o q r u",
@@ -867,56 +867,56 @@
                         "allowedKeys": [15, 32, 14, 34, 13, 31, 12, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "r u e i w o p ",
                         "isCompleted": false,
                         "text": "r u e i w o p r u e i w o p r u e i w o p r u e i w o p r u e i w o p r u",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 14, 34, 13, 31, 35, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "r u e i w o p q ",
                         "isCompleted": false,
                         "text": "r u e i w o p q r u e i w o p q r u e i w o p q r u e i w o p q r u e i w o",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 14, 34, 13, 31, 35, 12, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "ru ei wo pq ",
                         "isCompleted": false,
                         "text": "ru ei wo pq ru ei wo pq ru ei wo pq ru ei wo pq ru ei wo pq ru ei wo pq ru",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 14, 34, 13, 31, 35, 12, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "ur ie ow qp ",
                         "isCompleted": false,
                         "text": "ur ie ow qp ur ie ow qp ur ie ow qp ur ie ow qp ur ie ow qp ur ie ow qp ur",
                         "exerciseStats": null,
                         "allowedKeys": [32, 15, 34, 14, 31, 13, 12, 35, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "ru ur ie ei ow wo pq ",
                         "isCompleted": false,
                         "text": "ru ur ie ei ow wo pq ru ur ie ei ow wo pq ru ur ie ei ow wo pq ru ur ie ei ow",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 34, 14, 31, 13, 35, 12, 49]
                     },{
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "ur ru ei ie wo ow qp ",
                         "isCompleted": false,
                         "text": "ur ru ei ie wo ow qp ur ru ei ie wo ow qp ur ru ei ie wo ow qp ur ru ei ie wo",
                         "exerciseStats": null,
                         "allowedKeys": [32, 15, 14, 34, 13, 31, 12, 35, 49]
                     },{
-                        "id": "exercise 8",
+                        "id": "Exercise 8",
                         "title": "ru ur ie ei ow wo pq qp ",
                         "isCompleted": false,
                         "text": "ru ur ie ei ow wo pq qp ru ur ie ei ow wo pq qp ru ur ie ei ow wo pq qp ru ur ie",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 34, 14, 31, 13, 35, 12, 49]
                     },{
-                        "id": "exercise 9",
+                        "id": "Exercise 9",
                         "title": "ur ru ei ie wo ow qp pq ",
                         "isCompleted": false,
                         "text": "ur ru ei ie wo ow qp pq ur ru ei ie wo ow qp pq ur ru ei ie wo ow qp pq ur ru ei",
@@ -930,7 +930,7 @@
                 "lessonNumber": 8,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "y t ",
                         "isCompleted": false,
                         "text": "y t y t y t y t y t y t y t y t y t y t y t y t y t y t y t y t y t y t y t",
@@ -938,105 +938,105 @@
                         "allowedKeys": [16, 17, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "t y ",
                         "isCompleted": false,
                         "text": "t y t y t y t y t y t y t y t y t y t y t y t y t y t y t y t y t y t y t y",
                         "exerciseStats": null,
                         "allowedKeys": [16, 17, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "yt yt ",
                         "isCompleted": false,
                         "text": "yt yt yt yt yt yt yt yt yt yt yt yt yt yt yt yt yt yt yt yt yt yt yt yt yt yt",
                         "exerciseStats": null,
                         "allowedKeys": [16, 17, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "ty ty ",
                         "isCompleted": false,
                         "text": "ty ty ty ty ty ty ty ty ty ty ty ty ty ty ty ty ty ty ty ty ty ty ty ty ty ty",
                         "exerciseStats": null,
                         "allowedKeys": [16, 17, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "yt ty ",
                         "isCompleted": false,
                         "text": "yt ty yt ty yt ty yt ty yt ty yt ty yt ty yt ty yt ty yt ty yt ty yt ty yt ty",
                         "exerciseStats": null,
                         "allowedKeys": [16, 17, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "ty yt ",
                         "isCompleted": false,
                         "text": "ty yt ty yt ty yt ty yt ty yt ty yt ty yt ty yt ty yt ty yt ty yt ty yt ty yt",
                         "exerciseStats": null,
                         "allowedKeys": [16, 17, 49]
                     },{
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "r u e i w o p q t ",
                         "isCompleted": false,
                         "text": "r u e i w o p q t r u e i w o p q t r u e i w o p q t r u e i w o p q t r u e",
                         "exerciseStats": null,
                         "allowedKeys": [16, 17, 49]
                     },{
-                        "id": "exercise 8",
+                        "id": "Exercise 8",
                         "title": "r u e i w o p q y ",
                         "isCompleted": false,
                         "text": "r u e i w o p q y r u e i w o p q y r u e i w o p q y r u e i w o p q y r u e",
                         "exerciseStats": null,
                         "allowedKeys": [16, 17, 49]
                     },{
-                        "id": "exercise 9",
+                        "id": "Exercise 9",
                         "title": "r u e i w o p q t y ",
                         "isCompleted": false,
                         "text": "r u e i w o p q t y r u e i w o p q t y r u e i w o p q t y r u e i w o p q t y",
                         "exerciseStats": null,
                         "allowedKeys": [16, 17, 49]
                     },{
-                        "id": "exercise 10",
+                        "id": "Exercise 10",
                         "title": "u r i e o w q p y t ",
                         "isCompleted": false,
                         "text": "u r i e o w q p y t u r i e o w q p y t u r i e o w q p y t u r i e o w q p y t",
                         "exerciseStats": null,
                         "allowedKeys": [16, 17, 49]
                     },{
-                        "id": "exercise 11",
+                        "id": "Exercise 11",
                         "title": "ru ei wo qp ty ",
                         "isCompleted": false,
                         "text": "ru ei wo qp ty ru ei wo qp ty ru ei wo qp ty ru ei wo qp ty ru ei wo qp ty ru ei",
                         "exerciseStats": null,
                         "allowedKeys": [16, 17, 49]
                     },{
-                        "id": "exercise 12",
+                        "id": "Exercise 12",
                         "title": "ur ie ow qp yt ",
                         "isCompleted": false,
                         "text": "ur ie ow qp yt ur ie ow qp yt ur ie ow qp yt ur ie ow qp yt ur ie ow qp yt ur ie",
                         "exerciseStats": null,
                         "allowedKeys": [16, 17, 49]
                     },{
-                        "id": "exercise 13",
+                        "id": "Exercise 13",
                         "title": "ru ur ei ie wo ow qp pq yt ",
                         "isCompleted": false,
                         "text": "ru ur ei ie wo ow qp pq yt ru ur ei ie wo ow qp pq yt ru ur ei ie wo ow qp pq yt",
                         "exerciseStats": null,
                         "allowedKeys": [16, 17, 49]
                     },{
-                        "id": "exercise 14",
+                        "id": "Exercise 14",
                         "title": "ur ru ie ei ow wo qp pq ty ",
                         "isCompleted": false,
                         "text": "ur ru ie ei ow wo qp pq ty ur ru ie ei ow wo qp pq ty ur ru ie ei ow wo qp pq ty",
                         "exerciseStats": null,
                         "allowedKeys": [16, 17, 49]
                     },{
-                        "id": "exercise 15",
+                        "id": "Exercise 15",
                         "title": "ru ur ei ie wo ow qp pq yt ty ",
                         "isCompleted": false,
                         "text": "ru ur ei ie wo ow qp pq yt ty ru ur ei ie wo ow qp pq yt ty ru ur ei ie wo ow qp",
                         "exerciseStats": null,
                         "allowedKeys": [16, 17, 49]
                     },{
-                        "id": "exercise 16",
+                        "id": "Exercise 16",
                         "title": "ur ru ie ei ow wo qp pq ty yt ",
                         "isCompleted": false,
                         "text": "ur ru ie ei ow wo qp pq ty yt ur ru ie ei ow wo qp pq ty yt ur ru ie ei ow wo qp",
@@ -1055,7 +1055,7 @@
                 "lessonNumber": 1,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "v m ",
                         "isCompleted": false,
                         "text": "v m v m v m v m v m v m v m v m v m v m v m v m v m v m v m v m v m v m v m v m v m",
@@ -1063,35 +1063,35 @@
                         "allowedKeys": [9, 46, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "m v ",
                         "isCompleted": false,
                         "text": "m v m v m v m v m v m v m v m v m v m v m v m v m v m v m v m v m v m v m v m v m v",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "vm vm ",
                         "isCompleted": false,
                         "text": "vm vm vm vm vm vm vm vm vm vm vm vm vm vm vm vm vm vm vm vm vm vm vm vm vm vm vm vm",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "mv mv ",
                         "isCompleted": false,
                         "text": "mv mv mv mv mv mv mv mv mv mv mv mv mv mv mv mv mv mv mv mv mv mv mv mv mv mv mv mv",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "mv vm ",
                         "isCompleted": false,
                         "text": "mv vm mv vm mv vm mv vm mv vm mv vm mv vm mv vm mv vm mv vm mv vm mv vm mv vm mv vm",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "vm mv ",
                         "isCompleted": false,
                         "text": "vm mv vm mv vm mv vm mv vm mv vm mv vm mv vm mv vm mv vm mv vm mv vm mv vm mv vm mv",
@@ -1105,7 +1105,7 @@
                 "lessonNumber": 2,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "c , ",
                         "isCompleted": false,
                         "text": "c , c , c , c , c , c , c , c , c , c , c , c , c , c , c , c , c , c , c , c , c , c",
@@ -1113,35 +1113,35 @@
                         "allowedKeys": [8, 43, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": ", c ",
                         "isCompleted": false,
                         "text": ", c , c , c , c , c , c , c , c , c , c , c , c , c , c , c , c , c , c , c , c , c , c",
                         "exerciseStats": null,
                         "allowedKeys": [8, 43, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "c, c, ",
                         "isCompleted": false,
                         "text": "c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c,",
                         "exerciseStats": null,
                         "allowedKeys": [8, 43, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": ",c ,c ",
                         "isCompleted": false,
                         "text": ",c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c ,c",
                         "exerciseStats": null,
                         "allowedKeys": [8, 43, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "c, ,c ",
                         "isCompleted": false,
                         "text": "c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c",
                         "exerciseStats": null,
                         "allowedKeys": [8, 43, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": ",c c, ",
                         "isCompleted": false,
                         "text": ",c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c, ,c c,",
@@ -1155,7 +1155,7 @@
                 "lessonNumber": 3,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "v m c ",
                         "isCompleted": false,
                         "text": "v m c v m c v m c v m c v m c v m c v m c v m c v m c v m c v m c v m c v m c v m c v m c",
@@ -1163,63 +1163,63 @@
                         "allowedKeys": [9, 46, 8, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "v m , ",
                         "isCompleted": false,
                         "text": "v m , v m , v m , v m , v m , v m , v m , v m , v m , v m , v m , v m , v m , v m , v m ,",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 43, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "v m c , ",
                         "isCompleted": false,
                         "text": "v m c , v m c , v m c , v m c , v m c , v m c , v m c , v m c , v m c , v m c , v m c ,",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "m v , c ",
                         "isCompleted": false,
                         "text": "m v , c m v , c m v , c m v , c m v , c m v , c m v , c m v , c m v , c m v , c m v , c",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "mv c, ",
                         "isCompleted": false,
                         "text": "mv c, mv c, mv c, mv c, mv c, mv c, mv c, mv c, mv c, mv c, mv c, mv c, mv c, mv c, mv",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": ",c vm ",
                         "isCompleted": false,
                         "text": ",c vm ,c vm ,c vm ,c vm ,c vm ,c vm ,c vm ,c vm ,c vm ,c vm ,c vm ,c vm ,c vm ,c vm ,c",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 49]
                     },{
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "vm mv c, ",
                         "isCompleted": false,
                         "text": "vm mv c, vm mv c, vm mv c, vm mv c, vm mv c, vm mv c, vm mv c, vm mv c, vm mv c, vm mv c,",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 49]
                     },{
-                        "id": "exercise 8",
+                        "id": "Exercise 8",
                         "title": "mv vm ,c ",
                         "isCompleted": false,
                         "text": "mv vm ,c mv vm ,c mv vm ,c mv vm ,c mv vm ,c mv vm ,c mv vm ,c mv vm ,c mv vm ,c mv vm ,c",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 49]
                     },{
-                        "id": "exercise 9",
+                        "id": "Exercise 9",
                         "title": "mv vm ,c c, ",
                         "isCompleted": false,
                         "text": "mv vm ,c c, mv vm ,c c, mv vm ,c c, mv vm ,c c, mv vm ,c c, mv vm ,c c, mv vm ,c c, mv vm",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 49]
                     },{
-                        "id": "exercise 10",
+                        "id": "Exercise 10",
                         "title": "vm mv c, ,c ",
                         "isCompleted": false,
                         "text": "vm mv c, ,c vm mv c, ,c vm mv c, ,c vm mv c, ,c vm mv c, ,c vm mv c, ,c vm mv c, ,c vm mv",
@@ -1233,7 +1233,7 @@
                 "lessonNumber": 4,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "x .",
                         "isCompleted": false,
                         "text": "x . x . x . x . x . x . x . x .x . x . x . x .x . x . x . x .x . x . x . x .x . x . x . x .",
@@ -1241,35 +1241,35 @@
                         "allowedKeys": [7, 47, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": ". x ",
                         "isCompleted": false,
                         "text": ". x . x . x . x . x . x . x . x . x . x . x . x . x . x . x . x . x . x . x . x . x . x . x",
                         "exerciseStats": null,
                         "allowedKeys": [7, 47, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "x. x. ",
                         "isCompleted": false,
                         "text": "x. x. x. x. x. x. x. x. x. x. x. x. x. x. x. x. x. x. x. x. x. x. x. x. x. x. x. x. x. x. x.",
                         "exerciseStats": null,
                         "allowedKeys": [7, 47, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": ".x .x ",
                         "isCompleted": false,
                         "text": ".x .x .x .x .x .x .x .x .x .x .x .x .x .x .x .x .x .x .x .x .x .x .x .x .x .x .x .x .x .x .x",
                         "exerciseStats": null,
                         "allowedKeys": [7, 47, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "x. .x ",
                         "isCompleted": false,
                         "text": "x. .x x. .x x. .x x. .x x. .x x. .x x. .x x. .x x. .x x. .x x. .x x. .x x. .x x. .x x. .x x.",
                         "exerciseStats": null,
                         "allowedKeys": [7, 47, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": ".x x. ",
                         "isCompleted": false,
                         "text": ".x x. .x x. .x x. .x x. .x x. .x x. .x x. .x x. .x x. .x x. .x x. .x x. .x x. .x x. .x x. .x",
@@ -1283,7 +1283,7 @@
                 "lessonNumber": 5,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "v m c , x ",
                         "isCompleted": false,
                         "text": "v m c , x v m c , x v m c , x v m c , x v m c , x v m c , x v m c , x v m c , x v m c , x v m",
@@ -1291,56 +1291,56 @@
                         "allowedKeys": [9, 46, 8, 43, 7, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "v m c , . ",
                         "isCompleted": false,
                         "text": "v m c , . v m c , . v m c , . v m c , . v m c , . v m c , . v m c , . v m c , . v m c , . v m",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 47, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "v m c , x . ",
                         "isCompleted": false,
                         "text": "v m c , x . v m c , x . v m c , x . v m c , x . v m c , x . v m c , x . v m c , x . v m c , x .",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 7, 47, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "vm c, x. ",
                         "isCompleted": false,
                         "text": "vm c, x. vm c, x. vm c, x. vm c, x. vm c, x. vm c, x. vm c, x. vm c, x. vm c, x. vm c, x. vm c, x.",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 7, 47, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "mv ,c .x ",
                         "isCompleted": false,
                         "text": "mv ,c .x mv ,c .x mv ,c .x mv ,c .x mv ,c .x mv ,c .x mv ,c .x mv ,c .x mv ,c .x mv ,c .x mv ,c .x",
                         "exerciseStats": null,
                         "allowedKeys": [46, 9, 43, 8, 47, 7, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "vm mv c, ,c x. ",
                         "isCompleted": false,
                         "text": "vm mv c, ,c x. vm mv c, ,c x. vm mv c, ,c x. vm mv c, ,c x. vm mv c, ,c x. vm mv c, ,c x. vm mv c,",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 7, 47, 49]
                     },{
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "mv vm ,c c, .x ",
                         "isCompleted": false,
                         "text": "mv vm ,c c, .x mv vm ,c c, .x mv vm ,c c, .x mv vm ,c c, .x mv vm ,c c, .x mv vm ,c c, .x mv vm ,c",
                         "exerciseStats": null,
                         "allowedKeys": [46, 9, 43, 8, 47, 7, 49]
                     },{
-                        "id": "exercise 8",
+                        "id": "Exercise 8",
                         "title": "vm mv c, ,c x. .x ",
                         "isCompleted": false,
                         "text": "vm mv c, ,c x. .x vm mv c, ,c x. .x vm mv c, ,c x. .x vm mv c, ,c x. .x vm mv c, ,c x. .x vm mv c,",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 7, 47, 49]
                     },{
-                        "id": "exercise 9",
+                        "id": "Exercise 9",
                         "title": "mv vm ,c c, .x x. ",
                         "isCompleted": false,
                         "text": "mv vm ,c c, .x x. mv vm ,c c, .x x. mv vm ,c c, .x x. mv vm ,c c, .x x. mv vm ,c c, .x x. mv vm ,c",
@@ -1354,7 +1354,7 @@
                 "lessonNumber": 6,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "z / ",
                         "isCompleted": false,
                         "text": "z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z",
@@ -1362,35 +1362,35 @@
                         "allowedKeys": [6, 44, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "/ z ",
                         "isCompleted": false,
                         "text": "/ z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z /",
                         "exerciseStats": null,
                         "allowedKeys": [6, 44, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "z/ z/ ",
                         "isCompleted": false,
                         "text": "z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/ z/",
                         "exerciseStats": null,
                         "allowedKeys": [6, 44, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "/z /z ",
                         "isCompleted": false,
                         "text": "/z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z /z",
                         "exerciseStats": null,
                         "allowedKeys": [6, 44, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "z/ /z",
                         "isCompleted": false,
                         "text": "z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z",
                         "exerciseStats": null,
                         "allowedKeys": [6, 44, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "/z z/ ",
                         "isCompleted": false,
                         "text": "/z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/ /z z/",
@@ -1404,7 +1404,7 @@
                 "lessonNumber": 7,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "v m c , x . z ",
                         "isCompleted": false,
                         "text": "v m c , x . z v m c , x . z v m c , x . z v m c , x . z v m c , x . z v m c , x . z v m c , x . z v m",
@@ -1412,56 +1412,56 @@
                         "allowedKeys": [9, 46, 8, 43, 7, 47, 6, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "v m c , x . / ",
                         "isCompleted": false,
                         "text": "v m c , x . / v m c , x . / v m c , x . / v m c , x . / v m c , x . / v m c , x . / v m c , x . / v m",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 7, 47, 44, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "v m c , x . / z ",
                         "isCompleted": false,
                         "text": "v m c , x . / z v m c , x . / z v m c , x . / z v m c , x . / z v m c , x . / z v m c , x . / z v m c",
                         "exerciseStats": null,
                         "allowedKeys": [9, 49, 46, 8, 43, 7, 47, 44, 6]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "vm c, x. /z ",
                         "isCompleted": false,
                         "text": "vm c, x. /z vm c, x. /z vm c, x. /z vm c, x. /z vm c, x. /z vm c, x. /z vm c, x. /z vm c, x. /z vm c,",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 49, 8, 43, 7, 47, 44, 6]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "mv ,c .x z/ ",
                         "isCompleted": false,
                         "text": "mv ,c .x z/ mv ,c .x z/ mv ,c .x z/ mv ,c .x z/ mv ,c .x z/ mv ,c .x z/ mv ,c .x z/ mv ,c .x z/ mv ,c",
                         "exerciseStats": null,
                         "allowedKeys": [46, 9, 49, 43, 8, 47, 7, 6, 44]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "vm mv c, ,c x. .x z/ ",
                         "isCompleted": false,
                         "text": "vm mv c, ,c x. .x z/ vm mv c, ,c x. .x z/ vm mv c, ,c x. .x z/ vm mv c, ,c x. .x z/ vm mv c, ,c x. .x z/",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 49, 8, 43, 7, 47, 6, 44]
                     },{
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "vm mv c, ,c x. .x /z ",
                         "isCompleted": false,
                         "text": "vm mv c, ,c x. .x /z vm mv c, ,c x. .x /z vm mv c, ,c x. .x /z vm mv c, ,c x. .x /z vm mv c, ,c x. .x /z",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 49, 8, 43, 7, 47, 44, 6]
                     },{
-                        "id": "exercise 8",
+                        "id": "Exercise 8",
                         "title": "vm mv c, ,c x. .x z/ /z ",
                         "isCompleted": false,
                         "text": "vm mv c, ,c x. .x z/ /z vm mv c, ,c x. .x z/ /z vm mv c, ,c x. .x z/ /z vm mv c, ,c x. .x z/ /z vm mv c,",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 49, 8, 43, 7, 47, 6, 44]
                     },{
-                        "id": "exercise 9",
+                        "id": "Exercise 9",
                         "title": "vm mv c, ,c x. .x /z z/ ",
                         "isCompleted": false,
                         "text": "vm mv c, ,c x. .x /z z/ vm mv c, ,c x. .x /z z/ vm mv c, ,c x. .x /z z/ vm mv c, ,c x. .x /z z/ vm mv c,",
@@ -1475,7 +1475,7 @@
                 "lessonNumber": 8,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "b n ",
                         "isCompleted": false,
                         "text": "b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b",
@@ -1483,105 +1483,105 @@
                         "allowedKeys": [11, 45, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "n b ",
                         "isCompleted": false,
                         "text": "n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b n b",
                         "exerciseStats": null,
                         "allowedKeys": [11, 45, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "bn bn ",
                         "isCompleted": false,
                         "text": "bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn bn",
                         "exerciseStats": null,
                         "allowedKeys": [11, 45, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "nb nb ",
                         "isCompleted": false,
                         "text": "nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb nb",
                         "exerciseStats": null,
                         "allowedKeys": [11, 45, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "bn nb ",
                         "isCompleted": false,
                         "text": "bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb",
                         "exerciseStats": null,
                         "allowedKeys": [11, 45, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "nb bn ",
                         "isCompleted": false,
                         "text": "nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn nb bn",
                         "exerciseStats": null,
                         "allowedKeys": [11, 45, 49]
                     },{
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "v m c , x . z / b ",
                         "isCompleted": false,
                         "text": "v m c , x . z / b v m c , x . z / b v m c , x . z / b v m c , x . z / b v m c , x . z / b v m c , x . z / b",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 7, 47, 6, 44, 11, 49]
                     },{
-                        "id": "exercise 8",
+                        "id": "Exercise 8",
                         "title": "v m c , x . z / n ",
                         "isCompleted": false,
                         "text": "v m c , x . z / n v m c , x . z / n v m c , x . z / n v m c , x . z / n v m c , x . z / n v m c , x . z / n",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 7, 47, 6, 44, 45, 49]
                     },{
-                        "id": "exercise 9",
+                        "id": "Exercise 9",
                         "title": "v m c , x . z / b n ",
                         "isCompleted": false,
                         "text": "v m c , x . z / b n v m c , x . z / b n v m c , x . z / b n v m c , x . z / b n v m c , x . z / b n v m c ,",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 7, 47, 6, 44, 11, 45, 49]
                     },{
-                        "id": "exercise 10",
+                        "id": "Exercise 10",
                         "title": "vm c, x. z/ bn ",
                         "isCompleted": false,
                         "text": "vm c, x. z/ bn vm c, x. z/ bn vm c, x. z/ bn vm c, x. z/ bn vm c, x. z/ bn vm c, x. z/ bn vm c, x. z/ bn vm",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 7, 47, 6, 44, 11, 45, 49]
                     },{
-                        "id": "exercise 11",
+                        "id": "Exercise 11",
                         "title": "mv ,c .x /z nb ",
                         "isCompleted": false,
                         "text": "mv ,c .x /z nb mv ,c .x /z nb mv ,c .x /z nb mv ,c .x /z nb mv ,c .x /z nb mv ,c .x /z nb mv ,c .x /z nb mv",
                         "exerciseStats": null,
                         "allowedKeys": [46, 9, 43, 8, 47, 7, 44, 6, 45, 11, 49]
                     },{
-                        "id": "exercise 12",
+                        "id": "Exercise 12",
                         "title": "mv vm ,c c, .x x. bn nb ",
                         "isCompleted": false,
                         "text": "mv vm ,c c, .x x. bn nb mv vm ,c c, .x x. bn nb mv vm ,c c, .x x. bn nb mv vm ,c c, .x x. bn nb mv vm ,c c,",
                         "exerciseStats": null,
                         "allowedKeys": [46, 9, 43, 8, 47, 7, 11, 45, 49]
                     },{
-                        "id": "exercise 13",
+                        "id": "Exercise 13",
                         "title": "mv vm ,c c, .x x. nb bn ",
                         "isCompleted": false,
                         "text": "mv vm ,c c, .x x. nb bn mv vm ,c c, .x x. nb bn mv vm ,c c, .x x. nb bn mv vm ,c c, .x x. nb bn mv vm ,c c,",
                         "exerciseStats": null,
                         "allowedKeys": [46, 9, 43, 8, 47, 7, 11, 45, 49]
                     },{
-                        "id": "exercise 14",
+                        "id": "Exercise 14",
                         "title": "vm mv c, ,c x. .x z/ /z nb ",
                         "isCompleted": false,
                         "text": "vm mv c, ,c x. .x z/ /z nb vm mv c, ,c x. .x z/ /z nb vm mv c, ,c x. .x z/ /z nb vm mv c, ,c x. .x z/ /z nb",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 7, 47, 6, 44, 45, 11, 49]
                     },{
-                        "id": "exercise 15",
+                        "id": "Exercise 15",
                         "title": "vm mv c, ,c x. .x z/ /z nb bn ",
                         "isCompleted": false,
                         "text": "vm mv c, ,c x. .x z/ /z nb bn vm mv c, ,c x. .x z/ /z nb bn vm mv c, ,c x. .x z/ /z nb bn vm mv c, ,c x. .x z/",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 7, 47, 6, 44, 45, 11, 49]
                     },{
-                        "id": "exercise 16",
+                        "id": "Exercise 16",
                         "title": "mv vm ,c c, .x x. /z z/ bn nb ",
                         "isCompleted": false,
                         "text": "mv vm ,c c, .x x. /z z/ bn nb mv vm ,c c, .x x. /z z/ bn nb mv vm ,c c, .x x. /z z/ bn nb mv vm ,c c, .x x. /z",
@@ -1600,7 +1600,7 @@
                 "lessonNumber": 1,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "fj jf ru ur ",
                         "isCompleted": false,
                         "text": "fj jf ru ur fj jf ru ur fj jf ru ur fj jf ru ur fj jf ru ur fj jf ru ur fj jf ru ur fj jf ru ur",
@@ -1608,21 +1608,21 @@
                         "allowedKeys": [3, 38, 15, 32, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "jf fj ur ru ",
                         "isCompleted": false,
                         "text": "jf fj ur ru jf fj ur ru jf fj ur ru jf fj ur ru jf fj ur ru jf fj ur ru jf fj ur ru jf fj ur ru",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 15, 32, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "fj jf ru ur ei ie ",
                         "isCompleted": false,
                         "text": "fj jf ru ur ei ie fj jf ru ur ei ie fj jf ru ur ei ie fj jf ru ur ei ie fj jf ru ur ei ie fj jf",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 15, 32, 14, 34, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "jf fj ur ru ie ei ",
                         "isCompleted": false,
                         "text": "jf fj ur ru ie ei jf fj ur ru ie ei jf fj ur ru ie ei jf fj ur ru ie ei jf fj ur ru ie ei jf fj",
@@ -1636,7 +1636,7 @@
                 "lessonNumber": 2,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "ru ur ei ie ",
                         "isCompleted": false,
                         "text": "ru ur ei ie ru ur ei ie ru ur ei ie ru ur ei ie ru ur ei ie ru ur ei ie ru ur ei ie ru ur ei ie",
@@ -1644,21 +1644,21 @@
                         "allowedKeys": [15, 32, 14, 34, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "ur ur ie ei ",
                         "isCompleted": false,
                         "text": "ur ur ie ei ur ur ie ei ur ur ie ei ur ur ie ei ur ur ie ei ur ur ie ei ur ur ie ei ur ur ie ei",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 14, 34, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "dk kd ru ur ei ie ",
                         "isCompleted": false,
                         "text": "dk kd ru ur ei ie dk kd ru ur ei ie dk kd ru ur ei ie dk kd ru ur ei ie dk kd ru ur ei ie dk kd",
                         "exerciseStats": null,
                         "allowedKeys": [2, 40, 15, 32, 14, 34, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "kd dk ur ru ie ei ",
                         "isCompleted": false,
                         "text": "kd dk ur ru ie ei kd dk ur ru ie ei kd dk ur ru ie ei kd dk ur ru ie ei kd dk ur ru ie ei kd dk",
@@ -1672,7 +1672,7 @@
                 "lessonNumber": 3,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "ei ie wo ow ",
                         "isCompleted": false,
                         "text": "ei ie wo ow ei ie wo ow ei ie wo ow ei ie wo ow ei ie wo ow ei ie wo ow ei ie wo ow ei ie wo ow",
@@ -1680,35 +1680,35 @@
                         "allowedKeys": [14, 34, 13, 31, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "ie ei ow wo ",
                         "isCompleted": false,
                         "text": "ie ei ow wo ie ei ow wo ie ei ow wo ie ei ow wo ie ei ow wo ie ei ow wo ie ei ow wo ie ei ow wo",
                         "exerciseStats": null,
                         "allowedKeys": [34, 14, 31, 13, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "ru ur ei ie wo ow ",
                         "isCompleted": false,
                         "text": "ru ur ei ie wo ow ru ur ei ie wo ow ru ur ei ie wo ow ru ur ei ie wo ow ru ur ei ie wo ow ru ur",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 14, 34, 13, 31, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "ur ru ie ei ow wo ",
                         "isCompleted": false,
                         "text": "ur ru ie ei ow wo ur ru ie ei ow wo ur ru ie ei ow wo ur ru ie ei ow wo ur ru ie ei ow wo ur ru",
                         "exerciseStats": null,
                         "allowedKeys": [32, 15, 34, 14, 31, 13, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "sl ls ru ur ei ie wo ow ",
                         "isCompleted": false,
                         "text": "sl ls ru ur ei ie wo ow sl ls ru ur ei ie wo ow sl ls ru ur ei ie wo ow sl ls ru ur ei ie wo ow",
                         "exerciseStats": null,
                         "allowedKeys": [1, 37, 15, 32, 14, 34, 13, 31, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "ls sl ur ru ei ie ow wo ",
                         "isCompleted": false,
                         "text": "ls sl ur ru ei ie ow wo ls sl ur ru ei ie ow wo ls sl ur ru ei ie ow wo ls sl ur ru ei ie ow wo",
@@ -1722,7 +1722,7 @@
                 "lessonNumber": 4,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "ei ie wo ow pq qp ",
                         "isCompleted": false,
                         "text": "ei ie wo ow pq qp ei ie wo ow pq qp ei ie wo ow pq qp ei ie wo ow pq qp ei ie wo ow pq qp ei ie",
@@ -1730,35 +1730,35 @@
                         "allowedKeys": [14, 34, 13, 31, 35, 12, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "ie ei ow wo qp pq ",
                         "isCompleted": false,
                         "text": "ie ei ow wo qp pq ie ei ow wo qp pq ie ei ow wo qp pq ie ei ow wo qp pq ie ei ow wo qp pq ie ei",
                         "exerciseStats": null,
                         "allowedKeys": [34, 14, 31, 13, 12, 35, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "ru ur ei ie wo ow qp pq ",
                         "isCompleted": false,
                         "text": "ru ur ei ie wo ow qp pq ru ur ei ie wo ow qp pq ru ur ei ie wo ow qp pq ru ur ei ie wo ow qp pq",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 14, 34, 13, 31, 12, 35, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "ur ru ie ei ow wo pq qp ",
                         "isCompleted": false,
                         "text": "ur ru ie ei ow wo pq qp ur ru ie ei ow wo pq qp ur ru ie ei ow wo pq qp ur ru ie ei ow wo pq qp",
                         "exerciseStats": null,
                         "allowedKeys": [32, 15, 34, 14, 31, 13, 35, 12, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "a; ;a ru ur ei ie wo ow qp pq ",
                         "isCompleted": false,
                         "text": "a; ;a ru ur ei ie wo ow qp pq a; ;a ru ur ei ie wo ow qp pq a; ;a ru ur ei ie wo ow qp pq a; ;a",
                         "exerciseStats": null,
                         "allowedKeys": [0, 41, 15, 32, 14, 34, 13, 31, 12, 35, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": ";a a; ur ru ie ei ow wo pq qp ",
                         "isCompleted": false,
                         "text": ";a a; ur ru ie ei ow wo pq qp ;a a; ur ru ie ei ow wo pq qp ;a a; ur ru ie ei ow wo pq qp ;a a; u",
@@ -1772,7 +1772,7 @@
                 "lessonNumber": 5,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "wo ow qp pq ty yt ",
                         "isCompleted": false,
                         "text": "wo ow qp pq ty yt wo ow qp pq ty yt wo ow qp pq ty yt wo ow qp pq ty yt wo ow qp pq ty yt wo ow qp pq",
@@ -1780,49 +1780,49 @@
                         "allowedKeys": [13, 31, 12, 35, 17, 16, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "ow wo pq qp yt ty ",
                         "isCompleted": false,
                         "text": "ow wo pq qp yt ty ow wo pq qp yt ty ow wo pq qp yt ty ow wo pq qp yt ty ow wo pq qp yt ty ow wo pq qp",
                         "exerciseStats": null,
                         "allowedKeys": [31, 13, 35, 12, 16, 17, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "ei ie wo ow qp pq ty yt ",
                         "isCompleted": false,
                         "text": "ei ie wo ow qp pq ty yt ei ie wo ow qp pq ty yt ei ie wo ow qp pq ty yt ei ie wo ow qp pq ty yt ei ie",
                         "exerciseStats": null,
                         "allowedKeys": [14, 34, 13, 31, 12, 35, 17, 16, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "ie ei ow wo pq qp yt ty ",
                         "isCompleted": false,
                         "text": "ie ei ow wo pq qp yt ty ie ei ow wo pq qp yt ty ie ei ow wo pq qp yt ty ie ei ow wo pq qp yt ty ie ei",
                         "exerciseStats": null,
                         "allowedKeys": [34, 14, 31, 13, 35, 12, 16, 17, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "ru ur ei ie wo ow qp pq ty yt ",
                         "isCompleted": false,
                         "text": "ru ur ei ie wo ow qp pq ty yt ru ur ei ie wo ow qp pq ty yt ru ur ei ie wo ow qp pq ty yt ru ur ei ie",
                         "exerciseStats": null,
                         "allowedKeys": [15, 32, 14, 34, 13, 31, 12, 35, 17, 16, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "ur ru ie ei ow wo pq qp yt ty ",
                         "isCompleted": false,
                         "text": "ur ru ie ei ow wo pq qp yt ty ur ru ie ei ow wo pq qp yt ty ur ru ie ei ow wo pq qp yt ty ur ru ie ei",
                         "exerciseStats": null,
                         "allowedKeys": [32, 15, 34, 14, 31, 13, 35, 12, 16, 17, 49]
                     },{
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "gh hg ru ur ei ie wo ow qp pq ty yt ",
                         "isCompleted": false,
                         "text": "gh hg ru ur ei ie wo ow qp pq ty yt gh hg ru ur ei ie wo ow qp pq ty yt gh hg ru ur ei ie wo ow qp pq",
                         "exerciseStats": null,
                         "allowedKeys": [5, 4, 15, 32, 14, 34, 13, 31, 12, 35, 17, 16, 49]
                     },{
-                        "id": "exercise 8",
+                        "id": "Exercise 8",
                         "title": "hg gh ur ru ie ei ow wo pq qp yt ty ",
                         "isCompleted": false,
                         "text": "hg gh ur ru ie ei ow wo pq qp yt ty hg gh ur ru ie ei ow wo pq qp yt ty hg gh ur ru ie ei ow wo pq qp",
@@ -1836,7 +1836,7 @@
                 "lessonNumber": 6,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "ru ur ei ie ",
                         "isCompleted": false,
                         "text": "ru ur ei ie ru ur ei ie ru ur ei ie ru ur ei ie ru ur ei ie ru ur ei ie ru ur ei ie ru ur ei ie ru ur",
@@ -1844,56 +1844,56 @@
                         "allowedKeys": [15, 32, 14, 34, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "ur ur ie ei ",
                         "isCompleted": false,
                         "text": "ur ur ie ei ur ur ie ei ur ur ie ei ur ur ie ei ur ur ie ei ur ur ie ei ur ur ie ei ur ur ie ei ur ur",
                         "exerciseStats": null,
                         "allowedKeys": [32, 15, 34, 14, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "ei ie wo ow ",
                         "isCompleted": false,
                         "text": "ei ie wo ow ei ie wo ow ei ie wo ow ei ie wo ow ei ie wo ow ei ie wo ow ei ie wo ow ei ie wo ow ei ie",
                         "exerciseStats": null,
                         "allowedKeys": [14, 34, 13, 31, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "ie ei ow wo ",
                         "isCompleted": false,
                         "text": "ie ei ow wo ie ei ow wo ie ei ow wo ie ei ow wo ie ei ow wo ie ei ow wo ie ei ow wo ie ei ow wo ie ei",
                         "exerciseStats": null,
                         "allowedKeys": [34, 14, 31, 13, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "fj jf ru ur ",
                         "isCompleted": false,
                         "text": "fj jf ru ur fj jf ru ur fj jf ru ur fj jf ru ur fj jf ru ur fj jf ru ur fj jf ru ur fj jf ru ur fj jf",
                         "exerciseStats": null,
                         "allowedKeys": [3, 38, 15, 32, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "dk kd ru ur ei ie ",
                         "isCompleted": false,
                         "text": "dk kd ru ur ei ie dk kd ru ur ei ie dk kd ru ur ei ie dk kd ru ur ei ie dk kd ru ur ei ie dk kd ru ur",
                         "exerciseStats": null,
                         "allowedKeys": [2, 40, 15, 32, 14, 34, 49]
                     },{
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "dsl ls ru ur ei ie wo ow ",
                         "isCompleted": false,
                         "text": "dsl ls ru ur ei ie wo ow dsl ls ru ur ei ie wo ow dsl ls ru ur ei ie wo ow dsl ls ru ur ei ie wo ow dsl",
                         "exerciseStats": null,
                         "allowedKeys": [2, 1, 37, 15, 32, 14, 34, 13, 31, 49]
                     },{
-                        "id": "exercise 8",
+                        "id": "Exercise 8",
                         "title": "a; ;a ru ur wo ow  qp pq ",
                         "isCompleted": false,
                         "text": "a; ;a ru ur wo ow  qp pq a; ;a ru ur wo ow  qp pq a; ;a ru ur wo ow  qp pq a; ;a ru ur wo ow  qp pq a;",
                         "exerciseStats": null,
                         "allowedKeys": [0, 41, 15, 32, 13, 31, 12, 35, 49]
                     },{
-                        "id": "exercise 9",
+                        "id": "Exercise 9",
                         "title": "gh hg ru ur ei ie  wo ow qp pq ty yt ",
                         "isCompleted": false,
                         "text": "gh hg ru ur ei ie  wo ow qp pq ty yt gh hg ru ur ei ie  wo ow qp pq ty yt gh hg ru ur ei ie  wo ow qp",
@@ -1907,7 +1907,7 @@
                 "lessonNumber": 7,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "bn nb  /z z/",
                         "isCompleted": false,
                         "text": "bn nb  /z z/ bn nb  /z z/ bn nb  /z z/ bn nb  /z z/ bn nb  /z z/ bn nb  /z z/ bn nb  /z z/ bn nb  /z z/",
@@ -1915,42 +1915,42 @@
                         "allowedKeys": [11, 45, 44, 6, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "x. .x z/ /z bn nb",
                         "isCompleted": false,
                         "text": "x. .x z/ /z bn nb x. .x z/ /z bn nb x. .x z/ /z bn nb x. .x z/ /z bn nb x. .x z/ /z bn nb x. .x z/ /z bn nb",
                         "exerciseStats": null,
                         "allowedKeys": [7, 47, 6, 44, 11, 45, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "wo x. .x z/ /z bn nb ",
                         "isCompleted": false,
                         "text": "wo x. .x z/ /z bn nb wo x. .x z/ /z bn nb wo x. .x z/ /z bn nb wo x. .x z/ /z bn nb wo x. .x z/ /z bn nb wo",
                         "exerciseStats": null,
                         "allowedKeys": [13, 31, 7, 47, 6, 44, 11, 45, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "c, ,c x. .x z/ /z bn nb ",
                         "isCompleted": false,
                         "text": "c, ,c x. .x z/ /z bn nb c, ,c x. .x z/ /z bn nb c, ,c x. .x z/ /z bn nb c, ,c x. .x z/ /z bn nb c, ,c x. .x",
                         "exerciseStats": null,
                         "allowedKeys": [8, 43, 7, 47, 6, 44, 11, 45, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "vm mv c, ,c x. .x z/ /z bn nb ",
                         "isCompleted": false,
                         "text": "vm mv c, ,c x. .x z/ /z bn nb vm mv c, ,c x. .x z/ /z bn nb vm mv c, ,c x. .x z/ /z bn nb vm mv c, ,c x. .x",
                         "exerciseStats": null,
                         "allowedKeys": [9, 46, 8, 43, 7, 47, 6, 44, 11, 45, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "gh hg ty yt vm m v c, ,c x. .x z/ /z bn nb",
                         "isCompleted": false,
                         "text": "gh hg ty yt vm m v c, ,c x. .x z/ /z bn nb gh hg ty yt vm m v c, ,c x. .x z/ /z bn nb gh hg ty yt vm m v c, ,c",
                         "exerciseStats": null,
                         "allowedKeys": [5, 4, 17, 16, 9, 46, 8, 43, 7, 47, 6, 44, 11, 45, 49]
                     },{
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "hg gh yt ty mv mv ,c c, x. .x /z z/ nb bn ",
                         "isCompleted": false,
                         "text": "hg gh yt ty mv mv ,c c, x. .x /z z/ nb bn hg gh yt ty mv mv ,c c, x. .x /z z/ nb bn hg gh yt ty mv mv ,c c, x.",
@@ -1964,7 +1964,7 @@
                 "lessonNumber": 8,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "jf fj ur ru ie ei ",
                         "isCompleted": false,
                         "text": "jf fj ur ru ie ei jf fj ur ru ie ei jf fj ur ru ie ei jf fj ur ru ie ei jf fj ur ru ie ei jf fj ur ru ie ei jf",
@@ -1972,35 +1972,35 @@
                         "allowedKeys": [38, 3, 32, 15, 34, 14, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "kd dk ur ru ie ei ",
                         "isCompleted": false,
                         "text": "kd dk ur ru ie ei kd dk ur ru ie ei kd dk ur ru ie ei kd dk ur ru ie ei kd dk ur ru ie ei kd dk ur ru ie ei kd",
                         "exerciseStats": null,
                         "allowedKeys": [40, 2, 32, 15, 34, 14, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "ls sl ur ru ei ie ow wo ",
                         "isCompleted": false,
                         "text": "ls sl ur ru ei ie ow wo ls sl ur ru ei ie ow wo ls sl ur ru ei ie ow wo ls sl ur ru ei ie ow wo ls sl ur ru",
                         "exerciseStats": null,
                         "allowedKeys": [37, 1, 32, 15, 14, 34, 31, 13, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "a; ;a ru ur ei ie wo ow qp pq ",
                         "isCompleted": false,
                         "text": "a; ;a ru ur ei ie wo ow qp pq a; ;a ru ur ei ie wo ow qp pq a; ;a ru ur ei ie wo ow qp pq a; ;a ru ur ei ie",
                         "exerciseStats": null,
                         "allowedKeys": [0, 41, 15, 32, 14, 34, 13, 31, 12, 35, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "gh hg ru ur ei ie wo ow qp pq ty yt ",
                         "isCompleted": false,
                         "text": "gh hg ru ur ei ie wo ow qp pq ty yt gh hg ru ur ei ie wo ow qp pq ty yt gh hg ru ur ei ie wo ow qp pq ty yt",
                         "exerciseStats": null,
                         "allowedKeys": [5, 4, 15, 32, 14, 34, 13, 31, 12, 35, 17, 16, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "gh hg ty yt vm mv c, ,c x. .x z/ /z bn nb ",
                         "isCompleted": false,
                         "text": "gh hg ty yt vm mv c, ,c x. .x z/ /z bn nb gh hg ty yt vm mv c, ,c x. .x z/ /z bn nb gh hg ty yt vm mv c, ,c x. .x z/ /z bn nb ",
@@ -2019,7 +2019,7 @@
                 "lessonNumber": 1,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "hurrah afar flags husk lad;",
                         "isCompleted": false,
                         "text": "hurrah afar flags husk lad; jar harsh harsh has gauds fluff laugh jar flag ask; gag furs hash dark rugs sad",
@@ -2027,35 +2027,35 @@
                         "allowedKeys": [0, 2, 3, 4, 5, 15, 32, 37, 38, 40, 1, 41, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "ll rugs dark flags",
                         "isCompleted": false,
                         "text": "all rugs dark flags flags lads hussars a dark hussars sad furs frauds glad dark hush lads hussars rags furs",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 3, 4, 5, 15, 32, 37, 40, 1, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "all rugs dark flags",
                         "isCompleted": false,
                         "text": "all rugs dark flags flags lads hussars a dark hussars sad furs frauds glad dark hush lads hussars rags furs",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 3, 4, 5, 15, 32, 37, 40, 1, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "promises jury players",
                         "isCompleted": false,
                         "text": "promises jury players demolish algorithm pliers der polarised mort idea; thwash overhauls adios aweigh",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 14, 4, 5, 34, 38, 37, 46, 31, 35, 15, 1, 17, 32, 13, 16, 41, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "yourself dark just",
                         "isCompleted": false,
                         "text": "yourself dark just here he himself might tested it sister a hospital prayer almost starless to our surprise really",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 14, 3, 5, 4, 34, 38, 40, 37, 46, 31, 35, 15, 1, 17, 32, 16, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "You promised to prove",
                         "isCompleted": false,
                         "text": "You promised to prove it He thought of his wife Oakhurst did so Likee washee Very well I do Very well",
@@ -2069,7 +2069,7 @@
                 "lessonNumber": 2,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "guilder ides liked",
                         "isCompleted": false,
                         "text": "guilder ides liked egg raided glides kegs saddles defer sulk rural dishrag lurid agreed hired ref jarful file",
@@ -2077,35 +2077,35 @@
                         "allowedKeys": [0, 2, 14, 3, 5, 4, 34, 38, 40, 37, 46, 15, 1, 32, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "rugs sluggish girls rise",
                         "isCompleted": false,
                         "text": "rugs sluggish girls rise girls rise fair she had a liar irregular he had dressed raise his head girls ragged free",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 14, 3, 5, 4, 34, 37, 15, 1, 32, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "rugs sluggish girls",
                         "isCompleted": false,
                         "text": "rugs sluggish girls rise girls rise fair she had a liar irregular he had dressed raise his head girls ragged free",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 14, 3, 5, 4, 34, 37, 15, 1, 32, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "dough, hurl, droughts",
                         "isCompleted": false,
                         "text": "dough, hurl, droughts, showy, worsted, yourself; veraciously, sedulity, days, toujours, same, pertly",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 14, 5, 4, 34, 40, 37, 31, 35, 15, 1, 17, 32, 9, 13, 16, 41, 43, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "Oh, yes it had",
                         "isCompleted": false,
                         "text": "Oh, yes it had impressed Pyotr Petrovitch The masters rode together for the sake of her family",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 14, 3, 5, 4, 34, 40, 37, 46, 31, 35, 15, 1, 17, 32, 9, 16, 43, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "alas dull rugs furs",
                         "isCompleted": false,
                         "text": "alas dull rugs furs rugs lads alas sad furs all furs sad as usual flags furs had as usual sad sad a dark a dark",
@@ -2119,7 +2119,7 @@
                 "lessonNumber": 3,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "gourds warhorse waker",
                         "isCompleted": false,
                         "text": "gourds warhorse waker he; killed; rigid sidewalk losses leash dig loses affords; dishes raid redwoods",
@@ -2127,35 +2127,35 @@
                         "allowedKeys": [0, 2, 14, 5, 4, 34, 40, 37, 31, 15, 1, 17, 32, 13, 41, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "gourds warhorse waker",
                         "isCompleted": false,
                         "text": "gourds warhorse waker he; killed; rigid sidewalk losses leash dig loses affords; dishes raid redwoods",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 14, 5, 4, 34, 40, 37, 31, 15, 1, 17, 32, 13, 41, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "useless her refusal",
                         "isCompleted": false,
                         "text": "useless her refusal horror ooh he was glad furs useless week who will hear like her dear flushed so real he had",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 14, 3, 5, 4, 34, 40, 37, 31, 15, 1, 32, 13, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "useless her refusal",
                         "isCompleted": false,
                         "text": "useless her refusal horror ooh he was glad furs useless week who will hear like her dear flushed so real he had",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 14, 3, 5, 4, 34, 40, 37, 31, 15, 1, 32, 13, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "such as the others",
                         "isCompleted": false,
                         "text": "such as the others wore, furs, so that we talked of ourselves, the swift rush of the river, opposite, solely,",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 14, 3, 5, 4, 34, 40, 37, 31, 35, 15, 1, 17, 32, 9, 13, 16, 43, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "will keep quiet.",
                         "isCompleted": false,
                         "text": "will keep quiet. that way... 'Of course, mother,' 'Well,' Harry, with a formal apology from Mrs. of course... ‘see'",
@@ -2169,7 +2169,7 @@
                 "lessonNumber": 4,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "gourds warhorse waker",
                         "isCompleted": false,
                         "text": "gourds warhorse waker he; killed; rigid sidewalk losses leash dig loses affords; dishes raid redwoods",
@@ -2177,35 +2177,35 @@
                         "allowedKeys": [0, 2, 14, 5, 4, 34, 40, 37, 31, 15, 1, 17, 32, 13, 41, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "popes or ideas old",
                         "isCompleted": false,
                         "text": "popes or ideas old fellow, gross woodwork alas fell sighed hugged her raised his head regardless of orders",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 14, 3, 5, 4, 34, 37, 31, 35, 15, 1, 32, 13, 43, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "A few weeks passed",
                         "isCompleted": false,
                         "text": "A few weeks passed Pierre paused He paused She did so Pierre paused He looked I will go She did so",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 14, 3, 5, 4, 34, 40, 37, 31, 35, 15, 1, 17, 32, 13, 16, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "sad, cursively, mudflats",
                         "isCompleted": false,
                         "text": "sad, cursively, mudflats, earplug, vases, matchmaker, wherever, veracity, stories, jade, recess,",
                         "exerciseStats": null,
                         "allowedKeys": [0, 8, 2, 14, 3, 5, 4, 34, 38, 40, 37, 46, 35, 15, 1, 17, 32, 9, 13, 16, 43, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "psychological, opposite",
                         "isCompleted": false,
                         "text": "psychological, opposite, immediately, or to trick us, told her that, dead to him, waked me,",
                         "exerciseStats": null,
                         "allowedKeys": [0, 8, 2, 14, 5, 4, 34, 40, 37, 46, 31, 35, 15, 1, 17, 32, 13, 16, 43, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "jf fj",
                         "isCompleted": false,
                         "text": "Excuse me, please, His thoughts strayed aimlessly... What have you to make with that? Are you a devil?",
@@ -2219,7 +2219,7 @@
                 "lessonNumber": 5,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "settle shod flier",
                         "isCompleted": false,
                         "text": "The quick brown fox jumped over the lazy dog, while the cat cautiously observed from the windowsill.",
@@ -2227,35 +2227,35 @@
                         "allowedKeys": [0, 11, 8, 2, 14, 3, 5, 4, 34, 38, 40, 37, 46, 45, 31, 35, 12, 15, 1, 17, 32, 9, 13, 7, 16, 6, 47, 43, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "roused to fury a",
                         "isCompleted": false,
                         "text": "roused to fury a wife as yet it is he as he supposed hairy looked out there was a soiree thrilled you where",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 14, 3, 5, 4, 34, 40, 37, 31, 35, 15, 1, 17, 32, 13, 16, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "All right He stood",
                         "isCompleted": false,
                         "text": "All right He stood at the door He started They kept this attitude for the rest of the day He thought of his wife",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 14, 3, 5, 4, 34, 40, 37, 31, 35, 15, 1, 17, 32, 13, 16, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "grotesque, aeroliths",
                         "isCompleted": false,
                         "text": "grotesque, aeroliths, current, exit, merrier, stove, ringleaders, fours, looming, fortunes, writeup",
                         "exerciseStats": null,
                         "allowedKeys": [0, 8, 14, 3, 5, 4, 34, 37, 46, 45, 31, 35, 12, 15, 1, 17, 32, 9, 13, 7, 16, 43, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "now on his toes",
                         "isCompleted": false,
                         "text": "now on his toes, like that of most discoveries, whatever mood he might be in, his bodyguard",
                         "exerciseStats": null,
                         "allowedKeys": [0, 11, 8, 2, 14, 3, 5, 4, 34, 46, 45, 31, 35, 15, 1, 17, 32, 9, 13, 16, 43, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "Raskolnikov noticed",
                         "isCompleted": false,
                         "text": "Raskolnikov noticed all this, and he too was uneasy",
@@ -2269,7 +2269,7 @@
                 "lessonNumber": 6,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "The quick brown fox",
                         "isCompleted": false,
                         "text": "The quick brown fox jumped over the lazy dog, while the cat cautiously observed from the windowsill.",
@@ -2277,35 +2277,35 @@
                         "allowedKeys": [0, 11, 8, 2, 14, 3, 5, 4, 34, 38, 40, 37, 46, 45, 31, 35, 12, 15, 1, 17, 32, 9, 13, 7, 16, 6, 47, 43, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "Despite the rainstorm,",
                         "isCompleted": false,
                         "text": "Despite the rainstorm, the team forged ahead, determined to reach the summit by dusk, their resolve unwavering.",
                         "exerciseStats": null,
                         "allowedKeys": [0, 8, 2, 14, 3, 5, 4, 34, 40, 37, 46, 45, 31, 35, 15, 1, 17, 32, 9, 13, 16, 43, 47, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "Quantum mechanics, with",
                         "isCompleted": false,
                         "text": "Quantum mechanics, with its bewildering paradoxes and principles, challenges our fundamental understanding of reality.",
                         "exerciseStats": null,
                         "allowedKeys": [0, 8, 2, 14, 3, 5, 4, 34, 40, 37, 46, 45, 31, 35, 12, 15, 1, 17, 32, 13, 16, 43, 47, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "She walked through the",
                         "isCompleted": false,
                         "text": "She walked through the ancient corridors, her footsteps echoing off the stone walls as the faint hum of machinery vibrated through the floor.",
                         "exerciseStats": null,
                         "allowedKeys": [0, 8, 2, 14, 3, 5, 4, 34, 40, 37, 46, 45, 31, 35, 15, 1, 17, 32, 9, 13, 16, 43, 47, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "The adventurer ventured",
                         "isCompleted": false,
                         "text": "The adventurer ventured deeper into the jungle, seeking the hidden temple rumored to hold treasures beyond imagination, as dangerous creatures lurked nearby.",
                         "exerciseStats": null,
                         "allowedKeys": [0, 8, 2, 14, 5, 4, 34, 40, 37, 46, 45, 31, 35, 15, 1, 17, 32, 9, 13, 16, 43, 47, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "He deciphered the cryptic",
                         "isCompleted": false,
                         "text": "He deciphered the cryptic message, unraveling the enigma that had stumped scholars for centuries, a breakthrough in historical research.",
@@ -2319,7 +2319,7 @@
                 "lessonNumber": 7,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "The professor explained",
                         "isCompleted": false,
                         "text": "The professor explained the intricacies of string theory, captivating the students with its blend of mathematics and abstract concepts.",
@@ -2327,35 +2327,35 @@
                         "allowedKeys": [0, 11, 8, 2, 14, 3, 5, 4, 34, 40, 37, 46, 45, 31, 35, 15, 1, 17, 32, 9, 13, 7, 16, 43, 47, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "In the dim light",
                         "isCompleted": false,
                         "text": "In the dim light of the alley, the mysterious figure lingered, casting an eerie shadow as the wind howled through the narrow streets.",
                         "exerciseStats": null,
                         "allowedKeys": [0, 8, 2, 14, 3, 5, 4, 34, 40, 37, 46, 45, 31, 15, 1, 17, 32, 13, 16, 43, 47, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "The chess grandmaster",
                         "isCompleted": false,
                         "text": "The chess grandmaster carefully studied the board, contemplating his next move that would determine the fate of the match.",
                         "exerciseStats": null,
                         "allowedKeys": [0, 11, 8, 2, 14, 3, 5, 4, 34, 37, 46, 45, 31, 15, 1, 17, 32, 9, 13, 16, 43, 47, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "At the top of the mountain",
                         "isCompleted": false,
                         "text": "At the top of the mountain, the view was breathtaking, with endless stretches of snow-capped peaks and valleys below.",
                         "exerciseStats": null,
                         "allowedKeys": [0, 11, 8, 2, 14, 3, 5, 4, 34, 37, 46, 45, 31, 35, 15, 1, 17, 32, 9, 13, 16, 27, 43, 47, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "As the storm intensified",
                         "isCompleted": false,
                         "text": "As the storm intensified, the ship's captain steered the vessel through the rough waves, maintaining a steady course despite the fierce winds.",
                         "exerciseStats": null,
                         "allowedKeys": [0, 8, 2, 14, 3, 5, 4, 34, 37, 46, 45, 31, 35, 15, 1, 17, 32, 9, 13, 16, 39, 43, 47, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "The detective sifted",
                         "isCompleted": false,
                         "text": "The detective sifted through the evidence, piecing together the clues that would lead to the arrest of the elusive criminal mastermind.",
@@ -2369,7 +2369,7 @@
                 "lessonNumber": 8,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "With a swift motion,",
                         "isCompleted": false,
                         "text": "With a swift motion, the ninja disappeared into the shadows, leaving no trace of his presence as he executed his mission flawlessly.",
@@ -2377,35 +2377,35 @@
                         "allowedKeys": [0, 8, 2, 14, 3, 4, 34, 38, 37, 46, 45, 31, 35, 15, 1, 17, 32, 13, 7, 16, 43, 47, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "The scientist marveled",
                         "isCompleted": false,
                         "text": "The scientist marveled at the precision of the microscope, observing the minute details of the cells that were invisible to the naked eye.",
                         "exerciseStats": null,
                         "allowedKeys": [0, 11, 8, 2, 14, 3, 5, 4, 34, 40, 37, 46, 45, 31, 35, 15, 1, 17, 32, 9, 13, 16, 43, 47, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "In the vast desert,",
                         "isCompleted": false,
                         "text": "In the vast desert, the caravan trekked onward, each step sinking into the soft, golden sand under the unforgiving sun.",
                         "exerciseStats": null,
                         "allowedKeys": [0, 8, 2, 14, 3, 5, 4, 34, 40, 37, 46, 45, 31, 35, 15, 1, 17, 32, 9, 13, 16, 43, 47, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "The astronauts floated",
                         "isCompleted": false,
                         "text": "The astronauts floated weightlessly in the spacecraft, gazing out at the stars as Earth slowly rotated beneath them.",
                         "exerciseStats": null,
                         "allowedKeys": [0, 2, 14, 3, 5, 4, 34, 37, 46, 45, 31, 35, 15, 1, 17, 32, 9, 13, 16, 43, 47, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "The playwright captured",
                         "isCompleted": false,
                         "text": "The playwright captured the essence of human emotion in his latest work, drawing the audience into a world of love, betrayal, and redemption.",
                         "exerciseStats": null,
                         "allowedKeys": [0, 8, 2, 14, 3, 5, 4, 34, 40, 37, 46, 45, 31, 35, 15, 1, 17, 32, 13, 16, 43, 47, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "The soldier's heart raced",
                         "isCompleted": false,
                         "text": "The soldier's heart raced as the battle unfolded around him, the roar of gunfire and the explosion of grenades filling the air with chaos.",
@@ -2424,7 +2424,7 @@
                 "lessonNumber": 1,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "clarity",
                         "isCompleted": false,
                         "text": "clarity clarity clarity clarity clarity clarity clarity clarity clarity clarity clarity clarity",
@@ -2432,77 +2432,77 @@
                         "allowedKeys": [8, 37, 0, 15, 34, 17, 16, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "effort",
                         "isCompleted": false,
                         "text": "effort effort effort effort effort effort effort effort effort effort effort effort",
                         "exerciseStats": null,
                         "allowedKeys": [14, 3, 31, 15, 17, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "potential",
                         "isCompleted": false,
                         "text": "potential potential potential potential potential potential potential potential potential",
                         "exerciseStats": null,
                         "allowedKeys": [35, 31, 17, 14, 45, 34, 0, 37, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "harmony",
                         "isCompleted": false,
                         "text": "harmony harmony harmony harmony harmony harmony harmony harmony harmony harmony",
                         "exerciseStats": null,
                         "allowedKeys": [4, 0, 15, 46, 31, 45, 16, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "focus",
                         "isCompleted": false,
                         "text": "focus focus focus focus focus focus focus focus focus focus focus",
                         "exerciseStats": null,
                         "allowedKeys": [3, 31, 8, 32, 1, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "creativity",
                         "isCompleted": false,
                         "text": "creativity creativity creativity creativity creativity creativity creativity creativity",
                         "exerciseStats": null,
                         "allowedKeys": [8, 15, 14, 0, 17, 34, 9, 16, 49]
                     },{
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "strategy",
                         "isCompleted": false,
                         "text": "strategy strategy strategy strategy strategy strategy strategy strategy",
                         "exerciseStats": null,
                         "allowedKeys": [1, 17, 15, 0, 14, 5, 16, 49]
                     },{
-                        "id": "exercise 8",
+                        "id": "Exercise 8",
                         "title": "vision",
                         "isCompleted": false,
                         "text": "vision vision vision vision vision vision vision vision vision",
                         "exerciseStats": null,
                         "allowedKeys": [9, 34, 1, 31, 45, 49]
                     },{
-                        "id": "exercise 9",
+                        "id": "Exercise 9",
                         "title": "discipline",
                         "isCompleted": false,
                         "text": "discipline discipline discipline discipline discipline discipline discipline",
                         "exerciseStats": null,
                         "allowedKeys": [2, 34, 1, 8, 35, 37, 45, 14, 49]
                     },{
-                        "id": "exercise 10",
+                        "id": "Exercise 10",
                         "title": "innovation",
                         "isCompleted": false,
                         "text": "innovation innovation innovation innovation innovation innovation innovation innovation",
                         "exerciseStats": null,
                         "allowedKeys": [34, 45, 31, 9, 0, 17, 49]
                     },{
-                        "id": "exercise 11",
+                        "id": "Exercise 11",
                         "title": "determination",
                         "isCompleted": false,
                         "text": "determination determination determination determination determination determination",
                         "exerciseStats": null,
                         "allowedKeys": [2, 14, 17, 15, 46, 34, 45, 0, 31, 49]
                     },{
-                        "id": "exercise 12",
+                        "id": "Exercise 12",
                         "title": "perseverance",
                         "isCompleted": false,
                         "text": "perseverance perseverance perseverance perseverance perseverance perseverance perseverance",
@@ -2520,7 +2520,7 @@
                 "lessonNumber": 1,
                 "exercises": [
                     {
-                        "id": "exercise 1",
+                        "id": "Exercise 1",
                         "title": "comprehension",
                         "isCompleted": false,
                         "text": "comprehension comprehension comprehension comprehension comprehension comprehension comprehension",
@@ -2528,77 +2528,77 @@
                         "allowedKeys": [8, 31, 46, 35, 15, 14, 4, 45, 1, 34, 49]
                     },
                     {
-                        "id": "exercise 2",
+                        "id": "Exercise 2",
                         "title": "synthesis",
                         "isCompleted": false,
                         "text": "synthesis synthesis synthesis synthesis synthesis synthesis synthesis synthesis",
                         "exerciseStats": null,
                         "allowedKeys": [1, 16, 45, 17, 4, 14, 34, 49]
                     },{
-                        "id": "exercise 3",
+                        "id": "Exercise 3",
                         "title": "analysis",
                         "isCompleted": false,
                         "text": "analysis analysis analysis analysis analysis analysis analysis analysis",
                         "exerciseStats": null,
                         "allowedKeys": [0, 45, 37, 16, 1, 34, 49]
                     },{
-                        "id": "exercise 4",
+                        "id": "Exercise 4",
                         "title": "evaluation",
                         "isCompleted": false,
                         "text": "evaluation evaluation evaluation evaluation evaluation evaluation evaluation evaluation",
                         "exerciseStats": null,
                         "allowedKeys": [14, 9, 0, 37, 32, 17, 34, 31, 45, 49]
                     },{
-                        "id": "exercise 5",
+                        "id": "Exercise 5",
                         "title": "application",
                         "isCompleted": false,
                         "text": "application application application application application application application",
                         "exerciseStats": null,
                         "allowedKeys": [0, 35, 37, 34, 8, 17, 31, 45, 49]
                     },{
-                        "id": "exercise 6",
+                        "id": "Exercise 6",
                         "title": "diagnosis",
                         "isCompleted": false,
                         "text": "diagnosis diagnosis diagnosis diagnosis diagnosis diagnosis diagnosis",
                         "exerciseStats": null,
                         "allowedKeys": [2, 34, 0, 5, 45, 31, 1, 49]
                     },{
-                        "id": "exercise 7",
+                        "id": "Exercise 7",
                         "title": "interpretation",
                         "isCompleted": false,
                         "text": "interpretation interpretation interpretation interpretation interpretation interpretation",
                         "exerciseStats": null,
                         "allowedKeys": [34, 45, 17, 14, 15, 35, 0, 31, 49]
                     },{
-                        "id": "exercise 8",
+                        "id": "Exercise 8",
                         "title": "understanding",
                         "isCompleted": false,
                         "text": "understanding understanding understanding understanding understanding understanding understanding",
                         "exerciseStats": null,
                         "allowedKeys": [32, 45, 2, 14, 15, 1, 17, 0, 34, 5, 49]
                     },{
-                        "id": "exercise 9",
+                        "id": "Exercise 9",
                         "title": "reasoning",
                         "isCompleted": false,
                         "text": "reasoning reasoning reasoning reasoning reasoning reasoning reasoning reasoning",
                         "exerciseStats": null,
                         "allowedKeys": [15, 14, 0, 1, 31, 45, 34, 5, 49]
                     },{
-                        "id": "exercise 10",
+                        "id": "Exercise 10",
                         "title": "problem-solving",
                         "isCompleted": false,
                         "text": "problem-solving problem-solving problem-solving problem-solving problem-solving problem-solving",
                         "exerciseStats": null,
                         "allowedKeys": [35, 15, 31, 11, 37, 14, 46, 1, 9, 34, 45, 5, 27, 49]
                     },{
-                        "id": "exercise 11",
+                        "id": "Exercise 11",
                         "title": "inference",
                         "isCompleted": false,
                         "text": "inference inference inference inference inference inference inference inference inference inference inference inference inference inference",
                         "exerciseStats": null,
                         "allowedKeys": [34, 45, 3, 14, 15, 8, 49]
                     },{
-                        "id": "exercise 12",
+                        "id": "Exercise 12",
                         "title": "justification",
                         "isCompleted": false,
                         "text": "justification justification justification justification justification justification justification justification justification justification justification",

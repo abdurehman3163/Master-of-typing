@@ -182,7 +182,7 @@ class PracticeVC: NSViewController {
                 box.disable()
             }
             isTypingAllowed = false
-            
+
         }else if isfromDictationVC2ndIndex {
             registerVoiceRcognizer()
             speakerButtons.isHidden = false
@@ -215,7 +215,7 @@ class PracticeVC: NSViewController {
             fullText = exercise.text
             currentAllowedTags = Set(exercise.allowedKeys)
             mainTitle.isHidden = false
-            mainTitle.stringValue = exercise.title
+            mainTitle.stringValue = exercise.id
             
             // Enable only allowed keys in exercise mode
             for box in viewArray {
@@ -375,8 +375,6 @@ class PracticeVC: NSViewController {
 
     private func showSuccessAndNextExerciseAlert() {
         let alertVC = PractiveAlertView(nibName: "PractiveAlertView", bundle: nil)
-            
-            // Configure closures
             alertVC.onNext = { [weak self] in
                 self?.goToNextExercise()
             }
@@ -384,8 +382,6 @@ class PracticeVC: NSViewController {
             alertVC.onExit = { [weak self] in
                 self?.removeChildFromNavigation()
             }
-            
-            // Present as sheet (recommended — slides down from top)
             presentAsSheet(alertVC)
     }
     
@@ -455,8 +451,9 @@ class PracticeVC: NSViewController {
     
     private func updateTextDisplay() {
         let attributedString = NSMutableAttributedString(string: fullText)
-        
-        let defaultFont = NSFont.systemFont(ofSize: 18, weight: .medium)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center  // ← This forces center
+        let defaultFont = NSFont.systemFont(ofSize: 20, weight: .medium)
         let grayColor = NSColor.black
         let greenColor = NSColor.systemGreen
         let redColor = NSColor.systemRed
@@ -464,6 +461,7 @@ class PracticeVC: NSViewController {
         
         attributedString.addAttribute(.foregroundColor, value: grayColor, range: NSRange(location: 0, length: fullText.count))
         attributedString.addAttribute(.font, value: defaultFont, range: NSRange(location: 0, length: fullText.count))
+        attributedString.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: fullText.count))
         
         for i in 0..<min(currentIndex, typedCharacters.count) {
             let index = fullText.index(fullText.startIndex, offsetBy: i)
@@ -478,7 +476,7 @@ class PracticeVC: NSViewController {
             }
         }
         if currentIndex < fullText.count {
-            let boldFont = NSFont.boldSystemFont(ofSize: 18)
+            let boldFont = NSFont.boldSystemFont(ofSize: 20)
             attributedString.addAttributes([
                 .foregroundColor: currentCharColor,
                 .font: boldFont,
@@ -687,7 +685,8 @@ class PracticeVC: NSViewController {
             isTypingAllowed = true
             enableAllKeys()
             dictationBox.isHidden = true
-            
+            App.incrementFreeCount()
+
         } else if isfromDictationVC2ndIndex {
             // Mode 3: User finished recording → start typing
             if !RecordingManager.shared.isRecording {
@@ -750,6 +749,7 @@ extension PracticeVC: NSCollectionViewDelegate, NSCollectionViewDataSource, NSCo
         cell.img.isHidden = true
         cell.lblTitle?.stringValue = typingStrings[indexPath.item]
         cell.lblTitle?.font = NSFont.systemFont(ofSize: 16, weight: .medium)
+        cell.setSeparatorColor(NSColor.border)
         return cell
     }
     
@@ -766,6 +766,14 @@ extension PracticeVC: NSCollectionViewDelegate, NSCollectionViewDataSource, NSCo
         collectioinViewBox.isHidden = true
         
         collectionView.deselectAll(nil)
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        5
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        0
     }
 }
 

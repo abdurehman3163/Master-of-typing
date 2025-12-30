@@ -62,6 +62,10 @@ class AiDictationVC: NSCollectionViewItem {
         }
     
     @IBAction func btnStartAction(_ sender: Any?) {
+        guard App.canSendQuery else {
+            Utility.showProScreen(caller: self)
+            return
+        }
         let vc = PracticeVC(nibName: "PracticeVC", bundle: nil)
         vc.speechSpeed = speechSpeed
         vc.VoiceType = VoiceType
