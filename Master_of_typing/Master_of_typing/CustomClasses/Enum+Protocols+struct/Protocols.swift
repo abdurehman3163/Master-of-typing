@@ -37,6 +37,7 @@ protocol SpeechSpeedDelegate: AnyObject {
     func didChangeVoice(to voiceIdentifier: String)   // Apple uses identifier, not language code
     func didChangeSpeechSpeed(to multiplier: Float)   // 0.5 – 2.0
 }
+
 //protocol UserInteractionEnable: AnyObject{
 //    func enableInteraction()
 //    func disableInteraction()

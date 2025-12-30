@@ -33,7 +33,8 @@ final class SpeakerManager: NSObject {
     private let synthesizer = AVSpeechSynthesizer()
     private var currentUtterance: AVSpeechUtterance?
     private var currentText: String = ""
-    
+    private var lastSpokenRange: NSRange = NSRange(location: 0, length: 0)
+    private var originalText: String = ""  // The full text we started speaking
     // MARK: - Init
     private override init() {
         super.init()
@@ -44,23 +45,21 @@ final class SpeakerManager: NSObject {
     
     /// Speak the given text from the beginning (or restart if already speaking)
     func speak(_ text: String, fromStart: Bool = true) {
-        stopSpeaking() // Always stop any ongoing speech first
+        stopSpeaking()
         
         guard !text.isEmpty else { return }
         
         currentText = text
+        originalText = text  // ← Save full original text
         
         let utterance = AVSpeechUtterance(string: text)
         
-        // Apply voice
+        // Apply voice and rate (same as before)
         if let voice = AVSpeechSynthesisVoice(identifier: voiceIdentifier) {
             utterance.voice = voice
         } else {
-            utterance.voice = AVSpeechSynthesisVoice(language: voiceIdentifier) ??
-                             AVSpeechSynthesisVoice(language: "en-US")
+            utterance.voice = AVSpeechSynthesisVoice(language: voiceIdentifier) ?? AVSpeechSynthesisVoice(language: "en-US")
         }
-        
-        // Apply rate
         utterance.rate = speechSpeed
         
         currentUtterance = utterance
@@ -87,27 +86,56 @@ final class SpeakerManager: NSObject {
             isSpeaking = false
             isPaused = false
             currentUtterance = nil
+            lastSpokenRange = NSRange(location: 0, length: 0)  // ← Reset tracking
             delegate?.speakerManagerDidStopSpeaking()
         }
     }
     
     /// Restart current text with updated speed/voice (preserves text, doesn't reset typing)
     private func restartCurrentUtteranceIfNeeded() {
-        guard isSpeaking || isPaused, !currentText.isEmpty else { return }
+        guard (isSpeaking || isPaused), !originalText.isEmpty else { return }
         
         let wasPaused = isPaused
-        let range = synthesizer.pauseSpeaking(at: .word) // Try graceful pause first
         
-        // Fallback to immediate stop if needed
-        if !range {
-            synthesizer.stopSpeaking(at: .immediate)
+        // Just stop immediately — no need to pause first
+        synthesizer.stopSpeaking(at: .immediate)
+        
+        // Calculate remaining text from last known spoken position
+        let spokenUpTo = lastSpokenRange.location + lastSpokenRange.length
+        
+        // Safety: if we've somehow spoken past the end, don't resume
+        guard spokenUpTo < originalText.count else {
+            isSpeaking = false
+            isPaused = false
+            delegate?.speakerManagerDidStopSpeaking()
+            return
         }
         
-        // Re-speak the same text with new settings
-        speak(currentText, fromStart: false)
+        let startIndex = originalText.index(originalText.startIndex, offsetBy: spokenUpTo)
+        let remainingText = String(originalText[startIndex...])
+        
+        // Create and speak new utterance with current rate/voice
+        let utterance = AVSpeechUtterance(string: remainingText)
+        utterance.rate = speechSpeed
+        
+        if let voice = AVSpeechSynthesisVoice(identifier: voiceIdentifier) {
+            utterance.voice = voice
+        } else {
+            utterance.voice = AVSpeechSynthesisVoice(language: voiceIdentifier) ?? AVSpeechSynthesisVoice(language: "en-US")
+        }
+        
+        currentUtterance = utterance
+        synthesizer.speak(utterance)
+        
+        isSpeaking = true
         
         if wasPaused {
-            pauseOrResume() // Re-apply pause state
+            synthesizer.pauseSpeaking(at: .immediate)
+            isPaused = true
+            delegate?.speakerManagerDidPauseSpeaking()
+        } else {
+            isPaused = false
+            delegate?.speakerManagerDidStartSpeaking()
         }
     }
 }
@@ -152,5 +180,9 @@ extension SpeakerManager: AVSpeechSynthesizerDelegate {
         isPaused = false
         currentUtterance = nil
         delegate?.speakerManagerDidStopSpeaking()
+    }
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
+        lastSpokenRange = characterRange
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import StoreKit
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -16,18 +17,43 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var window: NSWindow!
     var eventMonitor: Any?
     
+    var products: Set<SKProduct> = []
+    var subScriptionsOffers: Set<String> = [AppConstants.weeklySubscriptionID,
+                                            AppConstants.monthlySubscriptionID,
+                                            AppConstants.yearlySubscriptionID]
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         goToHomeScreen(contentVC: splitViewController)
-        NSEvent.addGlobalMonitorForEvents(matching: .keyDown) { event in
-            if let keyPressed = event.charactersIgnoringModifiers {
-                print("Global key press detected: \(keyPressed)")
+        ReachabilityManager.shared.checkInternet()
+        
+        StoreManager.shared.fetchProducts()
+//        NSEvent.addGlobalMonitorForEvents(matching: .keyDown) { event in
+//            if let keyPressed = event.charactersIgnoringModifiers {
+//                print("Global key press detected: \(keyPressed)")
+//            }
+//        }
+        
+        StoreManager.shared.onStatusChange = { purchaseInfo in
+            if purchaseInfo != nil {
+                if !App.isPro {
+                    App.isPro = true
+                }
+            } else {
+                if App.isPro {
+                    App.isPro = false
+                }
             }
         }
+
 
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+    }
+
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        true
     }
 
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {

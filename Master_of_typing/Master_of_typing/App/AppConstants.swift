@@ -9,16 +9,16 @@ class AppConstants : NSObject {
     static let eulaLink: String = ""
     static let supportEmail : String =  "rabiasakhawatapps@gmail.com"
     static let AppName : String = "HandyText"
-    static let appIDForShowingApp : String = "6755829992"
+    static let appIDForShowingApp : String = "6757149517"
     static let appStoreURL : String = "itms-apps://apps.apple.com/app/id\(appIDForShowingApp)?action=write-review"
     static let appShareLink = "https://apps.apple.com/app/id\(appIDForShowingApp)"
     //MARK: - StoreKit Purchase Keys
-    static let weeklySubscriptionID: String = "com.rs.handy.text.weekly"
-    static let monthlySubscriptionID: String = "com.rs.handy.text.monthly"
-    static let yearlySubscriptionID: String = "com.rs.handy.text.yearly"
-//    static let lifeTimeSubscriptionID: String = "com.printcore.printer.app.lifetime"
+    static let weeklySubscriptionID: String =   "com.rs.typing.master.weekly"
+    static let monthlySubscriptionID: String =  "com.rs.typing.master.monthly"
+    static let yearlySubscriptionID: String =   "com.rs.typing.master.yearly"
+    static let lifeTimeSubscriptionID: String = "com.rs.typing.master.lifetime"
     
-    static let appSharedSecretKey: String = "cc50bea698754b5eae7650b3a0644ba5"
+    static let appSharedSecretKey: String = "290e9c311fd04606b58f6634e6ad3baf"
     static let hash: String = "sha256//5KjN64rxTiC13wacHTGCLnBdD2k6jwPdd7duayEkNiU="
     static var expandedRowIndices: Set<Int> = []
     static let jsonFileName: String = "HandyText.json"

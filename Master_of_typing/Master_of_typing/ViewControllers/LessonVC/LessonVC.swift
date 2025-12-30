@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class LessonVC: NSViewController {
+class LessonVC: BaseVC {
     
     @IBOutlet weak var lblHomeRow: NSTextField!
     @IBOutlet weak var lblTopRow: NSTextField!
@@ -41,8 +41,55 @@ class LessonVC: NSViewController {
         lblBottomRow.stringValue = dataManager.chapters[2].title
         lblDifferentRow.stringValue = dataManager.chapters[3].title
         lblFullKeyBoardRow.stringValue = dataManager.chapters[4].title
+        updateRowLabels()
+        
+        if App.isNotPro {
+//            if RemoteConfigManager.sharedInstance.fetchComplete == true {
+                showPremiumScreen()
+//            } else {
+//                RemoteConfigManager.sharedInstance.loadingDoneCallback = { [weak self] in
+//                    self?.showPremiumScreen()
+//                }
+//            }
+        }
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        
+        // Reload collection views in case completion status changed (e.g., checkmarks)
+        [CollectionViewHR, CollectionViewTR, CollectionViewBR, CollectionViewFKR, CollectionViewDR].forEach { $0?.reloadData() }
+        
+        // Update progress numbers
+        updateRowLabels()
+    }
+    
+    private func updateRowLabels() {
+        let chapters = DataManager.shared.chapters
+        
+        // Helper to find chapter by title and compute progress
+        func progress(for title: String) -> (completed: Int, total: Int) {
+            guard let chapter = chapters.first(where: { $0.title == title }) else {
+                return (0, 0)
+            }
+            return (chapter.completedLessons, chapter.numberOfLessons)
+        }
+        
+        let home = progress(for: "Home Row")
+        lblHomeRow.stringValue = "Home Row (\(home.completed)/\(home.total))"
+        
+        let top = progress(for: "Top Row")
+        lblTopRow.stringValue = "Top Row (\(top.completed)/\(top.total))"
+        
+        let bottom = progress(for: "Bottom Row")
+        lblBottomRow.stringValue = "Bottom Row (\(bottom.completed)/\(bottom.total))"
+        
+        let different = progress(for: "Different Rows")
+        lblDifferentRow.stringValue = "Different Rows (\(different.completed)/\(different.total))"
+        
+        let full = progress(for: "Full Keyboard")
+        lblFullKeyBoardRow.stringValue = "Full Keyboard (\(full.completed)/\(full.total))"
+    }
     private func getChapter(for collectionView: NSCollectionView) -> Chapter? {
         switch collectionView {
         case CollectionViewHR:
@@ -60,6 +107,62 @@ class LessonVC: NSViewController {
         }
     }
     
+    @IBAction func settingMenuBtn(_ sender: NSButton) {
+        let menu = NSMenu()
+
+        // Upgrade to Pro
+        let upgradeItem = NSMenuItem()
+        upgradeItem.title = "Upgrade to Pro"
+        upgradeItem.image = .imgSettingCrown
+        upgradeItem.target = self
+        upgradeItem.action = #selector(upgradeToProTapped) // Replace with your actual selector
+        menu.addItem(upgradeItem)
+
+        // Restore Purchases
+        let restoreItem = NSMenuItem()
+        restoreItem.title = "Restore Purchase"
+        restoreItem.image = .imgSettingRestore
+        restoreItem.target = self
+        restoreItem.action = #selector(restorePurchasesTapped) // Replace with your actual selector
+        menu.addItem(restoreItem)
+
+        // Separator (optional, for visual grouping)
+        menu.addItem(NSMenuItem.separator())
+
+        // Rate us
+        let rateItem = NSMenuItem()
+        rateItem.title = "Rate us"
+        rateItem.image = .imgSettingRateUs
+        rateItem.target = self
+        rateItem.action = #selector(rateAppTapped) // Replace with your actual selector
+        menu.addItem(rateItem)
+
+        // Share us
+        let shareItem = NSMenuItem()
+        shareItem.title = "Share us"
+        shareItem.image = .imgSettingShare
+        shareItem.target = self
+        shareItem.action = #selector(shareAppTapped) // Replace with your actual selector
+        menu.addItem(shareItem)
+
+        // Support
+        let supportItem = NSMenuItem()
+        supportItem.title = "Support"
+        supportItem.image = .imgSettingSupport
+        supportItem.target = self
+        supportItem.action = #selector(supportTapped) // Replace with your actual selector
+        menu.addItem(supportItem)
+
+        let location = sender.convert(sender.frame.origin, to: sender)
+        menu.popUp(positioning: nil, at: location, in: sender.superview)
+    }
+    
+    @objc  func upgradeToProTapped(){}
+    @objc  func restorePurchasesTapped(){}
+    @objc  func rateAppTapped(){}
+    @objc  func shareAppTapped(){}
+    @objc  func supportTapped(){}
+
 }
 
 extension LessonVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
@@ -124,6 +227,6 @@ extension LessonVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSColl
         
         addChildToNavigation(vc)
         
-        collectionView.deselectAll(nil)
+        collectionView.deselectItems(at: indexPaths)
     }
 }

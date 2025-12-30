@@ -90,8 +90,8 @@ extension NSTextField {
     
     func setAttributedStrike(color: NSColor) {
         let attributes: [NSAttributedString.Key: Any] = [
-            .strikethroughStyle: NSUnderlineStyle.thick.rawValue,
-            .foregroundColor: color
+            .strikethroughStyle: NSUnderlineStyle.single.rawValue,
+            .strikethroughColor: color
         ]
         attributedStringValue = NSAttributedString(string: stringValue, attributes: attributes)
     }

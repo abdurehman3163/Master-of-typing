@@ -30,7 +30,7 @@ class Exercise: Codable {
     var isCompleted: Bool
     let text: String
     var exerciseStats: ExerciseStats?
-    var allowedKeys: Set<Int> = [500, 501]
+    var allowedKeys: Set<Int> = []
 }
 
 class ExerciseStats: Codable {

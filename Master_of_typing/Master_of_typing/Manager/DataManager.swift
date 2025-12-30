@@ -38,6 +38,7 @@ class DataManager {
         do {
             let data = try JSONEncoder().encode(chapters)
             try data.write(to: jsonFileURL)
+            calculateStats()
             print("writen JSON file to disk.")
         } catch {
             print("Error:    Could not write JSON file to disk.")

@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import Combine
 
 class StatsVC: NSViewController {
     
@@ -17,18 +18,19 @@ class StatsVC: NSViewController {
     @IBOutlet weak var bestAccuracyProgressView: NSProgressIndicator!
     @IBOutlet weak var emptyLabelBox: NSBox!
     
-    private var allStats: TypingStats = TypingStats()
-    let dataManager = DataManager.shared.allStats
+    let dataManager = DataManager.shared
+    private var cancellables: Set<AnyCancellable> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if dataManager.averageAccuracy == 0 {
-            emptyLabelBox.isHidden = false
-        }else {
-            emptyLabelBox.isHidden = true
-        }
-        updateUI()
+//        updateUI()
+        
+        dataManager.$allStats.receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                guard let self else { return }
+                updateUI()
+            }.store(in: &cancellables)
         setProgressIndicatorColors(for: avgSpeedProgressView, progressColor: .green, backgroundColor: .gray)
         setProgressIndicatorColors(for: bestSpeedProgressView, progressColor: .yellow, backgroundColor: .gray)
         setProgressIndicatorColors(for: avgAccuracyProgressView, progressColor: .green, backgroundColor: .gray)
@@ -36,12 +38,19 @@ class StatsVC: NSViewController {
     }
     
     func updateUI() {
-        speedProgressView.progress = Double(dataManager.averageCPM)
-        accuracyProgressView.progress = Double(dataManager.averageAccuracy)
-        avgSpeedProgressView.doubleValue = Double(dataManager.averageCPM)
-        bestSpeedProgressView.doubleValue = Double(dataManager.bestCPM)
-        avgAccuracyProgressView.doubleValue = Double(dataManager.averageAccuracy)
-        bestAccuracyProgressView.doubleValue = Double(dataManager.bestAccuracy)
+        speedProgressView.progress = Double(dataManager.allStats.bestCPM)
+        accuracyProgressView.progress = Double(dataManager.allStats.bestAccuracy)
+        avgSpeedProgressView.doubleValue = Double(dataManager.allStats.averageCPM)
+        bestSpeedProgressView.doubleValue = Double(dataManager.allStats.bestCPM)
+        avgAccuracyProgressView.doubleValue = Double(dataManager.allStats.averageAccuracy)
+        bestAccuracyProgressView.doubleValue = Double(dataManager.allStats.bestAccuracy)
+        
+        if dataManager.allStats.averageAccuracy == 0 {
+            emptyLabelBox.isHidden = false
+        }else {
+            emptyLabelBox.isHidden = true
+        }
+
     }
     
 }

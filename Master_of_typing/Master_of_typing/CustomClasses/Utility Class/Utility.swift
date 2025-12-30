@@ -198,8 +198,8 @@ class Utility: NSObject {
     class func showProScreen(caller:NSViewController){
         if !App.isPro{
                     DispatchQueue.main.async {
-//                        let vc = PROViewController(nibName: "PROViewController", bundle: nil)
-//                        caller.presentAsSheet(vc)
+                        let vc = ProVC(nibName: "ProVC", bundle: nil)
+                        caller.presentAsSheet(vc)
                     }
                 }
     }

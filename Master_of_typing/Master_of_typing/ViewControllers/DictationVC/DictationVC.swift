@@ -108,19 +108,21 @@ extension DictationVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSC
         if isFromLesson || isFromPractice || isFromTest{
             let data = exercises[index.item]
             let isFirst = index.item == 0
-            let previousCompleted = !isFirst && exercises[index.item - 1].isCompleted
+            let previousCompleted: Bool = !isFirst ?
+                        (exercises[item - 1].isCompleted &&
+                         (exercises[item - 1].exerciseStats?.accuracy ?? 0) >= 80) : true
             //            let goodAccuracy = (data.exerciseStats?.accuracy ?? 0) >= 80
             
-            //            if isFirst || previousCompleted {
+                        if isFirst || previousCompleted {
             let vc = PracticeVC(nibName: "PracticeVC", bundle: nil)
             vc.exercise = data
             vc.chapter = chapter
             //                vc.chapterTitle = chapterTitle
             //                vc.lesson = lesson
             addChildToNavigation(vc)
-            //            } else {
-            //                showAlert(title: "", message: "Finish the previous exercise first")
-            //            }
+                        } else {
+                            showAlert(title: "", message: "Finish the previous exercise first")
+                        }
         }else{
             if item == 0 {
                 let vc = AiDictationVC(nibName: "AiDictationVC", bundle: nil)

@@ -1,93 +1,115 @@
 import Cocoa
 
 class CircularProgressView: NSView {
-    var progress: Double = 0.6 {
+    
+    var progress: Double = 0.0 {
         didSet {
-            needsDisplay = true
+            progress = max(0.0, min(1.0, progress))
+            // Use layer for fast updates instead of full redraw
+            updateProgressLayer()
         }
     }
     
-    var isSpeed: Bool = true {  // New boolean variable to toggle speed text visibility
-        didSet {
-            needsDisplay = true
-        }
+    // Configurable appearance
+    var trackColor: NSColor = NSColor.whiteColor2
+    var progressColor: NSColor = NSColor.appMain
+    var textColor: NSColor = NSColor.black
+    var lineWidth: CGFloat = 10.0
+    var fontSize: CGFloat = 18.0
+    
+    // Private layers for performance
+    private let trackLayer = CAShapeLayer()
+    private let progressLayer = CAShapeLayer()
+    private let textLayer = CATextLayer()
+    
+    override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+        setupLayers()
     }
     
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupLayers()
+    }
+    
+    private func setupLayers() {
+        wantsLayer = true
+        layer?.backgroundColor = nil // Transparent
         
-        guard !dirtyRect.isEmpty else { return }  // Avoid drawing if bounds are invalid
+        // Track layer (background ring)
+        trackLayer.strokeColor = trackColor.cgColor
+        trackLayer.fillColor = nil
+        trackLayer.lineCap = .round
+        layer?.addSublayer(trackLayer)
         
-        let center = NSPoint(x: bounds.midX, y: bounds.midY)
-        let radius = min(bounds.width, bounds.height) / 2 * 0.8
-        let lineWidth: CGFloat = 10.0
+        // Progress layer
+        progressLayer.strokeColor = progressColor.cgColor
+        progressLayer.fillColor = nil
+        progressLayer.lineCap = .round
+        progressLayer.strokeEnd = 0 // Start empty
+        layer?.addSublayer(progressLayer)
         
-        // Background circle
-        let backgroundPath = NSBezierPath()
-        backgroundPath.appendArc(withCenter: center, radius: radius, startAngle: 0, endAngle: 360)
-        NSColor.white.setStroke()  // Ensure this color is available
-        backgroundPath.lineWidth = lineWidth
-        backgroundPath.stroke()
+        // Text layer
+        textLayer.alignmentMode = .center
+        textLayer.contentsScale = NSScreen.main?.backingScaleFactor ?? 1.0
+        textLayer.font = CTFontCreateWithName("Helvetica-Bold" as CFString, fontSize, nil)
+        textLayer.fontSize = fontSize
+        textLayer.foregroundColor = textColor.cgColor
+        layer?.addSublayer(textLayer)
+    }
+    
+    override func layout() {
+        super.layout()
+        updateAllLayers()
+    }
+    
+    private func updateAllLayers() {
+        guard let layer = layer, bounds.width > 0, bounds.height > 0 else { return }
         
-        // Progress circle
-        let progressPath = NSBezierPath()
-        let endAngle = 360 * progress - 90
-        progressPath.appendArc(withCenter: center, radius: radius, startAngle: -90, endAngle: endAngle)
-        NSColor.blue.setStroke()  // Ensure this color is available
-        progressPath.lineWidth = lineWidth
-        progressPath.lineCapStyle = .round
-        progressPath.stroke()
+        let center = CGPoint(x: bounds.midX, y: bounds.midY)
+        let radius = (min(bounds.width, bounds.height) / 2) - (lineWidth / 2)
         
-        // Declare percentageText outside the if conditions
-        var percentageText: String
-        var cpmText: String
-        var speedText: String
+        let circularPath = CGPath(ellipseIn: CGRect(x: center.x - radius, y: center.y - radius,
+                                                    width: radius * 2, height: radius * 2), transform: nil)
         
-        // Assign the text based on isSpeed condition
-        if isSpeed {
-            percentageText = String(format: "%.0f", progress * 100) // Display without percentage symbol for speed
-            cpmText = "CPM" //
-            speedText = "Current Speed"
-        } else {
-            percentageText = String(format: "%.0f%%", progress * 100) // Display with percentage symbol for normal progress
-            cpmText = "Accuracy" //
-            speedText = "Accuracy Rate"
+        // Update track
+        trackLayer.path = circularPath
+        trackLayer.lineWidth = lineWidth
+        
+        // Update progress
+        progressLayer.path = circularPath
+        progressLayer.lineWidth = lineWidth
+        
+        // Update text position
+        let textRect = CGRect(x: 0, y: bounds.midY - fontSize / 2, width: bounds.width, height: fontSize + 4)
+        textLayer.frame = textRect
+        textLayer.string = String(format: "%.0f%%", progress * 100)
+    }
+    
+    private func updateProgressLayer() {
+        // Only update strokeEnd — super fast!
+        CATransaction.begin()
+        CATransaction.setDisableActions(true) // Prevent implicit animation flicker
+        progressLayer.strokeEnd = CGFloat(progress)
+        CATransaction.commit()
+        
+        // Update text smoothly
+        textLayer.string = String(format: "%.0f%%", progress * 100)
+    }
+    
+    // Optional: Smooth animated progress
+    func setProgress(_ newProgress: Double, animated: Bool = true, duration: CFTimeInterval = 0.3) {
+        let clamped = max(0.0, min(1.0, newProgress))
+        
+        if animated {
+            let animation = CABasicAnimation(keyPath: "strokeEnd")
+            animation.fromValue = progressLayer.strokeEnd
+            animation.toValue = clamped
+            animation.duration = duration
+            animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+            progressLayer.add(animation, forKey: "progressAnimation")
         }
         
-
-        // Set up attributes for the text with different font sizes for each text
-        let percentageTextAttributes: [NSAttributedString.Key: Any] = [
-            .font: NSFont.boldSystemFont(ofSize: 30), // Percentage text size
-            .foregroundColor: NSColor.black
-        ]
-        
-        let cpmTextAttributes: [NSAttributedString.Key: Any] = [
-            .font: NSFont.systemFont(ofSize: 16, weight: .semibold), // CPM text size
-            .foregroundColor: NSColor.black
-        ]
-        
-        let speedTextAttributes: [NSAttributedString.Key: Any] = [
-            .font: NSFont.systemFont(ofSize: 13, weight: .semibold), // Speed text size
-            .foregroundColor: NSColor.black
-        ]
-        
-        // Calculate sizes for each text
-        let percentageTextSize = percentageText.size(withAttributes: percentageTextAttributes)
-        let cpmTextSize = cpmText.size(withAttributes: cpmTextAttributes)
-        let speedTextSize = speedText.size(withAttributes: speedTextAttributes)
-
-        // Calculate the Y positions to space the texts vertically
-        let totalHeight = percentageTextSize.height + cpmTextSize.height + speedTextSize.height + 10 // 10 is the space between text lines
-        let percentageY = center.y + totalHeight / 2 - percentageTextSize.height / 2 - 10 // Add extra padding for percentage
-        let cpmY = percentageY - percentageTextSize.height - 5 // 5 is the spacing between percentage and cpm
-        let speedY = cpmY - cpmTextSize.height - 5 // 5 is the spacing between cpm and speed
-
-        // Calculate the X position (centered horizontally)
-        let textX = center.x - max(percentageTextSize.width, cpmTextSize.width, speedTextSize.width) / 2
-        
-        // Draw the text
-        percentageText.draw(at: NSPoint(x: textX, y: percentageY), withAttributes: percentageTextAttributes)
-        cpmText.draw(at: NSPoint(x: textX, y: cpmY), withAttributes: cpmTextAttributes)
-        speedText.draw(at: NSPoint(x: textX, y: speedY), withAttributes: speedTextAttributes)
+        progress = clamped // This triggers updateProgressLayer()
     }
 }

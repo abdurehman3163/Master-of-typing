@@ -14,27 +14,35 @@ class ButtonBox: NSBox {
     
     func enable() {
         alphaValue = 1
-        button.isEnabled = true
     }
     
     func disable() {
         alphaValue = 0.3
-        button.isEnabled = false
     }
     
     func highlight(_ pressed: Bool, isAllowed: Bool) {
         if pressed {
-            // Save original fill color on first press            
-            // Highlight appearance
-            alphaValue = 0.7
-            wantsLayer = true
-            layer?.cornerRadius = 8
-            layer?.borderWidth = 2
-            layer?.borderColor = NSColor.systemBlue.cgColor
+            // On press: always full alpha (pulse feedback for any key)
+            self.alphaValue = 1.0
+            
+            // Optional: add scale animation for nice feel
+            NSAnimationContext.runAnimationGroup { context in
+                context.duration = 0.1
+                self.animator().layer?.transform = CATransform3DMakeScale(1.05, 1.05, 1)
+            }
         } else {
-            // Key released → restore original fill, and correct alpha based on allowed state
-            alphaValue = isAllowed ? 1.0 : 0.3
-            layer?.borderWidth = 0
+            // On release:
+            if isAllowed {
+                // Allowed keys stay bright
+                self.alphaValue = 1.0
+                self.layer?.transform = CATransform3DIdentity
+            } else {
+                // Non-allowed keys go back to dim
+                self.alphaValue = 0.3
+                self.layer?.transform = CATransform3DIdentity
+            }
         }
     }
+    
+
 }

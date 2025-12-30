@@ -11,6 +11,8 @@ import AVFoundation
 
 class PracticeVC: NSViewController {
     
+    @IBOutlet weak var textCollectionView: NSCollectionView!
+    @IBOutlet weak var collectioinViewBox: NSBox!
     @IBOutlet weak var TextField: NSTextField!
     @IBOutlet weak var mainTitle: NSTextField!
     @IBOutlet weak var wpm: NSTextField!
@@ -80,6 +82,7 @@ class PracticeVC: NSViewController {
     @IBOutlet weak var keyFarword: ButtonBox!
     @IBOutlet weak var keyUp: ButtonBox!
     @IBOutlet weak var keyDown: ButtonBox!
+    @IBOutlet weak var showStringsToType: NSButton!
     @IBOutlet weak var restartOrSpeakButton: NSButton!
     @IBOutlet weak var startTyping: NSButton!
     @IBOutlet weak var pauseSpeaking: NSButton!
@@ -156,12 +159,8 @@ class PracticeVC: NSViewController {
                      keyShiftRight, keyFuntion, keyControl, keyOption, keyCommand1,
                      keySpacebar, keyCommand2, keyBack, keyFarword, keyUp, keyDown]
         
-        RecordingManager.shared.onSpeechRecognized = { [weak self] result in
-            guard let self = self else { return }
-            TextField.stringValue = result
-            fullText = result
-        }
-        
+        textCollectionView.dataSource = self
+        textCollectionView.delegate = self
         // CLEAR AND POPULATE tagToButtonBox ONCE, EARLY
         tagToButtonBox.removeAll()
         for box in viewArray {
@@ -183,7 +182,9 @@ class PracticeVC: NSViewController {
                 box.disable()
             }
             isTypingAllowed = false
+            
         }else if isfromDictationVC2ndIndex {
+            registerVoiceRcognizer()
             speakerButtons.isHidden = false
             dictationBox.isHidden = false
             dictationBoxImage.image = .imgDictationSpeak
@@ -191,7 +192,6 @@ class PracticeVC: NSViewController {
             restartOrSpeakButton.image = .imgDictationSpeak // or system symbol
             startTyping.isEnabled = false
             pauseSpeaking.isEnabled = false
-            
             for box in viewArray {
                 box.disable()
             }
@@ -199,10 +199,16 @@ class PracticeVC: NSViewController {
 
         }else if isfromDictationVC3rdIndex {
             dictationBox.isHidden = false
+            speedSlider.isHidden = false
+            speedLabelStack.isHidden = false
+            speakerButtons.isHidden = false
+            showStringsToType.isHidden = false
+            collectioinViewBox.isHidden = false
             dictationBoxImage.image = .imgDictationListen
             dictationBoxLabel.stringValue = "Choose the text you want to type and click start"
             restartOrSpeakButton.image = .imgSpeaker // or system symbol
             isTypingAllowed = false
+            
         } else {
             isTypingAllowed = true
             guard let exercise = exercise else { return }
@@ -231,6 +237,7 @@ class PracticeVC: NSViewController {
         elapsedTime = 0
         setupKeyHighlighting()
         updateTextDisplay()
+        updateAllowedKeysHighlight()
         
         SpeakerManager.shared.delegate = self
         SpeakerManager.shared.speechSpeed = speechSpeed
@@ -238,7 +245,7 @@ class PracticeVC: NSViewController {
     }
     
     private func updateSpeakButtons() {
-        if isfromAiDictationVC {
+        if isfromAiDictationVC || isfromDictationVC3rdIndex {
             if SpeakerManager.shared.isSpeaking && !SpeakerManager.shared.isPaused {
                 startTyping.title = "Restart"
                 restartOrSpeakButton.image = NSImage(systemSymbolName: "speaker.slash.fill", accessibilityDescription: "Pause")
@@ -273,17 +280,19 @@ class PracticeVC: NSViewController {
         guard isTypingAllowed else { return }
         // Restrict keys ONLY in regular exercise mode
         // Allow all keys in AI dictation mode OR free dictation typing mode
-        if !(isfromAiDictationVC || isfromDictationVC2ndIndex) {
-            guard currentAllowedTags.contains(keyCode) else { return }
-        }
+//        if !(isfromAiDictationVC || isfromDictationVC2ndIndex || isfromDictationVC3rdIndex) {
+//            guard currentAllowedTags.contains(keyCode) else { return }
+//        }
         
         // Highlight the key
         guard let buttonBox = tagToButtonBox[keyCode] else {
             print("Warning: No button box for keyCode \(keyCode)")
             return
         }
-        buttonBox.highlight(pressed, isAllowed: true)
-        
+        let isAllowedKey = currentAllowedTags.contains(keyCode) ||
+                           (isfromAiDictationVC || isfromDictationVC2ndIndex || isfromDictationVC3rdIndex)
+
+        buttonBox.highlight(pressed, isAllowed: isAllowedKey)
         guard pressed else { return }
         guard let characters = event.characters, !characters.isEmpty else { return }
         
@@ -306,10 +315,10 @@ class PracticeVC: NSViewController {
         currentIndex += 1
         
         // Accuracy (only meaningful in exercise mode, but safe to run)
-        if !(isfromAiDictationVC || isfromDictationVC2ndIndex),
-           let exerciseText = exercise?.text,
-           currentIndex - 1 < exerciseText.count {
-            let expectedChar = exerciseText[exerciseText.index(exerciseText.startIndex, offsetBy: currentIndex - 1)]
+        if currentIndex - 1 < fullText.count {
+            let index = fullText.index(fullText.startIndex, offsetBy: currentIndex - 1)
+            let expectedChar = fullText[index]
+            
             if typedChar == expectedChar {
                 correctCharacters += 1
             }
@@ -326,19 +335,124 @@ class PracticeVC: NSViewController {
         // Completion (only in exercise mode)
         if currentIndex >= fullText.count {
             stopStopwatch()
-            
+            let finalAccuracy = accuracyValue ?? 0
             // Optional: show "Well done!" message or stats popup
             
-            if !isfromAiDictationVC && !isfromDictationVC2ndIndex {
+            if !isfromAiDictationVC && !isfromDictationVC2ndIndex && !isfromDictationVC3rdIndex {
                 // Only real exercises get saved
                 exercise?.isCompleted = true
-                let stats = ExerciseStats(wpm: wpmValue ?? 0, cpm: cpmValue ?? 0,
-                                          time: Int(elapsedTime), accuracy: accuracyValue ?? 0)
+                let stats = ExerciseStats(wpm: wpmValue ?? 0,
+                                          cpm: cpmValue ?? 0,
+                                          time: Int(elapsedTime),
+                                          accuracy: accuracyValue ?? 0)
                 exercise?.exerciseStats = stats
                 DataManager.shared.saveData()
+                
+                if finalAccuracy >= 80 {
+                            showSuccessAndNextExerciseAlert()
+                        } else {
+                            showRetryEncouragementAlert()
+                        }
             }
         }
     }
+
+    private func showRetryEncouragementAlert() {
+        let alertVC = PractiveAlertView(nibName: "PractiveAlertView", bundle: nil)
+            
+        alertVC.isblow80 = true
+            alertVC.onNext = { [weak self] in
+                self?.resetTypingStateFully()
+                self?.updateTextDisplay()
+            }
+            
+            alertVC.onExit = { [weak self] in
+                self?.removeChildFromNavigation()
+            }
+            
+            presentAsSheet(alertVC)
+    }
+
+    private func showSuccessAndNextExerciseAlert() {
+        let alertVC = PractiveAlertView(nibName: "PractiveAlertView", bundle: nil)
+            
+            // Configure closures
+            alertVC.onNext = { [weak self] in
+                self?.goToNextExercise()
+            }
+            
+            alertVC.onExit = { [weak self] in
+                self?.removeChildFromNavigation()
+            }
+            
+            // Present as sheet (recommended — slides down from top)
+            presentAsSheet(alertVC)
+    }
+    
+    private func goToNextExercise() {
+        guard let currentExercise = exercise,
+              let chapters = chapter else {
+            removeChildFromNavigation()
+            return
+        }
+        
+        let currentExerciseId = currentExercise.id  // No 'let' unwrap needed – it's already String
+        
+        // Find the chapter containing this exercise
+        guard let currentChapter = chapters.first(where: { chapter in
+            chapter.lessons.contains { lesson in
+                lesson.exercises.contains { exercise in
+                    exercise.id == currentExerciseId
+                }
+            }
+        }) else {
+            removeChildFromNavigation()
+            return
+        }
+        
+        // Find the lesson containing this exercise
+        guard let lesson = currentChapter.lessons.first(where: { lesson in
+            lesson.exercises.contains { exercise in
+                exercise.id == currentExerciseId
+            }
+        }) else {
+            removeChildFromNavigation()
+            return
+        }
+        
+        // Find current index and check for next exercise
+        guard let currentIndex = lesson.exercises.firstIndex(where: { $0.id == currentExerciseId }),
+              currentIndex + 1 < lesson.exercises.count else {
+            removeChildFromNavigation()
+            return
+        }
+        
+        // Load next exercise
+        let nextExercise = lesson.exercises[currentIndex + 1]
+        
+        // Update current PracticeVC with next exercise
+        self.exercise = nextExercise
+        self.fullText = nextExercise.text
+        self.currentAllowedTags = Set(nextExercise.allowedKeys)
+        self.mainTitle.stringValue = nextExercise.title
+        
+        // Update key states
+        for box in viewArray {
+            if currentAllowedTags.contains(box.button?.tag ?? -1) {
+                box.enable()
+            } else {
+                box.disable()
+            }
+        }
+        
+        // Reset typing progress
+        resetTypingStateFully()
+        updateAllowedKeysHighlight()
+        updateTextDisplay()
+        
+        print("Advanced to next exercise: \(nextExercise.title)")
+    }
+    
     private func updateTextDisplay() {
         let attributedString = NSMutableAttributedString(string: fullText)
         
@@ -373,6 +487,30 @@ class PracticeVC: NSViewController {
             ], range: NSRange(location: currentIndex, length: 1))
         }
         TextField.attributedStringValue = attributedString
+    }
+    
+    private func updateAllowedKeysHighlight() {
+        // Default: dim all keys
+        for box in viewArray {
+            box.alphaValue = 0.3
+        }
+        
+        // In exercise mode: brighten only allowed keys
+        if !(isfromAiDictationVC || isfromDictationVC2ndIndex || isfromDictationVC3rdIndex) {
+            for box in viewArray {
+                if let tag = box.button?.tag,
+                   currentAllowedTags.contains(tag) {
+                    box.alphaValue = 1.0
+                }
+            }
+        } else {
+            // In dictation modes: all keys bright when typing allowed
+            if isTypingAllowed {
+                for box in viewArray {
+                    box.alphaValue = 1.0
+                }
+            }
+        }
     }
     
     private func updateMetrics() {
@@ -438,6 +576,7 @@ class PracticeVC: NSViewController {
         
         updateTextDisplay()
         updateMetrics()
+        updateAllowedKeysHighlight()
     }
     
     private func enableAllKeys() {
@@ -452,8 +591,34 @@ class PracticeVC: NSViewController {
         }
     }
     
+    func registerVoiceRcognizer() {
+        RecordingManager.shared.onSpeechRecognized = { [weak self] result in
+            guard let self = self else { return }
+                
+                // Update the displayed text and fullText
+                TextField.stringValue = result
+                fullText = result
+                
+                // Only apply character limit in Free Dictation mode
+                guard self.isfromDictationVC2ndIndex else { return }
+                
+                // If recognized text reaches 300 characters → automatically stop recording
+                if result.count >= 300 {
+                    RecordingManager.shared.stopSpeechRecognition()
+                    
+                    // Update UI to reflect typing mode
+                    self.dictationBoxLabel.stringValue = "Click start to type..."
+                    self.startTyping.isEnabled = true
+                    
+                    // Optional: show a subtle message
+                    // You can add a temporary label or alert if you want
+                    print("Auto-stopped recording at 300 characters")
+                }
+        }
+    }
     @IBAction func backButton(_ sender: Any?) {
         removeChildFromNavigation()
+        SpeakerManager.shared.stopSpeaking()
     }
     
     @IBAction func btnRestartExcersieAction(_ sender: Any?) {
@@ -488,19 +653,35 @@ class PracticeVC: NSViewController {
                 disableAllKeys()
                 
                 dictationBoxLabel.stringValue = "Speak now..."            }
-        } else {
+        }else if isfromDictationVC3rdIndex {
+            if SpeakerManager.shared.isSpeaking || SpeakerManager.shared.isPaused {
+                SpeakerManager.shared.pauseOrResume()
+            } else {
+                // Start speaking from beginning
+                resetTypingStateFully()           // <--- important: reset timer & progress
+                SpeakerManager.shared.speak(fullText)
+                isTypingAllowed = true
+                enableAllKeys()
+                
+                dictationBox.isHidden = true
+                dictationBoxLabel.stringValue = "Listen and type the text"
+                dictationBoxImage.image = NSImage(systemSymbolName: "headphones", accessibilityDescription: "Listen")
+            }
+        }else {
             guard let exercise = exercise else { return }
             resetTypingStateFully()
             updateTextDisplay()
             print("Exercise restarted!")
         }
         updateSpeakButtons()
+        updateAllowedKeysHighlight()
     }
     
     @IBAction func startButtonAction(_ sender: Any?) {
         if isfromAiDictationVC {
             // Mode 2: Restart speaking from beginning
             resetTypingStateFully()
+            updateAllowedKeysHighlight()
             SpeakerManager.shared.stopSpeaking()
             SpeakerManager.shared.speak(fullText)
             isTypingAllowed = true
@@ -513,69 +694,78 @@ class PracticeVC: NSViewController {
                 isTypingAllowed = true
                 enableAllKeys()
                 dictationBox.isHidden = true
+                updateAllowedKeysHighlight()
             }
+        } else if isfromDictationVC3rdIndex {
+            // Mode 3: User finished recording → start typing
+            resetTypingStateFully()
+            updateAllowedKeysHighlight()
+            SpeakerManager.shared.stopSpeaking()
+            SpeakerManager.shared.speak(fullText)
+            isTypingAllowed = true
+            enableAllKeys()
+            dictationBox.isHidden = true
         }
         
         updateSpeakButtons()
     }
     
     @IBAction func pauseAndPlayButtonAction(_ sender: Any?) {
-        guard isfromAiDictationVC else { return }
+        guard isfromAiDictationVC || isfromDictationVC3rdIndex else { return }
         SpeakerManager.shared.pauseOrResume()
     }
     
+    @IBAction func showStringsToTypeAction(_ sender: Any?) {
+            collectioinViewBox.isHidden.toggle()
+    }
+    
     @IBAction func speedSliderChanged(_ sender: NSSlider) {
-        guard isfromAiDictationVC else { return }
-        let sliderValue = Float(sender.doubleValue)
-        let speedSteps: [(rate: Float, label: String)] = [
-            (0.25, "0.5x"),
-            (0.35, "0.75x"),
-            (0.50, "1.0x"),
-            (0.55, "1.5x"),
-            (0.60, "1.75x"),
-            (0.65, "2.0x")
-        ]
+        guard isfromAiDictationVC || isfromDictationVC3rdIndex else { return }
+            
+            let sliderValue = Float(sender.doubleValue)
+            let speedSteps: [(rate: Float, label: String)] = [
+                (0.25, "0.5x"),
+                (0.35, "0.75x"),
+                (0.50, "1.0x"),
+                (0.55, "1.5x"),
+                (0.60, "1.75x"),
+                (0.65, "2.0x")
+            ]
+            
+            let numSteps = Float(speedSteps.count - 1)
+            let stepIndex = round(sliderValue * numSteps)
+            let index = Int(min(max(stepIndex, 0), numSteps))
+            
+            SpeakerManager.shared.speechSpeed = speedSteps[index].rate
+    }
+}
+
+extension PracticeVC: NSCollectionViewDelegate, NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+        return typingStrings.count
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+        guard let cell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier("LessonCVC"), for: indexPath) as? LessonCVC else { return NSCollectionViewItem() }
+        cell.img.isHidden = true
+        cell.lblTitle?.stringValue = typingStrings[indexPath.item]
+        cell.lblTitle?.font = NSFont.systemFont(ofSize: 16, weight: .medium)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
+        NSSize(width: collectionView.frame.width, height: 50)
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        guard let indexPath = indexPaths.first else { return }
         
-        let numSteps = Float(speedSteps.count - 1)
-        let stepIndex = round(sliderValue * numSteps)
-        let index = Int(min(max(stepIndex, 0), numSteps))
+        let selectedtext = typingStrings[indexPath.item]
+        fullText = selectedtext
+        TextField.stringValue = selectedtext
+        collectioinViewBox.isHidden = true
         
-        SpeakerManager.shared.speechSpeed = speedSteps[index].rate
-        //            let sliderValue = Float(sender.doubleValue) // 0.0 to 1.0
-        //
-        //            // Define realistic, perceptually even steps
-        //            let speedSteps: [(rate: Float, label: String)] = [
-        //                (0.25, "0.5x"),
-        //                (0.35, "0.75x"),
-        //                (0.50, "1.0x"),
-        //                (0.55, "1.5x"),
-        //                (0.60, "1.75x"),
-        //                (0.65, "2.0x")
-        //            ]
-        //
-        //            // Snap to nearest step
-        //            let numSteps = Float(speedSteps.count - 1)
-        //            let stepIndex = round(sliderValue * numSteps)
-        //            let index = Int(min(max(stepIndex, 0), numSteps))
-        //
-        //            let newRate = speedSteps[index].rate
-        //            speechSpeed = newRate
-        //
-        //            // Optional: Update a label to show current speed
-        //            // speedLabel?.stringValue = speedSteps[index].label
-        //
-        //            // Apply change immediately if speaking (by restarting utterance)
-        //            if synthesizer.isSpeaking {
-        //                let wasPaused = isPaused
-        //                synthesizer.stopSpeaking(at: .immediate)
-        //
-        //                // Resume from current text (don't reset typing progress)
-        //                speakText(fromStart: false)
-        //
-        //                if wasPaused {
-        //                    pauseOrResumeSpeech() // re-pause if it was paused
-        //                }
-        //            }
+        collectionView.deselectAll(nil)
     }
 }
 
