@@ -45,7 +45,7 @@ class AiDictationVC: NSCollectionViewItem {
                 textView.textColor = NSColor.systemRed
                 
                 // Disable Start button
-                btnStartBox.alphaValue = 0.5
+                btnStartBox.layer?.opacity = 0.5
                 btnStart.isEnabled = false
             } else {
                 characterCountLabel.stringValue = "\(characterCount)/\(maxCharacters)"
@@ -56,7 +56,7 @@ class AiDictationVC: NSCollectionViewItem {
                 
                 // Enable Start button only if not empty
                 let isEmpty = text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-                btnStartBox.alphaValue = isEmpty ? 0.5 : 1.0
+                btnStartBox.layer?.opacity = isEmpty ? 0.5 : 1.0
                 btnStart.isEnabled = !isEmpty
             }
         }
