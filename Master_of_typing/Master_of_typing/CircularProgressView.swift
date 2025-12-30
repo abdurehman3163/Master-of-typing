@@ -30,6 +30,13 @@ class CircularProgressView: NSView {
         }
     }
     
+    var subText: String = "" {
+        didSet {
+            // Update the sub-text layer when the property changes
+            subTextLayer.string = subText
+        }
+    }
+
     // Configurable appearance
     var trackColor: NSColor = NSColor.whiteColor2
     var progressColor: NSColor = NSColor.appMain
@@ -41,6 +48,8 @@ class CircularProgressView: NSView {
     private let trackLayer = CAShapeLayer()
     private let progressLayer = CAShapeLayer()
     private let textLayer = CATextLayer()
+    private let subTextLayer = CATextLayer()
+
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -76,6 +85,14 @@ class CircularProgressView: NSView {
         textLayer.fontSize = fontSize
         textLayer.foregroundColor = textColor.cgColor
         layer?.addSublayer(textLayer)
+        
+        subTextLayer.alignmentMode = .center
+        subTextLayer.contentsScale = NSScreen.main?.backingScaleFactor ?? 1.0
+        subTextLayer.font = CTFontCreateWithName("Helvetica-Bold" as CFString, fontSize + 2, nil) // Slightly smaller font
+        subTextLayer.fontSize = fontSize + 2
+        subTextLayer.foregroundColor = textColor.cgColor
+        layer?.addSublayer(subTextLayer)
+
     }
     
     override func layout() {
@@ -101,9 +118,13 @@ class CircularProgressView: NSView {
         progressLayer.lineWidth = lineWidth
         
         // Update text position
-        let textRect = CGRect(x: 0, y: bounds.midY - fontSize / 2, width: bounds.width, height: fontSize + 4)
+        let textRect = CGRect(x: 0, y: bounds.midY + fontSize / 2, width: bounds.width, height: fontSize + 4)
         textLayer.frame = textRect
         textLayer.string = String(format: "%.0f%%", progress * 100)
+        
+        let subTextRect = CGRect(x: 0, y: bounds.midY - fontSize / 2, width: bounds.width, height: fontSize + 4)
+        subTextLayer.frame = subTextRect
+        subTextLayer.string = subText // This will be updated dynamically later
     }
     
     private func updateProgressLayer() {

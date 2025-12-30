@@ -43,8 +43,8 @@ class StatsVC: NSViewController {
     }
     
     func updateUI() {
-//        speedProgressView.subtitle = "Current Speed"
-//        accuracyProgressView.subtitle = "Accuracy"
+        speedProgressView.subText = "Current Speed"
+        accuracyProgressView.subText = "Accuracy"
         speedProgressView.progress = Double(dataManager.allStats.averageCPM) / 100.0
         accuracyProgressView.progress = Double(dataManager.allStats.averageAccuracy) / 100.0
         avgSpeedProgressView.doubleValue = Double(dataManager.allStats.averageCPM)
