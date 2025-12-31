@@ -90,38 +90,6 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
-                            <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="WrS-Gd-Jdl">
-                                <rect key="frame" x="0.0" y="0.0" width="1070" height="709"/>
-                                <view key="contentView" id="S7g-g3-y7i">
-                                    <rect key="frame" x="0.0" y="0.0" width="1070" height="709"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cXG-gI-M0E">
-                                            <rect key="frame" x="451" y="261" width="169" height="187"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="187" id="cib-MS-CgX"/>
-                                                <constraint firstAttribute="width" constant="169" id="vZu-dD-05x"/>
-                                            </constraints>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Illustration" id="2Vg-kA-n7y"/>
-                                        </imageView>
-                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xWJ-lO-z9Q">
-                                            <rect key="frame" x="463" y="237" width="144" height="19"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="No Stats Available" id="4nF-3A-lFI">
-                                                <font key="font" metaFont="systemBold" size="16"/>
-                                                <color key="textColor" name="BlackColor"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="xWJ-lO-z9Q" firstAttribute="centerX" secondItem="cXG-gI-M0E" secondAttribute="centerX" id="4s1-Zf-qjz"/>
-                                        <constraint firstItem="cXG-gI-M0E" firstAttribute="centerX" secondItem="S7g-g3-y7i" secondAttribute="centerX" id="Oj6-JE-rGU"/>
-                                        <constraint firstItem="cXG-gI-M0E" firstAttribute="centerY" secondItem="S7g-g3-y7i" secondAttribute="centerY" id="YeG-uE-4IZ"/>
-                                        <constraint firstItem="xWJ-lO-z9Q" firstAttribute="top" secondItem="cXG-gI-M0E" secondAttribute="bottom" constant="5" id="cie-Lm-umi"/>
-                                    </constraints>
-                                </view>
-                                <color key="fillColor" name="WhiteColor"/>
-                            </box>
                             <box wantsLayer="YES" boxType="custom" borderWidth="0.0" cornerRadius="12" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="7DT-Wf-LtU">
                                 <rect key="frame" x="20" y="120" width="1030" height="525"/>
                                 <view key="contentView" id="8an-9C-T4K">
@@ -592,6 +560,38 @@
                                 <shadow key="shadow" blurRadius="10">
                                     <color key="color" name="shadowColor"/>
                                 </shadow>
+                                <color key="fillColor" name="WhiteColor"/>
+                            </box>
+                            <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="WrS-Gd-Jdl">
+                                <rect key="frame" x="0.0" y="0.0" width="1070" height="709"/>
+                                <view key="contentView" id="S7g-g3-y7i">
+                                    <rect key="frame" x="0.0" y="0.0" width="1070" height="709"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cXG-gI-M0E">
+                                            <rect key="frame" x="451" y="261" width="169" height="187"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="187" id="cib-MS-CgX"/>
+                                                <constraint firstAttribute="width" constant="169" id="vZu-dD-05x"/>
+                                            </constraints>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Illustration" id="2Vg-kA-n7y"/>
+                                        </imageView>
+                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xWJ-lO-z9Q">
+                                            <rect key="frame" x="463" y="237" width="144" height="19"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="No Stats Available" id="4nF-3A-lFI">
+                                                <font key="font" metaFont="systemBold" size="16"/>
+                                                <color key="textColor" name="BlackColor"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="xWJ-lO-z9Q" firstAttribute="centerX" secondItem="cXG-gI-M0E" secondAttribute="centerX" id="4s1-Zf-qjz"/>
+                                        <constraint firstItem="cXG-gI-M0E" firstAttribute="centerX" secondItem="S7g-g3-y7i" secondAttribute="centerX" id="Oj6-JE-rGU"/>
+                                        <constraint firstItem="cXG-gI-M0E" firstAttribute="centerY" secondItem="S7g-g3-y7i" secondAttribute="centerY" id="YeG-uE-4IZ"/>
+                                        <constraint firstItem="xWJ-lO-z9Q" firstAttribute="top" secondItem="cXG-gI-M0E" secondAttribute="bottom" constant="5" id="cie-Lm-umi"/>
+                                    </constraints>
+                                </view>
                                 <color key="fillColor" name="WhiteColor"/>
                             </box>
                         </subviews>

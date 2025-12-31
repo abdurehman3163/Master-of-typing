@@ -248,17 +248,10 @@ class PracticeVC: NSViewController {
         if isfromAiDictationVC || isfromDictationVC3rdIndex {
             if SpeakerManager.shared.isSpeaking && !SpeakerManager.shared.isPaused {
                 startTyping.title = "Restart"
-                restartOrSpeakButton.image = NSImage(systemSymbolName: "speaker.slash.fill", accessibilityDescription: "Pause")
+                restartOrSpeakButton.image = .imgSpeakerSlash
             } else {
                 startTyping.title = "Start"
-                restartOrSpeakButton.image = NSImage(systemSymbolName: "speaker.fill", accessibilityDescription: "Speak")
-            }
-        } else if isfromDictationVC2ndIndex {
-            if RecordingManager.shared.isRecording {
-                restartOrSpeakButton.image = NSImage(systemSymbolName: "stop.fill", accessibilityDescription: "Stop Recording")
-            } else {
-                restartOrSpeakButton.image = .imgDictationSpeak // or microphone icon
-                startTyping.title = "Start Typing"
+                restartOrSpeakButton.image = .imgSpeaker
             }
         }
     }
@@ -617,6 +610,7 @@ class PracticeVC: NSViewController {
     @IBAction func backButton(_ sender: Any?) {
         removeChildFromNavigation()
         SpeakerManager.shared.stopSpeaking()
+        RecordingManager.shared.stopSpeechRecognition()
     }
     
     @IBAction func btnRestartExcersieAction(_ sender: Any?) {
@@ -641,6 +635,7 @@ class PracticeVC: NSViewController {
             if RecordingManager.shared.isRecording {
                 RecordingManager.shared.stopSpeechRecognition()
                 dictationBoxLabel.stringValue = "Click start to type..."
+                restartOrSpeakButton.image = .imgDictationSpeak
                 startTyping.isEnabled = true
             } else {
                 startTyping.isEnabled = false
@@ -649,8 +644,10 @@ class PracticeVC: NSViewController {
                 dictationBox.isHidden = false
                 isTypingAllowed = false
                 disableAllKeys()
-                
-                dictationBoxLabel.stringValue = "Speak now..."            }
+                restartOrSpeakButton.image = .imgDictationSpeakSlash // or microphone icon
+                startTyping.title = "Start Typing"
+                dictationBoxLabel.stringValue = "Speak now..."
+            }
         }else if isfromDictationVC3rdIndex {
             if SpeakerManager.shared.isSpeaking || SpeakerManager.shared.isPaused {
                 SpeakerManager.shared.pauseOrResume()
@@ -749,6 +746,7 @@ extension PracticeVC: NSCollectionViewDelegate, NSCollectionViewDataSource, NSCo
         cell.img.isHidden = true
         cell.lblTitle?.stringValue = typingStrings[indexPath.item]
         cell.lblTitle?.font = NSFont.systemFont(ofSize: 16, weight: .medium)
+//        cell.lblTitle?.textColor = NSColor.white
         cell.setSeparatorColor(NSColor.border)
         return cell
     }
