@@ -89,7 +89,9 @@ class LessonVC: BaseVC {
         
         let full = progress(for: "Full Keyboard")
         lblFullKeyBoardRow.stringValue = "Full Keyboard (\(full.completed)/\(full.total))"
+        
     }
+    
     private func getChapter(for collectionView: NSCollectionView) -> Chapter? {
         switch collectionView {
         case CollectionViewHR:
@@ -116,7 +118,6 @@ class LessonVC: BaseVC {
         upgradeItem.image = .imgSettingCrown
         upgradeItem.target = self
         upgradeItem.action = #selector(upgradeToProTapped) // Replace with your actual selector
-        menu.addItem(upgradeItem)
 
         // Restore Purchases
         let restoreItem = NSMenuItem()
@@ -124,10 +125,9 @@ class LessonVC: BaseVC {
         restoreItem.image = .imgSettingRestore
         restoreItem.target = self
         restoreItem.action = #selector(restorePurchasesTapped) // Replace with your actual selector
-        menu.addItem(restoreItem)
 
         // Separator (optional, for visual grouping)
-        menu.addItem(NSMenuItem.separator())
+//        menu.addItem(NSMenuItem.separator())
 
         // Rate us
         let rateItem = NSMenuItem()
@@ -135,7 +135,6 @@ class LessonVC: BaseVC {
         rateItem.image = .imgSettingRateUs
         rateItem.target = self
         rateItem.action = #selector(rateAppTapped) // Replace with your actual selector
-        menu.addItem(rateItem)
 
         // Share us
         let shareItem = NSMenuItem()
@@ -143,7 +142,6 @@ class LessonVC: BaseVC {
         shareItem.image = .imgSettingShare
         shareItem.target = self
         shareItem.action = #selector(shareAppTapped) // Replace with your actual selector
-        menu.addItem(shareItem)
 
         // Support
         let supportItem = NSMenuItem()
@@ -151,8 +149,18 @@ class LessonVC: BaseVC {
         supportItem.image = .imgSettingSupport
         supportItem.target = self
         supportItem.action = #selector(supportTapped) // Replace with your actual selector
-        menu.addItem(supportItem)
-
+       
+        if App.isPro {
+            menu.addItem(rateItem)
+            menu.addItem(shareItem)
+            menu.addItem(supportItem)
+        }else {
+            menu.addItem(upgradeItem)
+            menu.addItem(restoreItem)
+            menu.addItem(rateItem)
+            menu.addItem(shareItem)
+            menu.addItem(supportItem)
+        }
         let location = sender.convert(sender.frame.origin, to: sender)
         menu.popUp(positioning: nil, at: location, in: sender.superview)
     }

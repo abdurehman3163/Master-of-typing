@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23727" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23727"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -81,7 +82,6 @@
                 <outlet property="mainTitle" destination="Efj-K7-FbF" id="nRT-2r-Z9Y"/>
                 <outlet property="pauseSpeaking" destination="pht-Dy-cgL" id="oFm-7R-2Aq"/>
                 <outlet property="restartOrSpeakButton" destination="0KV-g1-HiB" id="ONP-Th-h6b"/>
-                <outlet property="showStringsToType" destination="AZe-f1-aWQ" id="x5u-qN-rCS"/>
                 <outlet property="speakerButtons" destination="MED-DA-9N4" id="NqX-lS-OEc"/>
                 <outlet property="speedLabelStack" destination="EYr-WE-q6X" id="lHR-G6-oVE"/>
                 <outlet property="speedSlider" destination="uQX-ky-0Wz" id="Adm-o7-hPn"/>
@@ -104,14 +104,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="1434" height="864"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WJ1-VK-PLw">
+                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WJ1-VK-PLw">
                                 <rect key="frame" x="20" y="824" width="20" height="20"/>
                                 <subviews>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="W7d-eA-S8A">
-                                        <rect key="frame" x="0.0" y="-1" width="20" height="23"/>
-                                        <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="arrow.backward" catalog="system" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="6mz-kx-JY5">
+                                        <rect key="frame" x="0.0" y="-3" width="20.5" height="27"/>
+                                        <buttonCell key="cell" type="bevel" bezelStyle="rounded" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="6mz-kx-JY5">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
+                                            <imageReference key="image" image="arrow.backward" catalog="system" symbolScale="large"/>
                                         </buttonCell>
                                         <color key="contentTintColor" name="BlackColor"/>
                                         <constraints>
@@ -120,20 +121,6 @@
                                         </constraints>
                                         <connections>
                                             <action selector="backButton:" target="-2" id="nyP-qG-ccG"/>
-                                        </connections>
-                                    </button>
-                                    <button hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AZe-f1-aWQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="38" height="20"/>
-                                        <buttonCell key="cell" type="bevel" title="Text" bezelStyle="rounded" image="arrow.backward" catalog="system" alignment="center" imageScaling="proportionallyDown" inset="2" id="B3E-Sk-RKe">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="systemSemibold" size="17"/>
-                                        </buttonCell>
-                                        <color key="contentTintColor" name="BlackColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="DRF-M6-7SQ"/>
-                                        </constraints>
-                                        <connections>
-                                            <action selector="showStringsToTypeAction:" target="-2" id="AyV-2n-pm5"/>
                                         </connections>
                                     </button>
                                     <textField hidden="YES" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Efj-K7-FbF">
@@ -148,10 +135,8 @@
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
-                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
@@ -564,7 +549,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="15" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="~" id="gqA-jA-5Bu">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -572,7 +557,7 @@
                                                                                 <rect key="frame" x="-1" y="0.0" width="12" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="`" id="Rdd-cD-DS3">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -625,7 +610,7 @@
                                                                                 <rect key="frame" x="-1" y="23" width="10" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="!" id="uAy-YK-ZeL">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -633,7 +618,7 @@
                                                                                 <rect key="frame" x="-2" y="0.0" width="12" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="1" id="f6p-ME-dCS">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -686,7 +671,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="19" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="@" id="ktP-0W-A0m">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -694,7 +679,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="14" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="2" id="Noh-P9-NtU">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -747,7 +732,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="15" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="#" id="peR-3t-Ylb">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -755,7 +740,7 @@
                                                                                 <rect key="frame" x="-2" y="0.0" width="15" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="3" id="0vt-nc-pcz">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -808,7 +793,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="15" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="$" id="lRA-fm-dw6">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -816,7 +801,7 @@
                                                                                 <rect key="frame" x="-2" y="0.0" width="15" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="4" id="5o3-IT-p84">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -869,7 +854,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="20" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="%" id="jTb-OR-K3l">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -877,7 +862,7 @@
                                                                                 <rect key="frame" x="1" y="0.0" width="15" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="5" id="w1o-vQ-zsQ">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -930,7 +915,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="15" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="^" id="6At-j2-whN">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -938,7 +923,7 @@
                                                                                 <rect key="frame" x="-2" y="0.0" width="15" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="6" id="3Zd-kH-xeN">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -991,7 +976,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="16" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="&amp;" id="lCq-ht-X1N">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -999,7 +984,7 @@
                                                                                 <rect key="frame" x="-1" y="0.0" width="14" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="7" id="dlg-pz-5HG">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -1052,7 +1037,7 @@
                                                                                 <rect key="frame" x="-1" y="23" width="12" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="*" id="Txg-kO-ho8">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -1060,7 +1045,7 @@
                                                                                 <rect key="frame" x="-2" y="0.0" width="15" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="8" id="Ig9-h7-Ms8">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -1113,7 +1098,7 @@
                                                                                 <rect key="frame" x="0.0" y="23" width="11" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="(" id="OMn-Vw-qIc">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -1121,7 +1106,7 @@
                                                                                 <rect key="frame" x="-2" y="0.0" width="15" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="9" id="rCm-CY-QzJ">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -1174,7 +1159,7 @@
                                                                                 <rect key="frame" x="0.0" y="23" width="11" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title=")" id="Tmd-QO-pOd">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -1182,7 +1167,7 @@
                                                                                 <rect key="frame" x="-2" y="0.0" width="15" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="0" id="dvN-De-sDg">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -1235,7 +1220,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="14" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="_" id="iqi-sI-6Ph">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -1243,7 +1228,7 @@
                                                                                 <rect key="frame" x="-1" y="0.0" width="12" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="-" id="ya7-KC-4Hh">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -1296,7 +1281,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="15" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="+" id="iBX-fx-nJE">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -1304,7 +1289,7 @@
                                                                                 <rect key="frame" x="-2" y="0.0" width="15" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="=" id="6F3-4T-EBo">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -1354,7 +1339,7 @@
                                                                         <rect key="frame" x="37" y="21" width="52" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="delete" id="xeN-3K-jFk">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -1431,7 +1416,7 @@
                                                                         <rect key="frame" x="32" y="21" width="29" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="tab" id="rvS-au-ata">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -1471,7 +1456,7 @@
                                                                         <rect key="frame" x="22" y="21" width="17" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Q" id="8Zu-tk-IYE">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -1511,7 +1496,7 @@
                                                                         <rect key="frame" x="20" y="21" width="20" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="W" id="SLb-Oj-cpk">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -1551,7 +1536,7 @@
                                                                         <rect key="frame" x="23" y="21" width="14" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="E" id="VCK-sp-ZbP">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -1591,7 +1576,7 @@
                                                                         <rect key="frame" x="23" y="21" width="15" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="R" id="EXu-Et-6Zz">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -1631,7 +1616,7 @@
                                                                         <rect key="frame" x="23" y="21" width="15" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="T" id="tfe-oR-epe">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -1671,7 +1656,7 @@
                                                                         <rect key="frame" x="23" y="21" width="15" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Y" id="a0e-Yj-Xjn">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -1711,7 +1696,7 @@
                                                                         <rect key="frame" x="22" y="21" width="16" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="U" id="lqo-Ck-Ytq">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -1751,7 +1736,7 @@
                                                                         <rect key="frame" x="26" y="21" width="9" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="I" id="Cy8-dN-PmG">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -1791,7 +1776,7 @@
                                                                         <rect key="frame" x="22" y="21" width="17" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="O" id="e1b-Lt-V7O">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -1831,7 +1816,7 @@
                                                                         <rect key="frame" x="23" y="21" width="15" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="P" id="DmN-nJ-ber">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -1874,7 +1859,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="11" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="{" id="aiv-cn-3sE">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -1882,7 +1867,7 @@
                                                                                 <rect key="frame" x="-2" y="0.0" width="11" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="[" id="z3T-DH-l42">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -1935,7 +1920,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="11" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="}" id="XGw-RF-1ax">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -1943,7 +1928,7 @@
                                                                                 <rect key="frame" x="-2" y="0.0" width="11" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="]" id="a1c-T9-2qy">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -1996,7 +1981,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="9" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="|" id="5cJ-Z0-ZED">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -2004,7 +1989,7 @@
                                                                                 <rect key="frame" x="-2" y="0.0" width="9" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="\" id="iOw-fT-kPr">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -2091,7 +2076,7 @@
                                                                         <rect key="frame" x="15" y="21" width="76" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="caps lock" id="cif-HX-xoB">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2131,7 +2116,7 @@
                                                                         <rect key="frame" x="22" y="21" width="16" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="A" id="5oa-bN-9vb">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2171,7 +2156,7 @@
                                                                         <rect key="frame" x="23" y="21" width="15" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="S" id="UO9-lU-21Y">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2211,7 +2196,7 @@
                                                                         <rect key="frame" x="22" y="21" width="16" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="D" id="Pjv-12-MWd">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2251,7 +2236,7 @@
                                                                         <rect key="frame" x="23" y="21" width="14" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="F" id="frB-6g-Uwn">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2291,7 +2276,7 @@
                                                                         <rect key="frame" x="22" y="21" width="16" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="G" id="DAQ-II-TFQ">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2331,7 +2316,7 @@
                                                                         <rect key="frame" x="22" y="21" width="16" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="H" id="Xhb-ji-B9R">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2371,7 +2356,7 @@
                                                                         <rect key="frame" x="24" y="21" width="13" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="J" id="Mw4-cl-YuW">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2411,7 +2396,7 @@
                                                                         <rect key="frame" x="23" y="21" width="15" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="K" id="vru-f1-DGb">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2451,7 +2436,7 @@
                                                                         <rect key="frame" x="23" y="21" width="14" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="L" id="Ccx-IK-aus">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2494,7 +2479,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="9" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title=":" id="SDm-aV-lDZ">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -2502,7 +2487,7 @@
                                                                                 <rect key="frame" x="-2" y="0.0" width="9" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title=";" id="Yit-Ea-APF">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -2555,7 +2540,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="13" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="&quot;" id="XuY-1t-Km1">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -2563,7 +2548,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="9" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="'" id="6hn-LV-7Pa">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -2613,7 +2598,7 @@
                                                                         <rect key="frame" x="49" y="21" width="51" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="return" id="fGC-Qu-zot">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2688,7 +2673,7 @@
                                                                         <rect key="frame" x="51" y="21" width="39" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="shift" id="xuN-hx-8Js">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2728,7 +2713,7 @@
                                                                         <rect key="frame" x="23" y="21" width="15" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Z" id="780-aC-7oR">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2768,7 +2753,7 @@
                                                                         <rect key="frame" x="22" y="21" width="16" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="X" id="G8X-Pg-Crj">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2808,7 +2793,7 @@
                                                                         <rect key="frame" x="22" y="21" width="16" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="C" id="7Ev-U9-9SC">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2848,7 +2833,7 @@
                                                                         <rect key="frame" x="23" y="21" width="15" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="V" id="YjF-GA-E3c">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2891,7 +2876,7 @@
                                                                         <rect key="frame" x="23" y="21" width="15" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="B" id="Ktn-dv-PvV">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2931,7 +2916,7 @@
                                                                         <rect key="frame" x="22" y="21" width="16" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="N" id="LYL-E5-6U5">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -2971,7 +2956,7 @@
                                                                         <rect key="frame" x="21" y="21" width="19" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="M" id="rho-GJ-P1P">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -3014,7 +2999,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="15" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="&lt;" id="Sik-MW-wUL">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -3022,7 +3007,7 @@
                                                                                 <rect key="frame" x="1" y="0.0" width="9" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="," id="71I-XS-MW0">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -3075,7 +3060,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="15" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="&gt;" id="H6T-rR-HMz">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -3083,7 +3068,7 @@
                                                                                 <rect key="frame" x="1" y="0.0" width="9" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="." id="u04-xW-0Tw">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -3136,7 +3121,7 @@
                                                                                 <rect key="frame" x="-2" y="23" width="13" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="?" id="tia-jl-1o5">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -3144,7 +3129,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="9" height="19"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="/" id="95h-UC-0IQ">
                                                                                     <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" name="WhiteColor"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -3194,7 +3179,7 @@
                                                                         <rect key="frame" x="72" y="21" width="39" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="shift" id="qzs-PZ-f8c">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -3267,7 +3252,7 @@
                                                                         <rect key="frame" x="20" y="21" width="20" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="fn" id="r3v-iN-rqY">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -3307,7 +3292,7 @@
                                                                         <rect key="frame" x="4" y="21" width="58" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="control" id="BU6-A0-gfi">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -3347,7 +3332,7 @@
                                                                         <rect key="frame" x="6" y="21" width="80" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="command" id="LcZ-F3-2jd">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -3417,7 +3402,7 @@
                                                                         <rect key="frame" x="6" y="21" width="80" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="command" id="EHO-Hb-esN">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -3457,7 +3442,7 @@
                                                                         <rect key="frame" x="4" y="21" width="53" height="19"/>
                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="option" id="t2T-ds-Krf">
                                                                             <font key="font" metaFont="systemSemibold" size="16"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="WhiteColor"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
@@ -3500,6 +3485,7 @@
                                                                             <constraint firstAttribute="height" constant="16" id="mRq-ql-g1y"/>
                                                                         </constraints>
                                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="imgArrowLeft" id="38x-9w-184"/>
+                                                                        <color key="contentTintColor" name="WhiteColor"/>
                                                                     </imageView>
                                                                     <button tag="123" translatesAutoresizingMaskIntoConstraints="NO" id="Szo-T9-QeA">
                                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -3549,6 +3535,7 @@
                                                                                                 <constraint firstAttribute="width" constant="16" id="rXp-JQ-Iej"/>
                                                                                             </constraints>
                                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="imgArrowUp" id="rnA-5J-vTI"/>
+                                                                                            <color key="contentTintColor" name="WhiteColor"/>
                                                                                         </imageView>
                                                                                         <button tag="126" translatesAutoresizingMaskIntoConstraints="NO" id="gJB-gV-2Ge">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="25"/>
@@ -3589,6 +3576,7 @@
                                                                                                 <constraint firstAttribute="height" constant="16" id="bD8-ya-DDA"/>
                                                                                             </constraints>
                                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="imgArrowDown" id="KdB-lb-UcM"/>
+                                                                                            <color key="contentTintColor" name="WhiteColor"/>
                                                                                         </imageView>
                                                                                         <button tag="125" translatesAutoresizingMaskIntoConstraints="NO" id="Ypk-7O-02H">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="25"/>
@@ -3647,6 +3635,7 @@
                                                                             <constraint firstAttribute="height" constant="16" id="Iqu-De-Oj7"/>
                                                                         </constraints>
                                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="imgArrowRight" id="v9Z-5E-om7"/>
+                                                                        <color key="contentTintColor" name="WhiteColor"/>
                                                                     </imageView>
                                                                     <button tag="124" translatesAutoresizingMaskIntoConstraints="NO" id="WXA-mX-gNJ">
                                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -3843,7 +3832,7 @@
                                 </constraints>
                             </box>
                             <box hidden="YES" boxType="custom" borderWidth="0.0" cornerRadius="12" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="sqS-WN-dEm">
-                                <rect key="frame" x="198" y="132" width="1038" height="600"/>
+                                <rect key="frame" x="198" y="-468" width="1038" height="600"/>
                                 <view key="contentView" id="8zA-HG-icx">
                                     <rect key="frame" x="0.0" y="0.0" width="1038" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3987,7 +3976,7 @@
                             <constraint firstItem="sqS-WN-dEm" firstAttribute="centerX" secondItem="DQV-hD-kSx" secondAttribute="centerX" id="ZJI-l3-yo2"/>
                             <constraint firstItem="uQX-ky-0Wz" firstAttribute="centerY" secondItem="EnK-ql-R6h" secondAttribute="centerY" id="cmJ-99-TiM"/>
                             <constraint firstItem="EnK-ql-R6h" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DQV-hD-kSx" secondAttribute="top" constant="20" id="dQx-DP-FEM"/>
-                            <constraint firstItem="sqS-WN-dEm" firstAttribute="centerY" secondItem="DQV-hD-kSx" secondAttribute="centerY" id="ds8-5l-Vkx"/>
+                            <constraint firstItem="sqS-WN-dEm" firstAttribute="centerY" secondItem="DQV-hD-kSx" secondAttribute="centerY" constant="600" id="ds8-5l-Vkx"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aHU-Fh-Dhp" secondAttribute="trailing" constant="20" id="jKV-yd-ScQ"/>
                             <constraint firstItem="EYr-WE-q6X" firstAttribute="top" secondItem="uQX-ky-0Wz" secondAttribute="bottom" constant="5" id="q3U-hf-m1K"/>
                             <constraint firstItem="EnK-ql-R6h" firstAttribute="trailing" secondItem="aHU-Fh-Dhp" secondAttribute="trailing" id="q5p-Gl-j4A"/>
@@ -4007,7 +3996,7 @@
         </customView>
     </objects>
     <resources>
-        <image name="arrow.backward" catalog="system" width="15" height="12"/>
+        <image name="arrow.backward" catalog="system" width="20" height="16"/>
         <image name="imgAccuracy" width="60" height="60"/>
         <image name="imgArrowDown" width="16" height="16"/>
         <image name="imgArrowLeft" width="16" height="16"/>

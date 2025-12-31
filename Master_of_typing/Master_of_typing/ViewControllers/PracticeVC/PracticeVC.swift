@@ -490,7 +490,7 @@ class PracticeVC: NSViewController {
     private func updateAllowedKeysHighlight() {
         // Default: dim all keys
         for box in viewArray {
-            box.alphaValue = 0.3
+            box.layer?.opacity = 0.3
         }
         
         // In exercise mode: brighten only allowed keys
@@ -498,14 +498,14 @@ class PracticeVC: NSViewController {
             for box in viewArray {
                 if let tag = box.button?.tag,
                    currentAllowedTags.contains(tag) {
-                    box.alphaValue = 1.0
+                    box.layer?.opacity = 1.0
                 }
             }
         } else {
             // In dictation modes: all keys bright when typing allowed
             if isTypingAllowed {
                 for box in viewArray {
-                    box.alphaValue = 1.0
+                    box.layer?.opacity = 1.0
                 }
             }
         }
