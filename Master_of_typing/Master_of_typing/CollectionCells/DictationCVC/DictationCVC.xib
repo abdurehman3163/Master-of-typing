@@ -91,12 +91,45 @@
                                     <action selector="btnMenuAction:" target="VUt-az-FfM" id="IHq-Tl-dik"/>
                                 </connections>
                             </button>
+                            <box hidden="YES" boxType="custom" borderWidth="0.0" cornerRadius="6" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="brO-JT-SbS">
+                                <rect key="frame" x="401" y="10" width="36" height="36"/>
+                                <view key="contentView" id="EuJ-ve-cXI">
+                                    <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="qeE-Nw-4Vi">
+                                            <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                                            <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="imgSpeaker" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="I4X-r7-QMP">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <color key="contentTintColor" name="BlackColor"/>
+                                            <connections>
+                                                <action selector="btnSpeakerAction:" target="VUt-az-FfM" id="uqG-AX-rNq"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qeE-Nw-4Vi" firstAttribute="top" secondItem="EuJ-ve-cXI" secondAttribute="top" id="5TF-Ph-ch1"/>
+                                        <constraint firstAttribute="trailing" secondItem="qeE-Nw-4Vi" secondAttribute="trailing" id="5Wi-RQ-JZI"/>
+                                        <constraint firstItem="qeE-Nw-4Vi" firstAttribute="leading" secondItem="EuJ-ve-cXI" secondAttribute="leading" id="OUU-9M-ava"/>
+                                        <constraint firstAttribute="bottom" secondItem="qeE-Nw-4Vi" secondAttribute="bottom" id="ehk-dc-NXq"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="YZX-ST-mKj"/>
+                                    <constraint firstAttribute="height" constant="36" id="bJx-LJ-pWl"/>
+                                </constraints>
+                                <color key="fillColor" name="LightGrayColor"/>
+                            </box>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="brO-JT-SbS" firstAttribute="centerY" secondItem="EAp-MH-rnw" secondAttribute="centerY" id="5aw-e2-fLs"/>
                             <constraint firstAttribute="trailing" secondItem="EAp-MH-rnw" secondAttribute="trailing" constant="12" id="Pdk-9U-VVL"/>
                             <constraint firstItem="EAp-MH-rnw" firstAttribute="centerY" secondItem="OeU-La-vhK" secondAttribute="centerY" id="SYj-GG-e0S"/>
                             <constraint firstItem="I7q-90-1hX" firstAttribute="leading" secondItem="OeU-La-vhK" secondAttribute="leading" constant="12" id="sOb-ge-I95"/>
                             <constraint firstItem="I7q-90-1hX" firstAttribute="centerY" secondItem="OeU-La-vhK" secondAttribute="centerY" id="usK-or-CTV"/>
+                            <constraint firstItem="EAp-MH-rnw" firstAttribute="leading" secondItem="brO-JT-SbS" secondAttribute="trailing" constant="5" id="xPF-ti-git"/>
                         </constraints>
                     </view>
                     <color key="borderColor" name="BorderColor"/>
@@ -116,6 +149,8 @@
                 <outlet property="boxLabel" destination="x5s-uq-etG" id="3d7-vO-e4P"/>
                 <outlet property="button" destination="EAp-MH-rnw" id="NJN-RB-vv6"/>
                 <outlet property="image" destination="C0m-o2-ngu" id="L8X-Vc-lcq"/>
+                <outlet property="speakerBox" destination="brO-JT-SbS" id="JkO-Iv-wJ7"/>
+                <outlet property="speakerButton" destination="qeE-Nw-4Vi" id="CQ9-El-G3x"/>
                 <outlet property="titleLabel" destination="8qJ-9P-dF7" id="O56-u0-W0o"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="PcF-FQ-EJG"/>
                 <outlet property="weidth" destination="Yc5-qk-80S" id="5ks-g5-2pD"/>
@@ -124,11 +159,15 @@
     </objects>
     <resources>
         <image name="arrow.forward" catalog="system" width="15" height="12"/>
+        <image name="imgSpeaker" width="24" height="24"/>
         <namedColor name="BlackColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BorderColor">
             <color red="0.68235294117647061" green="0.70196078431372544" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightGrayColor">
+            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="WhiteColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

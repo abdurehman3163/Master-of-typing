@@ -13,9 +13,12 @@ class DictationCVC: NSCollectionViewItem {
     @IBOutlet weak var titleLabel: NSTextField!
     @IBOutlet weak var image: NSImageView!
     @IBOutlet weak var button: NSButton!
+    @IBOutlet weak var speakerButton: NSButton!
+    @IBOutlet weak var speakerBox: NSBox!
     @IBOutlet weak var boxLabel: NSBox!
     @IBOutlet weak var weidth: NSLayoutConstraint!
     
+    var VoiceType: String = "en-US"
     var isVoiceType: Bool = false
     var isDictationSpeed: Bool = false
     weak var speechDelegate: SpeechSpeedDelegate?
@@ -23,6 +26,7 @@ class DictationCVC: NSCollectionViewItem {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        SpeakerManager.shared.delegate = self
     }
     
     @IBAction func btnMenuAction(_ sender: NSButton){
@@ -38,6 +42,10 @@ class DictationCVC: NSCollectionViewItem {
     menu.popUp(positioning: nil, at: NSPoint(x: 0, y: sender.frame.height + 4), in: sender)
 }
 
+    @IBAction func btnSpeakerAction(_ sender: NSButton){
+        SpeakerManager.shared.speak("this is my voice", fromStart: true)
+}
+    
 private func setupVoiceMenu(into menu: NSMenu) {
         // Sort voices: Enhanced first, then by language, then name
     let englishVoices = allVoices.filter { $0.language.hasPrefix("en-") }
@@ -86,6 +94,7 @@ private func setupSpeedMenu(into menu: NSMenu) {
 @objc private func voiceSelected(_ sender: NSMenuItem) {
         guard let voiceID = sender.representedObject as? String else { return }
         speechDelegate?.didChangeVoice(to: voiceID)
+    SpeakerManager.shared.voiceIdentifier = voiceID
         button.title = sender.title.replacingOccurrences(of: " ⭐", with: "") // Clean title
     }
     

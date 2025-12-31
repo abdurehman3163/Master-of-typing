@@ -100,6 +100,7 @@ extension AiDictationVC: NSCollectionViewDataSource, NSCollectionViewDelegate, N
         cell.weidth.constant = 102
         cell.speechDelegate = self
         if indexPath.item == 0 {
+            cell.speakerBox.isHidden = false
             cell.isVoiceType = true
             cell.button.title = "Aaron"
         }else if indexPath.item == 1 {

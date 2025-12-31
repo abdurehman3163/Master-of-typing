@@ -104,17 +104,17 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="l9v-U7-4Vm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1011" height="236"/>
+                                                        <rect key="frame" x="5" y="5" width="1001" height="226"/>
                                                         <clipView key="contentView" drawsBackground="NO" id="uwV-gp-Qs9">
-                                                            <rect key="frame" x="0.0" y="0.0" width="1011" height="236"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="1001" height="226"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textView wantsLayer="YES" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="6B0-MG-zmw">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="1011" height="236"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="1001" height="226"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <color key="textColor" name="BlackColor"/>
-                                                                    <color key="backgroundColor" name="WhiteColor1"/>
-                                                                    <size key="minSize" width="1011" height="236"/>
+                                                                    <color key="backgroundColor" name="WhiteColor2"/>
+                                                                    <size key="minSize" width="1001" height="226"/>
                                                                     <size key="maxSize" width="1051" height="10000000"/>
                                                                 </textView>
                                                             </subviews>
@@ -125,16 +125,16 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </scroller>
                                                         <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="yuq-VT-9kY">
-                                                            <rect key="frame" x="995" y="0.0" width="16" height="236"/>
+                                                            <rect key="frame" x="985" y="0.0" width="16" height="226"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </scroller>
                                                     </scrollView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="l9v-U7-4Vm" firstAttribute="leading" secondItem="E0Q-do-qbK" secondAttribute="leading" id="CDa-Qk-GKe"/>
-                                                    <constraint firstAttribute="bottom" secondItem="l9v-U7-4Vm" secondAttribute="bottom" id="Dcf-sz-Weq"/>
-                                                    <constraint firstItem="l9v-U7-4Vm" firstAttribute="top" secondItem="E0Q-do-qbK" secondAttribute="top" id="IWL-jy-vfv"/>
-                                                    <constraint firstAttribute="trailing" secondItem="l9v-U7-4Vm" secondAttribute="trailing" id="OnC-Eu-UMN"/>
+                                                    <constraint firstItem="l9v-U7-4Vm" firstAttribute="leading" secondItem="E0Q-do-qbK" secondAttribute="leading" constant="5" id="BWx-MH-04V"/>
+                                                    <constraint firstAttribute="trailing" secondItem="l9v-U7-4Vm" secondAttribute="trailing" constant="5" id="WHx-C2-a9B"/>
+                                                    <constraint firstItem="l9v-U7-4Vm" firstAttribute="top" secondItem="E0Q-do-qbK" secondAttribute="top" constant="5" id="puC-iR-npz"/>
+                                                    <constraint firstAttribute="bottom" secondItem="l9v-U7-4Vm" secondAttribute="bottom" constant="5" id="sVG-DJ-Dqa"/>
                                                 </constraints>
                                             </view>
                                             <constraints>
@@ -259,9 +259,6 @@
         </namedColor>
         <namedColor name="WhiteColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="WhiteColor1">
-            <color red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="WhiteColor2">
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
