@@ -38,6 +38,9 @@ protocol SpeechSpeedDelegate: AnyObject {
     func didChangeSpeechSpeed(to multiplier: Float)   // 0.5 – 2.0
 }
 
+protocol LessonCompleted: AnyObject{
+    func lessonCompleted()
+}
 //protocol UserInteractionEnable: AnyObject{
 //    func enableInteraction()
 //    func disableInteraction()

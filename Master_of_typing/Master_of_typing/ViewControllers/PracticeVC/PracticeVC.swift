@@ -88,12 +88,14 @@ class PracticeVC: NSViewController {
     @IBOutlet weak var pauseSpeaking: NSButton!
     @IBOutlet weak var speedLabelStack: NSStackView!
     @IBOutlet weak var speedSlider: NSSlider!
+    @IBOutlet weak var restartOrSpeakBox: NSBox!
     @IBOutlet weak var dictationBox: NSBox!
     @IBOutlet weak var dictationBoxImage: NSImageView!
     @IBOutlet weak var dictationBoxLabel: NSTextField!
     @IBOutlet weak var speakerButtons: NSStackView!
     
     var chapter: [Chapter]?
+    var lesson: Lesson?
     var exercise: Exercise?
     var viewArray: [ButtonBox] = []
     var allowedKeys: [Int] = []
@@ -125,6 +127,7 @@ class PracticeVC: NSViewController {
     private var fullText: String = ""  // The original text to type
     private var isTypingAllowed = false  // Controls both input and highlighting
     
+    weak var delegate: LessonCompleted?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -208,6 +211,9 @@ class PracticeVC: NSViewController {
             dictationBoxLabel.stringValue = "Choose the text you want to type and click start"
             restartOrSpeakButton.image = .imgSpeaker // or system symbol
             isTypingAllowed = false
+            speedLabelStack.isHidden = true
+            speedSlider.isHidden = true
+            restartOrSpeakBox.isHidden = true
             
         } else {
             isTypingAllowed = true
@@ -244,6 +250,11 @@ class PracticeVC: NSViewController {
         SpeakerManager.shared.voiceIdentifier = VoiceType
     }
     
+    override func viewDidLayout() {
+        super.viewDidLayout()
+        textCollectionView .collectionViewLayout?.invalidateLayout()
+    }
+
     private func updateSpeakButtons() {
         if isfromAiDictationVC || isfromDictationVC3rdIndex {
             if SpeakerManager.shared.isSpeaking && !SpeakerManager.shared.isPaused {
@@ -334,6 +345,9 @@ class PracticeVC: NSViewController {
             if !isfromAiDictationVC && !isfromDictationVC2ndIndex && !isfromDictationVC3rdIndex {
                 // Only real exercises get saved
                 exercise?.isCompleted = true
+                if lesson?.isCompleted ?? false {
+                    delegate?.lessonCompleted()
+                }
                 let stats = ExerciseStats(wpm: wpmValue ?? 0,
                                           cpm: cpmValue ?? 0,
                                           time: Int(elapsedTime),
@@ -380,66 +394,41 @@ class PracticeVC: NSViewController {
     
     private func goToNextExercise() {
         guard let currentExercise = exercise,
-              let chapters = chapter else {
+              let lesson = lesson,
+              let currentIndex = lesson.exercises.firstIndex(where: { $0.id == currentExercise.id }) else {
             removeChildFromNavigation()
             return
         }
-        
-        let currentExerciseId = currentExercise.id  // No 'let' unwrap needed – it's already String
-        
-        // Find the chapter containing this exercise
-        guard let currentChapter = chapters.first(where: { chapter in
-            chapter.lessons.contains { lesson in
-                lesson.exercises.contains { exercise in
-                    exercise.id == currentExerciseId
+
+        // Check if there's a next exercise in the SAME lesson
+        if currentIndex + 1 < lesson.exercises.count {
+            let nextExercise = lesson.exercises[currentIndex + 1]
+
+            // Update PracticeVC with the next exercise
+            self.exercise = nextExercise
+            self.fullText = nextExercise.text
+            self.currentAllowedTags = Set(nextExercise.allowedKeys)
+            self.mainTitle.stringValue = nextExercise.title
+
+            // Update keyboard highlighting
+            for box in viewArray {
+                if currentAllowedTags.contains(box.button?.tag ?? -1) {
+                    box.enable()
+                } else {
+                    box.disable()
                 }
             }
-        }) else {
+
+            // Reset typing state
+            resetTypingStateFully()
+            updateAllowedKeysHighlight()
+            updateTextDisplay()
+
+            print("Advanced to next exercise: \(nextExercise.title)")
+        } else {
+            // End of lesson — go back or show completion
             removeChildFromNavigation()
-            return
         }
-        
-        // Find the lesson containing this exercise
-        guard let lesson = currentChapter.lessons.first(where: { lesson in
-            lesson.exercises.contains { exercise in
-                exercise.id == currentExerciseId
-            }
-        }) else {
-            removeChildFromNavigation()
-            return
-        }
-        
-        // Find current index and check for next exercise
-        guard let currentIndex = lesson.exercises.firstIndex(where: { $0.id == currentExerciseId }),
-              currentIndex + 1 < lesson.exercises.count else {
-            removeChildFromNavigation()
-            return
-        }
-        
-        // Load next exercise
-        let nextExercise = lesson.exercises[currentIndex + 1]
-        
-        // Update current PracticeVC with next exercise
-        self.exercise = nextExercise
-        self.fullText = nextExercise.text
-        self.currentAllowedTags = Set(nextExercise.allowedKeys)
-        self.mainTitle.stringValue = nextExercise.title
-        
-        // Update key states
-        for box in viewArray {
-            if currentAllowedTags.contains(box.button?.tag ?? -1) {
-                box.enable()
-            } else {
-                box.disable()
-            }
-        }
-        
-        // Reset typing progress
-        resetTypingStateFully()
-        updateAllowedKeysHighlight()
-        updateTextDisplay()
-        
-        print("Advanced to next exercise: \(nextExercise.title)")
     }
     
     private func updateTextDisplay() {
@@ -713,6 +702,10 @@ class PracticeVC: NSViewController {
     
     @IBAction func showStringsToTypeAction(_ sender: Any?) {
             collectioinViewBox.isHidden.toggle()
+        speedLabelStack.isHidden.toggle()
+        speedSlider.isHidden.toggle()
+        restartOrSpeakBox.isHidden.toggle()
+
     }
     
     @IBAction func speedSliderChanged(_ sender: NSSlider) {
@@ -762,8 +755,11 @@ extension PracticeVC: NSCollectionViewDelegate, NSCollectionViewDataSource, NSCo
         fullText = selectedtext
         TextField.stringValue = selectedtext
         collectioinViewBox.isHidden = true
-        
-        collectionView.deselectAll(nil)
+        speedLabelStack.isHidden = false
+        speedSlider.isHidden = false
+        restartOrSpeakBox.isHidden = false
+
+        collectionView.deselectAll(indexPath)
     }
     
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

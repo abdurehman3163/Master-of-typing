@@ -90,6 +90,7 @@ class LessonVC: BaseVC {
         let full = progress(for: "Full Keyboard")
         lblFullKeyBoardRow.stringValue = "Full Keyboard (\(full.completed)/\(full.total))"
         
+        [CollectionViewHR, CollectionViewTR, CollectionViewBR, CollectionViewFKR, CollectionViewDR].forEach { $0?.reloadData() }
     }
     
     private func getChapter(for collectionView: NSCollectionView) -> Chapter? {
@@ -233,12 +234,13 @@ extension LessonVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSColl
             cell.img.contentTintColor = .differentRow
         }
         
-        if isFirstLesson || isProUser {
-                cell.img.isHidden = true  // First lesson always unlocked + Pro users see no locks
-            } else {
-                cell.img.isHidden = false
-                cell.img.image = .imgLessonLock
-            }
+        if lesson.isCompleted {
+            cell.img.image = NSImage.imgLessonDone
+            cell.img.isHidden = false
+        } else {
+            cell.img.image = .imgLessonLock
+            cell.img.isHidden = isFirstLesson || isProUser
+        }
         
         return cell
     }
@@ -275,9 +277,17 @@ extension LessonVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSColl
         vc.chapter = dataManager.chapters  // Pass full chapters array
         vc.chapterTitle = chapter.title
         vc.isFromLesson = true
-        
+        vc.delegate = self
         addChildToNavigation(vc)
         pushedViewController = vc
         collectionView.deselectItems(at: indexPaths)
     }
+}
+
+extension LessonVC: LessonCompleted {
+    func lessonCompleted() {
+        updateRowLabels()
+    }
+    
+    
 }

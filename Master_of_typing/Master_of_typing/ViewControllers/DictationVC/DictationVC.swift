@@ -8,7 +8,11 @@
 import Cocoa
 
 
-class DictationVC: BaseVC {
+class DictationVC: BaseVC, LessonCompleted {
+    func lessonCompleted() {
+        delegate?.lessonCompleted()
+    }
+    
     
     @IBOutlet weak var dictationCollectionView: NSCollectionView!
     @IBOutlet weak var mainTitle: NSTextField!
@@ -30,6 +34,8 @@ class DictationVC: BaseVC {
     var isFromTest: Bool = false
     private let dataManager = DataManager.shared
     private var singleChapter: Chapter?
+
+    weak var delegate: LessonCompleted?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,7 +153,8 @@ extension DictationVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSC
                 vc.exercise = data
                 vc.chapter = chapter
                 //                vc.chapterTitle = chapterTitle
-                //                vc.lesson = lesson
+                vc.lesson = lesson
+                vc.delegate = self
                 addChildToNavigation(vc)
                 pushedViewController = vc
             } else {
