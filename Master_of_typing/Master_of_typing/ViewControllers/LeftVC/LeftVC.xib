@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="LeftVC" customModule="Master_of_typing" customModuleProvider="target">
             <connections>
                 <outlet property="leftCollectionView" destination="m2u-Ub-f7k" id="x30-FH-vpR"/>
+                <outlet property="proBox" destination="no0-Rd-r9B" id="HQS-LR-ye2"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>

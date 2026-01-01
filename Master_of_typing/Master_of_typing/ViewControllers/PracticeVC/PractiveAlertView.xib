@@ -14,6 +14,7 @@
                 <outlet property="alertImage" destination="oSv-xO-gdq" id="9sx-T5-fYR"/>
                 <outlet property="exitBox" destination="m6w-Dl-rHk" id="vKJ-bz-dwN"/>
                 <outlet property="exitBtn" destination="fYT-gr-2HZ" id="nDb-bT-dTn"/>
+                <outlet property="nextBox" destination="1Vz-hm-5iV" id="2Gb-8n-pqF"/>
                 <outlet property="nextBtn" destination="5zX-zq-apb" id="3Kc-wt-caW"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>

@@ -11,6 +11,7 @@ class LeftVC: NSViewController {
 
     @IBOutlet weak var leftCollectionView: NSCollectionView!
     @IBOutlet weak var proButton: NSButton!
+    @IBOutlet weak var proBox: NSBox!
 
     weak var delegate: GetSelectedViewControllerProtocol?
     var selectedIndex: IndexPath = IndexPath(item: 0, section: 0)
@@ -25,6 +26,7 @@ class LeftVC: NSViewController {
         super.viewDidLoad()
         leftCollectionView.delegate = self
         leftCollectionView.dataSource = self
+        proBox.isHidden = App.isPro
     }
     
     @IBAction func proButtonAction(_ sender: Any) {

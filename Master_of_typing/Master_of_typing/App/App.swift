@@ -12,7 +12,7 @@ class App {
     private static let defaults: UserDefaults = .standard
     
     static var isPro: Bool {
-        get {return true
+        get {/*return true*/
             defaults.bool(forKey: "isPremium") }
         set {
             defaults.set(newValue, forKey: "isPremium")

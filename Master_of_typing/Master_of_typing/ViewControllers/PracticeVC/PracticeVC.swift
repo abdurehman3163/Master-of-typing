@@ -109,6 +109,7 @@ class PracticeVC: NSViewController {
     var isfromDictationVC3rdIndex: Bool = false
     var isFromPractice: Bool = false
     var isFromTest: Bool = false
+    var isLessonCompleted: Bool = false
     var selectedIndex: IndexPath?
 
     var speechSpeed: Float = 0.5
@@ -254,7 +255,7 @@ class PracticeVC: NSViewController {
         SpeakerManager.shared.voiceIdentifier = VoiceType
 
         if isFromTest{
-            timer.stringValue = "00.15"
+            timer.stringValue = "15.00"
         }else {
             timer.stringValue = "00.00"
         }
@@ -390,9 +391,31 @@ class PracticeVC: NSViewController {
             
             presentAsSheet(alertVC)
     }
+    
+    private func showTimeUpRetryAlert() {
+        let alertVC = PractiveAlertView(nibName: "PractiveAlertView", bundle: nil)
+        
+        alertVC.isblow80 = true
+        alertVC.isFromTest = true
+        alertVC.onNext = { [weak self] in
+            self?.resetTypingStateFully()
+            self?.updateTextDisplay()
+            // Timer will restart when user types first key again
+        }
+        
+        alertVC.onExit = { [weak self] in
+            self?.removeChildFromNavigation()
+        }
+        
+        presentAsSheet(alertVC)
+    }
 
     private func showSuccessAndNextExerciseAlert() {
         let alertVC = PractiveAlertView(nibName: "PractiveAlertView", bundle: nil)
+        if lesson?.isCompleted ?? false {
+            alertVC.isLessonCompleted = true
+        }
+
             alertVC.onNext = { [weak self] in
                 self?.goToNextExercise()
             }
@@ -512,7 +535,7 @@ class PracticeVC: NSViewController {
             wpm.stringValue = "0"
             accuracy.stringValue = "0 %"
             if isFromTest{
-                timer.stringValue = "00.15"
+                timer.stringValue = "15.00"
             }else {
                 timer.stringValue = "00.00"
             }
@@ -535,40 +558,53 @@ class PracticeVC: NSViewController {
     private func updateTimerDisplay() {
         guard let timerLabel = timer else { return }  // Your @IBOutlet weak var timer: NSTextField!
         
-        let minutes = Int(elapsedTime) / 60
-        let seconds = Int(elapsedTime) % 60
-        let hundredths = Int((elapsedTime * 100).truncatingRemainder(dividingBy: 100))
-        timer.stringValue = String(format: "%02d.%02d", minutes, seconds)
+        if isFromTest {
+            // Countdown mode: show remaining time (15.00 → 00.00)
+            let remaining = max(elapsedTime, 0.0)
+            let seconds = Int(remaining)
+            let hundredths = Int((remaining * 100).truncatingRemainder(dividingBy: 100))
+            timer.stringValue = String(format: "%02d.%02d", seconds, hundredths)
+            
+            // Visual warning when under 5 seconds
+//            if remaining <= 5.0 && remaining > 0 {
+//                timer.textColor = .systemRed
+//            } else if remaining == 0 {
+//                timer.textColor = .systemRed
+//            } else {
+//                timer.textColor = .labelColor
+//            }
+        }else {
+            let minutes = Int(elapsedTime) / 60
+            let seconds = Int(elapsedTime) % 60
+            let hundredths = Int((elapsedTime * 100).truncatingRemainder(dividingBy: 100))
+            timer.stringValue = String(format: "%02d.%02d", minutes, seconds)
+        }
     }
-    
     private func startStopwatch() {
         if isFromTest {
-            elapsedTime = 15.0
-                
+                // TEST MODE: 15-second countdown
+                elapsedTime = 15.0
                 updateTimerDisplay()
                 
-                // Invalidate any existing timer
                 stopwatchTimer?.invalidate()
-                
                 stopwatchTimer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] _ in
                     guard let self = self else { return }
                     
-                    // Decrease time
                     self.elapsedTime -= 0.05
                     
-                    // Update display
-                    self.updateTimerDisplay()
-                    
-                    // Check if time is up
                     if self.elapsedTime <= 0.0 {
                         self.elapsedTime = 0.0
                         self.updateTimerDisplay()
                         self.stopStopwatch()
                         
+                        // TIME'S UP → Show retry alert
+                        self.showTimeUpRetryAlert()
+                    } else {
+                        self.updateTimerDisplay()
                     }
                 }
-        }else{
-            elapsedTime = 0.0
+            } else {
+                elapsedTime = 0.0
             updateTimerDisplay()
             
             stopwatchTimer?.invalidate()
@@ -596,16 +632,19 @@ class PracticeVC: NSViewController {
         cpm.stringValue = "0"
         wpm.stringValue = "0"
         accuracy.stringValue = "0 %"
-        if isFromTest{
-            timer.stringValue = "00.15"
-        }else {
-            timer.stringValue = "00.00"
-        }
-        
+        if isFromTest {
+                elapsedTime = 15.0
+                timer.stringValue = "15.00"
+            } else {
+                elapsedTime = 0.0
+                timer.stringValue = "00:00.00"
+            }
         updateTextDisplay()
         updateMetrics()
         updateAllowedKeysHighlight()
     }
+    
+    
     
     private func enableAllKeys() {
         for box in viewArray {
@@ -643,6 +682,8 @@ class PracticeVC: NSViewController {
                     print("Auto-stopped recording at 300 characters")
                 }
         }
+        
+        
     }
     @IBAction func backButton(_ sender: Any?) {
         removeChildFromNavigation()
