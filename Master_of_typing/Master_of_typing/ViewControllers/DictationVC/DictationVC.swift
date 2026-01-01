@@ -135,7 +135,7 @@ extension DictationVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSC
         let isProUser = App.isPro
         if isFromLesson || isFromPractice || isFromTest{
             let data = exercises[index.item]
-            let isFirst = index.item < 3
+            let isFirst = index.item < 1
             let previousCompleted: Bool = !isFirst ?
             (exercises[item - 1].isCompleted &&
              (exercises[item - 1].exerciseStats?.accuracy ?? 0) >= 80) : true
@@ -155,11 +155,34 @@ extension DictationVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSC
                 //                vc.chapterTitle = chapterTitle
                 vc.lesson = lesson
                 vc.delegate = self
+                if isFromPractice {
+                        // Create a temporary lesson containing ALL Practice exercises
+                    let practiceLesson = Lesson(
+                            lessonNumber: 1,
+                            exercises: exercises  // All Practice exercises
+                            // id is optional — defaults to a new UUID
+                        )
+//                        practiceLesson.title = "Practice Session"  // if you add title later
+
+                        vc.lesson = practiceLesson
+                        vc.isFromPractice = true
+
+                } else if isFromTest {
+                    let testLesson = Lesson(
+                            lessonNumber: 1,
+                            exercises: exercises
+                        )
+//                        testLesson.title = "Test Session"
+
+                        vc.lesson = testLesson
+                        vc.isFromTest = true
+                }
                 addChildToNavigation(vc)
                 pushedViewController = vc
             } else {
                 showAlert(title: "", message: "Finish the previous exercise first")
             }
+            
         }else{
             if item == 0 {
                 let vc = AiDictationVC(nibName: "AiDictationVC", bundle: nil)

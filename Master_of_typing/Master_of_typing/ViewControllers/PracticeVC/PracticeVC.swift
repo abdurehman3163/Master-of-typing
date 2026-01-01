@@ -107,6 +107,9 @@ class PracticeVC: NSViewController {
     var isfromAiDictationVC: Bool = false
     var isfromDictationVC2ndIndex: Bool = false
     var isfromDictationVC3rdIndex: Bool = false
+    var isFromPractice: Bool = false
+    var isFromTest: Bool = false
+
     var speechSpeed: Float = 0.5
     var VoiceType: String = "en-US"
     var text: String = ""
@@ -355,11 +358,11 @@ class PracticeVC: NSViewController {
                 exercise?.exerciseStats = stats
                 DataManager.shared.saveData()
                 
-                if finalAccuracy >= 80 {
+//                if finalAccuracy >= 80 {
                             showSuccessAndNextExerciseAlert()
-                        } else {
-                            showRetryEncouragementAlert()
-                        }
+//                        } else {
+//                            showRetryEncouragementAlert()
+//                        }
             }
         }
     }
@@ -396,19 +399,20 @@ class PracticeVC: NSViewController {
         guard let currentExercise = exercise,
               let lesson = lesson,
               let currentIndex = lesson.exercises.firstIndex(where: { $0.id == currentExercise.id }) else {
+            // If no current exercise or lesson, or couldn't find current exercise in lesson, go back
             removeChildFromNavigation()
             return
         }
 
-        // Check if there's a next exercise in the SAME lesson
+        // Check if there's a next exercise in the same lesson
         if currentIndex + 1 < lesson.exercises.count {
             let nextExercise = lesson.exercises[currentIndex + 1]
-
+            
             // Update PracticeVC with the next exercise
             self.exercise = nextExercise
             self.fullText = nextExercise.text
             self.currentAllowedTags = Set(nextExercise.allowedKeys)
-            self.mainTitle.stringValue = nextExercise.title
+            self.mainTitle.stringValue = nextExercise.id
 
             // Update keyboard highlighting
             for box in viewArray {
@@ -426,8 +430,9 @@ class PracticeVC: NSViewController {
 
             print("Advanced to next exercise: \(nextExercise.title)")
         } else {
-            // End of lesson — go back or show completion
-            removeChildFromNavigation()
+            // All exercises are completed — handle lesson completion
+            print("All exercises completed in this lesson.")
+            removeChildFromNavigation() // Go back or show completion
         }
     }
     
@@ -740,12 +745,12 @@ extension PracticeVC: NSCollectionViewDelegate, NSCollectionViewDataSource, NSCo
         cell.lblTitle?.stringValue = typingStrings[indexPath.item]
         cell.lblTitle?.font = NSFont.systemFont(ofSize: 16, weight: .medium)
 //        cell.lblTitle?.textColor = NSColor.white
-        cell.setSeparatorColor(NSColor.border)
+        cell.configureSeparator(color: .white, thickness: 7, leadingInset: 1, trailingInset: 1)
         return cell
     }
     
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
-        NSSize(width: collectionView.frame.width, height: 50)
+        NSSize(width: collectionView.frame.width, height: 70)
     }
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
@@ -763,11 +768,11 @@ extension PracticeVC: NSCollectionViewDelegate, NSCollectionViewDataSource, NSCo
     }
     
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        5
+        10
     }
     
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        0
+        10
     }
 }
 

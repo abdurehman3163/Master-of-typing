@@ -22,6 +22,22 @@ class Lesson: Codable {
     var isCompleted: Bool {
         exercises.allSatisfy(\.isCompleted)
     }
+    
+    // This is required for Codable — keep it
+        required init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.id = try container.decode(String.self, forKey: .id)
+            self.lessonNumber = try container.decode(Int.self, forKey: .lessonNumber)
+            self.exercises = try container.decode([Exercise].self, forKey: .exercises)
+        }
+        
+        // ADD THIS: Custom convenience initializer for manual creation
+        init(id: String = UUID().uuidString, lessonNumber: Int, exercises: [Exercise]) {
+            self.id = id
+            self.lessonNumber = lessonNumber
+            self.exercises = exercises
+        }
+    
 }
 
 class Exercise: Codable {

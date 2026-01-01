@@ -14,6 +14,9 @@ class LessonCVC: NSCollectionViewItem {
     @IBOutlet weak var img: NSImageView!
     
     private let separator = NSView()
+    private var separatorHeightConstraint: NSLayoutConstraint?
+    private var separatorLeadingConstraint: NSLayoutConstraint?
+    private var separatorTrailingConstraint: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,18 +27,32 @@ class LessonCVC: NSCollectionViewItem {
         separator.wantsLayer = true
         separator.layer?.backgroundColor = NSColor.stroke.cgColor  // default color
         view.addSubview(separator)
-        
         separator.translatesAutoresizingMaskIntoConstraints = false
+        
+        let height = separator.heightAnchor.constraint(equalToConstant: 1)
+        let leading = separator.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12)
+        let trailing = separator.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12)
+        
+        self.separatorHeightConstraint = height
+        self.separatorLeadingConstraint = leading
+        self.separatorTrailingConstraint = trailing
         NSLayoutConstraint.activate([
-            separator.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-            separator.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+            leading,
+            trailing,
             separator.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            separator.heightAnchor.constraint(equalToConstant: 1)
-        ])
+            height        ])
     }
     
     /// Public function to set separator color from outside
-    func setSeparatorColor(_ color: NSColor) {
+    func configureSeparator(
+        color: NSColor = .stroke,
+        thickness: CGFloat = 1.0,
+        leadingInset: CGFloat = 12.0,
+        trailingInset: CGFloat = 12.0
+    ) {
         separator.layer?.backgroundColor = color.cgColor
+        separatorHeightConstraint?.constant = thickness
+        separatorLeadingConstraint?.constant = leadingInset
+        separatorTrailingConstraint?.constant = -trailingInset  // negative for trailing
     }
 }

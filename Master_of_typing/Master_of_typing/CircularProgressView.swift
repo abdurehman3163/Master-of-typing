@@ -118,11 +118,11 @@ class CircularProgressView: NSView {
         progressLayer.lineWidth = lineWidth
         
         // Update text position
-        let textRect = CGRect(x: 0, y: bounds.midY + fontSize / 2, width: bounds.width, height: fontSize + 4)
+        let textRect = CGRect(x: 0, y: bounds.midY + fontSize / 2, width: bounds.width, height: fontSize + 5)
         textLayer.frame = textRect
         textLayer.string = String(format: "%.0f%%", progress * 100)
         
-        let subTextRect = CGRect(x: 0, y: bounds.midY - fontSize / 2, width: bounds.width, height: fontSize + 4)
+        let subTextRect = CGRect(x: 0, y: bounds.midY - fontSize / 1, width: bounds.width, height: fontSize + 10)
         subTextLayer.frame = subTextRect
         subTextLayer.string = subText // This will be updated dynamically later
     }
