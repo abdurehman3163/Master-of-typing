@@ -100,7 +100,7 @@ extension DictationVC: NSCollectionViewDataSource, NSCollectionViewDelegate, NSC
             cell.image.isHidden = true
             cell.boxLabel.isHidden = true
             
-            let isFirst = indexPath.item < 3
+            let isFirst = indexPath.item < 1
             let isProUser = App.isPro
             // ← Your existing Pro check
             if isFromPractice || isFromTest {

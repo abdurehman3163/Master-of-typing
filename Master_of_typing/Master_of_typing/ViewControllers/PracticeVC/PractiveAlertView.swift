@@ -47,7 +47,7 @@ class PractiveAlertView: NSViewController {
         }else{
             if isLessonCompleted {
                 alertDesc1.stringValue = "Congratulations!"
-                alertDesc2.stringValue = "Well Done! You have Completed the whole lesson?"
+                alertDesc2.stringValue = "Well Done! You have Completed the whole lesson"
                 alertDesc3.isHidden = true
                 alertImage.isHidden = true
                 nextBox.isHidden = true
