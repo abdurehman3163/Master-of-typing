@@ -11,6 +11,8 @@ class LessonCVC: NSCollectionViewItem {
     
     @IBOutlet weak var lblTitle: NSTextField!
     @IBOutlet weak var Box: NSBox!
+    @IBOutlet weak var bottomBox: NSBox!
+    @IBOutlet weak var bottomBoxHeight: NSLayoutConstraint!
     @IBOutlet weak var img: NSImageView!
     
     private let separator = NSView()
@@ -20,7 +22,7 @@ class LessonCVC: NSCollectionViewItem {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSeparator()
+//        setupSeparator()
     }
     
     private func setupSeparator() {
@@ -44,15 +46,15 @@ class LessonCVC: NSCollectionViewItem {
     }
     
     /// Public function to set separator color from outside
-    func configureSeparator(
-        color: NSColor = .stroke,
-        thickness: CGFloat = 1.0,
-        leadingInset: CGFloat = 12.0,
-        trailingInset: CGFloat = 12.0
-    ) {
-        separator.layer?.backgroundColor = color.cgColor
-        separatorHeightConstraint?.constant = thickness
-        separatorLeadingConstraint?.constant = leadingInset
-        separatorTrailingConstraint?.constant = -trailingInset  // negative for trailing
-    }
+//    func configureSeparator(
+//        color: NSColor = .stroke,
+//        thickness: CGFloat = 1.0,
+//        leadingInset: CGFloat = 12.0,
+//        trailingInset: CGFloat = 12.0
+//    ) {
+//        separator.layer?.backgroundColor = color.cgColor
+//        separatorHeightConstraint?.constant = thickness
+//        separatorLeadingConstraint?.constant = leadingInset
+//        separatorTrailingConstraint?.constant = -trailingInset  // negative for trailing
+//    }
 }

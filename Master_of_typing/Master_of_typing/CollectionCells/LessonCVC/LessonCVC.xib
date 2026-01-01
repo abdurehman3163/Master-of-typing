@@ -36,14 +36,28 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="arrow.forward" catalog="system" id="eav-Xn-U2C"/>
                                 <color key="contentTintColor" name="BlackColor"/>
                             </imageView>
+                            <box boxType="custom" borderWidth="0.0" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="PZ8-ts-8H0">
+                                <rect key="frame" x="5" y="0.0" width="470" height="1"/>
+                                <view key="contentView" id="X5q-eX-AYF">
+                                    <rect key="frame" x="0.0" y="0.0" width="470" height="1"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="geT-YM-kiY"/>
+                                </constraints>
+                                <color key="fillColor" name="WhiteColor2"/>
+                            </box>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ozj-t3-rSq" secondAttribute="trailing" constant="12" id="6CB-Om-bZo"/>
                             <constraint firstItem="ozj-t3-rSq" firstAttribute="top" secondItem="wcM-2Q-ddT" secondAttribute="top" constant="10" id="CAB-0O-Wod"/>
+                            <constraint firstAttribute="trailing" secondItem="PZ8-ts-8H0" secondAttribute="trailing" constant="5" id="FaQ-VD-vAt"/>
+                            <constraint firstAttribute="bottom" secondItem="PZ8-ts-8H0" secondAttribute="bottom" id="Kzo-CH-xZ3"/>
                             <constraint firstItem="ozj-t3-rSq" firstAttribute="centerY" secondItem="wcM-2Q-ddT" secondAttribute="centerY" id="O3t-7p-lJR"/>
+                            <constraint firstItem="PZ8-ts-8H0" firstAttribute="top" secondItem="ozj-t3-rSq" secondAttribute="bottom" constant="9" id="TUF-R9-5io"/>
                             <constraint firstItem="ozj-t3-rSq" firstAttribute="leading" secondItem="qMu-bt-gc8" secondAttribute="trailing" constant="10" id="cja-BF-hf7"/>
                             <constraint firstItem="qMu-bt-gc8" firstAttribute="leading" secondItem="wcM-2Q-ddT" secondAttribute="leading" constant="10" id="gsq-YE-kCb"/>
-                            <constraint firstAttribute="bottom" secondItem="ozj-t3-rSq" secondAttribute="bottom" constant="10" id="iHm-8G-8Tk"/>
+                            <constraint firstItem="PZ8-ts-8H0" firstAttribute="leading" secondItem="wcM-2Q-ddT" secondAttribute="leading" constant="5" id="td2-3t-pUL"/>
                             <constraint firstItem="qMu-bt-gc8" firstAttribute="centerY" secondItem="wcM-2Q-ddT" secondAttribute="centerY" id="xxY-u4-YPH"/>
                         </constraints>
                     </view>
@@ -61,6 +75,8 @@
         <customObject id="DjE-Y8-4NP" customClass="LessonCVC" customModule="Master_of_typing" customModuleProvider="target">
             <connections>
                 <outlet property="Box" destination="PXC-1A-wd1" id="vQ7-MH-EYh"/>
+                <outlet property="bottomBox" destination="PZ8-ts-8H0" id="gV5-Gu-cq3"/>
+                <outlet property="bottomBoxHeight" destination="geT-YM-kiY" id="MSb-1e-mHz"/>
                 <outlet property="img" destination="ozj-t3-rSq" id="77H-tL-B6u"/>
                 <outlet property="lblTitle" destination="qMu-bt-gc8" id="SoT-Yf-PNR"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="tk8-Xf-YA8"/>
@@ -74,6 +90,9 @@
         </namedColor>
         <namedColor name="ClearColor">
             <color red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WhiteColor2">
+            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -63,6 +63,11 @@ class DictationVC: BaseVC, LessonCompleted {
         
     }
     
+    override func viewDidLayout() {
+        super.viewDidLayout()
+        dictationCollectionView.collectionViewLayout?.invalidateLayout()
+    }
+
     @IBAction func backBtnAction(_ sender: Any) {
         removeChildFromNavigation()
     }

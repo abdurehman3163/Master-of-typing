@@ -109,6 +109,7 @@ class PracticeVC: NSViewController {
     var isfromDictationVC3rdIndex: Bool = false
     var isFromPractice: Bool = false
     var isFromTest: Bool = false
+    var selectedIndex: IndexPath?
 
     var speechSpeed: Float = 0.5
     var VoiceType: String = "en-US"
@@ -251,11 +252,18 @@ class PracticeVC: NSViewController {
         SpeakerManager.shared.delegate = self
         SpeakerManager.shared.speechSpeed = speechSpeed
         SpeakerManager.shared.voiceIdentifier = VoiceType
+
+        if isFromTest{
+            timer.stringValue = "00.15"
+        }else {
+            timer.stringValue = "00.00"
+        }
+
     }
     
     override func viewDidLayout() {
         super.viewDidLayout()
-        textCollectionView .collectionViewLayout?.invalidateLayout()
+        textCollectionView.collectionViewLayout?.invalidateLayout()
     }
 
     private func updateSpeakButtons() {
@@ -503,7 +511,11 @@ class PracticeVC: NSViewController {
             cpm.stringValue = "0"
             wpm.stringValue = "0"
             accuracy.stringValue = "0 %"
-            timer.stringValue = "00.00"
+            if isFromTest{
+                timer.stringValue = "00.15"
+            }else {
+                timer.stringValue = "00.00"
+            }
             return
         }
         
@@ -530,13 +542,40 @@ class PracticeVC: NSViewController {
     }
     
     private func startStopwatch() {
-        elapsedTime = 0.0
-        updateTimerDisplay()
-        
-        stopwatchTimer?.invalidate()
-        stopwatchTimer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] _ in
-            self?.elapsedTime += 0.05
-            self?.updateTimerDisplay()
+        if isFromTest {
+            elapsedTime = 15.0
+                
+                updateTimerDisplay()
+                
+                // Invalidate any existing timer
+                stopwatchTimer?.invalidate()
+                
+                stopwatchTimer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] _ in
+                    guard let self = self else { return }
+                    
+                    // Decrease time
+                    self.elapsedTime -= 0.05
+                    
+                    // Update display
+                    self.updateTimerDisplay()
+                    
+                    // Check if time is up
+                    if self.elapsedTime <= 0.0 {
+                        self.elapsedTime = 0.0
+                        self.updateTimerDisplay()
+                        self.stopStopwatch()
+                        
+                    }
+                }
+        }else{
+            elapsedTime = 0.0
+            updateTimerDisplay()
+            
+            stopwatchTimer?.invalidate()
+            stopwatchTimer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] _ in
+                self?.elapsedTime += 0.05
+                self?.updateTimerDisplay()
+            }
         }
     }
     
@@ -557,7 +596,11 @@ class PracticeVC: NSViewController {
         cpm.stringValue = "0"
         wpm.stringValue = "0"
         accuracy.stringValue = "0 %"
-        timer.stringValue = "00.00"
+        if isFromTest{
+            timer.stringValue = "00.15"
+        }else {
+            timer.stringValue = "00.00"
+        }
         
         updateTextDisplay()
         updateMetrics()
@@ -745,7 +788,20 @@ extension PracticeVC: NSCollectionViewDelegate, NSCollectionViewDataSource, NSCo
         cell.lblTitle?.stringValue = typingStrings[indexPath.item]
         cell.lblTitle?.font = NSFont.systemFont(ofSize: 16, weight: .medium)
 //        cell.lblTitle?.textColor = NSColor.white
-        cell.configureSeparator(color: .white, thickness: 7, leadingInset: 1, trailingInset: 1)
+        cell.bottomBox.wantsLayer = true
+        cell.bottomBox.fillColor = NSColor.clear
+        cell.view.wantsLayer = true
+        cell.view.layer?.cornerRadius = 8
+        cell.view.layer?.backgroundColor = NSColor.whiteColor2.cgColor
+        
+        if selectedIndex == indexPath {
+            cell.view.layer?.backgroundColor = NSColor.appMain.cgColor
+            cell.lblTitle.textColor = NSColor.white
+        }else {
+            cell.view.layer?.backgroundColor = NSColor.whiteColor2.cgColor
+            cell.lblTitle.textColor = NSColor.black
+
+        }
         return cell
     }
     
@@ -755,7 +811,7 @@ extension PracticeVC: NSCollectionViewDelegate, NSCollectionViewDataSource, NSCo
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
         guard let indexPath = indexPaths.first else { return }
-        
+        selectedIndex = indexPath
         let selectedtext = typingStrings[indexPath.item]
         fullText = selectedtext
         TextField.stringValue = selectedtext
@@ -764,11 +820,12 @@ extension PracticeVC: NSCollectionViewDelegate, NSCollectionViewDataSource, NSCo
         speedSlider.isHidden = false
         restartOrSpeakBox.isHidden = false
 
-        collectionView.deselectAll(indexPath)
+        collectionView.deselectAll(nil)
+        collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        10
+        0
     }
     
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
