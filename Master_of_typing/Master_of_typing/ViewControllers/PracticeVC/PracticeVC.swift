@@ -366,11 +366,11 @@ class PracticeVC: NSViewController {
                 exercise?.exerciseStats = stats
                 DataManager.shared.saveData()
                 
-//                if finalAccuracy >= 80 {
+                if finalAccuracy >= 80 {
                             showSuccessAndNextExerciseAlert()
-//                        } else {
-//                            showRetryEncouragementAlert()
-//                        }
+                        } else {
+                            showRetryEncouragementAlert()
+                        }
             }
         }
     }
