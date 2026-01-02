@@ -81,6 +81,7 @@
                 <outlet property="keyZ" destination="SQl-Nf-SCz" id="lEQ-5c-qva"/>
                 <outlet property="mainTitle" destination="Efj-K7-FbF" id="nRT-2r-Z9Y"/>
                 <outlet property="pauseSpeaking" destination="pht-Dy-cgL" id="oFm-7R-2Aq"/>
+                <outlet property="pauseSpeakingBox" destination="FcR-5e-h5U" id="lRU-IB-zx3"/>
                 <outlet property="restartOrSpeakBox" destination="EnK-ql-R6h" id="z9O-Xs-IOQ"/>
                 <outlet property="restartOrSpeakButton" destination="0KV-g1-HiB" id="ONP-Th-h6b"/>
                 <outlet property="showStringsToType" destination="Iog-96-UFY" id="hHz-Ee-Bxi"/>
@@ -126,11 +127,10 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iog-96-UFY">
-                                        <rect key="frame" x="0.0" y="0.0" width="94" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="74" height="20"/>
                                         <buttonCell key="cell" type="bevel" title="Select Text" bezelStyle="rounded" imagePosition="right" alignment="center" imageScaling="proportionallyDown" inset="2" id="T6N-ih-zeL">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="systemSemibold" size="13"/>
-                                            <imageReference key="image" image="chevron.down" catalog="system" symbolScale="large"/>
                                         </buttonCell>
                                         <color key="contentTintColor" name="BlackColor"/>
                                         <constraints>
@@ -4014,7 +4014,6 @@
     </objects>
     <resources>
         <image name="arrow.backward" catalog="system" width="20" height="16"/>
-        <image name="chevron.down" catalog="system" width="18" height="11"/>
         <image name="imgAccuracy" width="60" height="60"/>
         <image name="imgArrowDown" width="16" height="16"/>
         <image name="imgArrowLeft" width="16" height="16"/>

@@ -25,7 +25,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoQ-w3-pMU">
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="xoQ-w3-pMU">
                                 <rect key="frame" x="0.0" y="175" width="480" height="445"/>
                                 <clipView key="contentView" drawsBackground="NO" id="Sdj-AY-TRP">
                                     <rect key="frame" x="0.0" y="0.0" width="480" height="445"/>

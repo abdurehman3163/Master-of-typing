@@ -117,7 +117,6 @@ extension AiDictationVC: NSCollectionViewDataSource, NSCollectionViewDelegate, N
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
         guard let index = indexPaths.first else { return }
         self.selectedIndex = index
-        
     }
 }
 

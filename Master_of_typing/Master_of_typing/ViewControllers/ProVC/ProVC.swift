@@ -13,6 +13,7 @@ class ProVC: BaseVC {
     @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet weak var threeDayFreeTrialLabel: NSTextField!
     @IBOutlet weak var startForFreeLabel: NSButton!
+    @IBOutlet weak var proBannerBox: NSBox!
 
     private let storeManager = StoreManager.shared
     private var selectedProduct: ProductInfo?
@@ -46,6 +47,11 @@ class ProVC: BaseVC {
             StoreManager.shared.fetchProducts()
             
         }
+        
+        proBannerBox.wantsLayer = true
+        proBannerBox.layer?.cornerRadius = 10
+        proBannerBox.layer?.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+
     }
     
     override func appProStatusDidChange() {

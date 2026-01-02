@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="ProVC" customModule="Master_of_typing" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="FS0-bo-n5k" id="Y2x-Bj-x79"/>
+                <outlet property="proBannerBox" destination="X9j-Cj-DnP" id="gYi-nD-aJe"/>
                 <outlet property="startForFreeLabel" destination="iWj-ZD-niP" id="qMo-90-b7v"/>
                 <outlet property="threeDayFreeTrialLabel" destination="bw3-cT-HU1" id="MdM-9h-V8w"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>

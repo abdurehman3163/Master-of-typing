@@ -21,7 +21,7 @@
                         <subviews>
                             <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qMu-bt-gc8">
                                 <rect key="frame" x="8" y="11" width="432" height="19"/>
-                                <textFieldCell key="cell" alignment="left" title="Label" id="3RD-bT-Rwk">
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="left" title="Label" id="3RD-bT-Rwk">
                                     <font key="font" metaFont="systemSemibold" size="16"/>
                                     <color key="textColor" name="BlackColor"/>
                                     <color key="backgroundColor" name="ClearColor"/>

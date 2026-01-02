@@ -86,6 +86,7 @@ class PracticeVC: NSViewController {
     @IBOutlet weak var restartOrSpeakButton: NSButton!
     @IBOutlet weak var startTyping: NSButton!
     @IBOutlet weak var pauseSpeaking: NSButton!
+    @IBOutlet weak var pauseSpeakingBox: NSBox!
     @IBOutlet weak var speedLabelStack: NSStackView!
     @IBOutlet weak var speedSlider: NSSlider!
     @IBOutlet weak var restartOrSpeakBox: NSBox!
@@ -196,8 +197,10 @@ class PracticeVC: NSViewController {
             speakerButtons.isHidden = false
             dictationBox.isHidden = false
             dictationBoxImage.image = .imgDictationSpeak
+            dictationBoxImage.addTapGesture(target: self, action: #selector(speakFunction))
             dictationBoxLabel.stringValue = "Dictate the text you want to type"
-            restartOrSpeakButton.image = .imgDictationSpeak // or system symbol
+            restartOrSpeakBox.isHidden = true
+            pauseSpeakingBox.isHidden = true
             startTyping.isEnabled = false
             pauseSpeaking.isEnabled = false
             for box in viewArray {
@@ -219,7 +222,8 @@ class PracticeVC: NSViewController {
             speedLabelStack.isHidden = true
             speedSlider.isHidden = true
             restartOrSpeakBox.isHidden = true
-            
+            showStringsToType.title = "Select a string to dictate"
+
         } else {
             isTypingAllowed = true
             guard let exercise = exercise else { return }
@@ -273,8 +277,13 @@ class PracticeVC: NSViewController {
                 startTyping.title = "Restart"
                 restartOrSpeakButton.image = .imgSpeakerSlash
             } else {
-                startTyping.title = "Start"
                 restartOrSpeakButton.image = .imgSpeaker
+            }
+        }else if isfromDictationVC2ndIndex {
+            if !RecordingManager.shared.isRecording {
+                startTyping.title = "Restart"
+            }else{
+                startTyping.title = "Start"
             }
         }
     }
@@ -710,22 +719,7 @@ class PracticeVC: NSViewController {
             // MARK: Free Dictation Mode (Speak your own text)
         } else if isfromDictationVC2ndIndex {
             //            dictationBox.isHidden = true
-            if RecordingManager.shared.isRecording {
-                RecordingManager.shared.stopSpeechRecognition()
-                dictationBoxLabel.stringValue = "Click start to type..."
-                restartOrSpeakButton.image = .imgDictationSpeak
-                startTyping.isEnabled = true
-            } else {
-                startTyping.isEnabled = false
-                resetTypingStateFully()           // <--- reset before new recording
-                RecordingManager.shared.startSpeechRecognition()
-                dictationBox.isHidden = false
-                isTypingAllowed = false
-                disableAllKeys()
-                restartOrSpeakButton.image = .imgDictationSpeakSlash // or microphone icon
-                startTyping.title = "Start Typing"
-                dictationBoxLabel.stringValue = "Speak now..."
-            }
+            
         }else if isfromDictationVC3rdIndex {
             if SpeakerManager.shared.isSpeaking || SpeakerManager.shared.isPaused {
                 SpeakerManager.shared.pauseOrResume()
@@ -765,6 +759,7 @@ class PracticeVC: NSViewController {
         } else if isfromDictationVC2ndIndex {
             // Mode 3: User finished recording → start typing
             if !RecordingManager.shared.isRecording {
+                resetTypingStateFully()           // <--- reset before new recording
                 isTypingAllowed = true
                 enableAllKeys()
                 dictationBox.isHidden = true
@@ -790,11 +785,6 @@ class PracticeVC: NSViewController {
     }
     
     @IBAction func showStringsToTypeAction(_ sender: Any?) {
-            collectioinViewBox.isHidden.toggle()
-        speedLabelStack.isHidden.toggle()
-        speedSlider.isHidden.toggle()
-        restartOrSpeakBox.isHidden.toggle()
-
     }
     
     @IBAction func speedSliderChanged(_ sender: NSSlider) {
@@ -816,6 +806,25 @@ class PracticeVC: NSViewController {
             
             SpeakerManager.shared.speechSpeed = speedSteps[index].rate
     }
+    
+    @objc func speakFunction(){
+        if RecordingManager.shared.isRecording {
+            RecordingManager.shared.stopSpeechRecognition()
+            dictationBoxLabel.stringValue = "Click start to type..."
+            restartOrSpeakButton.image = .imgDictationSpeak
+            startTyping.isEnabled = true
+        } else {
+            startTyping.isEnabled = false
+            resetTypingStateFully()           // <--- reset before new recording
+            RecordingManager.shared.startSpeechRecognition()
+            dictationBox.isHidden = false
+            isTypingAllowed = false
+            disableAllKeys()
+            restartOrSpeakButton.image = .imgDictationSpeakSlash // or microphone icon
+            startTyping.title = "Start Typing"
+            dictationBoxLabel.stringValue = "Speak now..."
+        }
+    }
 }
 
 extension PracticeVC: NSCollectionViewDelegate, NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout {
@@ -825,37 +834,33 @@ extension PracticeVC: NSCollectionViewDelegate, NSCollectionViewDataSource, NSCo
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         guard let cell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier("LessonCVC"), for: indexPath) as? LessonCVC else { return NSCollectionViewItem() }
-        cell.img.isHidden = true
-        cell.lblTitle?.stringValue = typingStrings[indexPath.item]
+        let date = typingStrings[indexPath.item]
+
+        cell.img.isHidden = false
+        cell.lblTitle?.stringValue = date["title"] ?? ""
         cell.lblTitle?.font = NSFont.systemFont(ofSize: 16, weight: .medium)
 //        cell.lblTitle?.textColor = NSColor.white
         cell.bottomBox.wantsLayer = true
         cell.bottomBox.fillColor = NSColor.clear
         cell.view.wantsLayer = true
         cell.view.layer?.cornerRadius = 8
-        cell.view.layer?.backgroundColor = NSColor.whiteColor2.cgColor
-        
-        if selectedIndex == indexPath {
-            cell.view.layer?.backgroundColor = NSColor.appMain.cgColor
-            cell.lblTitle.textColor = NSColor.white
-        }else {
-            cell.view.layer?.backgroundColor = NSColor.whiteColor2.cgColor
-            cell.lblTitle.textColor = NSColor.black
-
-        }
+        cell.view.layer?.backgroundColor = NSColor.white.cgColor
+        cell.view.layer?.borderWidth = 1
+        cell.view.layer?.borderColor = NSColor.border.cgColor
         return cell
     }
     
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
-        NSSize(width: collectionView.frame.width, height: 70)
+        NSSize(width: collectionView.frame.width, height: 50)
     }
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
         guard let indexPath = indexPaths.first else { return }
         selectedIndex = indexPath
-        let selectedtext = typingStrings[indexPath.item]
-        fullText = selectedtext
-        TextField.stringValue = selectedtext
+        let date = typingStrings[indexPath.item]
+        fullText = date["description"] ?? ""
+        showStringsToType.title = date["title"] ?? ""
+        TextField.stringValue = date["description"] ?? ""
         collectioinViewBox.isHidden = true
         speedLabelStack.isHidden = false
         speedSlider.isHidden = false

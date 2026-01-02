@@ -41,6 +41,9 @@ protocol SpeechSpeedDelegate: AnyObject {
 protocol LessonCompleted: AnyObject{
     func lessonCompleted()
 }
+protocol BackButtonUnHide: AnyObject{
+    func backButtonUnHide()
+}
 //protocol UserInteractionEnable: AnyObject{
 //    func enableInteraction()
 //    func disableInteraction()
