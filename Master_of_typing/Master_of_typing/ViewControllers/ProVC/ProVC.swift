@@ -48,9 +48,6 @@ class ProVC: BaseVC {
             
         }
         
-        proBannerBox.wantsLayer = true
-        proBannerBox.layer?.cornerRadius = 10
-        proBannerBox.layer?.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
 
     }
     

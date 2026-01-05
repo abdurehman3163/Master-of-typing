@@ -28,13 +28,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <box boxType="custom" borderType="none" borderWidth="0.0" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="X9j-Cj-DnP">
-                                <rect key="frame" x="1" y="1" width="307" height="677"/>
+                                <rect key="frame" x="0.0" y="0.0" width="307" height="679"/>
                                 <view key="contentView" id="u2F-5l-PVs">
-                                    <rect key="frame" x="0.0" y="0.0" width="307" height="677"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="679"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TAv-x9-37E">
-                                            <rect key="frame" x="47" y="582" width="213" height="35"/>
+                                            <rect key="frame" x="47" y="584" width="213" height="35"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="AI Typo Master" id="0pb-D2-kEj">
                                                 <font key="font" metaFont="systemBold" size="30"/>
                                                 <color key="textColor" name="WhiteColor"/>
@@ -42,7 +42,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BQK-c1-iex">
-                                            <rect key="frame" x="61" y="551" width="185" height="19"/>
+                                            <rect key="frame" x="61" y="553" width="185" height="19"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="With advance AI Feature" id="I7K-QO-gvF">
                                                 <font key="font" metaFont="systemMedium" size="16"/>
                                                 <color key="textColor" name="WhiteColor"/>
@@ -50,7 +50,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zJt-6V-ABu">
-                                            <rect key="frame" x="33" y="193" width="242" height="292"/>
+                                            <rect key="frame" x="33" y="194" width="242" height="292"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="292" id="qJE-Oc-i6I"/>
                                                 <constraint firstAttribute="width" constant="242" id="xGS-Ew-DHl"/>
@@ -91,9 +91,9 @@ your progress.</string>
                                 <color key="fillColor" name="appMain"/>
                             </box>
                             <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="QMt-Rg-5Na">
-                                <rect key="frame" x="308" y="0.0" width="797" height="679"/>
+                                <rect key="frame" x="307" y="0.0" width="798" height="679"/>
                                 <view key="contentView" id="I4U-ai-vwO">
-                                    <rect key="frame" x="0.0" y="0.0" width="797" height="679"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="798" height="679"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RbH-Ev-07r">
@@ -113,7 +113,7 @@ your progress.</string>
                                             </textFieldCell>
                                         </textField>
                                         <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W0w-Cb-j4d">
-                                            <rect key="frame" x="73" y="507" width="651" height="46"/>
+                                            <rect key="frame" x="74" y="507" width="651" height="46"/>
                                             <subviews>
                                                 <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="geg-yO-Le2">
                                                     <rect key="frame" x="0.0" y="16" width="213" height="30"/>
@@ -230,7 +230,7 @@ your progress.</string>
                                             </customSpacing>
                                         </stackView>
                                         <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="FXm-5F-oUg">
-                                            <rect key="frame" x="209" y="465" width="379" height="30"/>
+                                            <rect key="frame" x="210" y="465" width="379" height="30"/>
                                             <view key="contentView" id="PjN-xj-fbP">
                                                 <rect key="frame" x="0.0" y="0.0" width="379" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,7 +264,7 @@ your progress.</string>
                                             <color key="fillColor" name="ClearColor"/>
                                         </box>
                                         <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="5Nj-OK-1XL">
-                                            <rect key="frame" x="11" y="235" width="775" height="195"/>
+                                            <rect key="frame" x="12" y="235" width="775" height="195"/>
                                             <clipView key="contentView" drawsBackground="NO" id="HP1-EZ-wx5">
                                                 <rect key="frame" x="1" y="1" width="773" height="193"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -294,7 +294,7 @@ your progress.</string>
                                             </scroller>
                                         </scrollView>
                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bw3-cT-HU1">
-                                            <rect key="frame" x="272" y="183" width="253" height="17"/>
+                                            <rect key="frame" x="273" y="183" width="253" height="17"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="3 Days Free Trail, then $14.99/month" id="1PP-vy-sfC">
                                                 <font key="font" metaFont="systemSemibold" size="14"/>
                                                 <color key="textColor" name="BlackColor"/>
@@ -354,7 +354,7 @@ subscription period. Payment will be charged to your iTunes account at confirmat
                                             </textFieldCell>
                                         </textField>
                                         <stackView distribution="fill" orientation="horizontal" alignment="bottom" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkW-z2-E0v">
-                                            <rect key="frame" x="147" y="34" width="503" height="19"/>
+                                            <rect key="frame" x="148" y="34" width="503" height="19"/>
                                             <subviews>
                                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="O6r-h6-cwW">
                                                     <rect key="frame" x="0.0" y="0.0" width="83" height="15"/>
@@ -491,11 +491,11 @@ subscription period. Payment will be charged to your iTunes account at confirmat
                         <constraints>
                             <constraint firstItem="QMt-Rg-5Na" firstAttribute="top" secondItem="Zno-NQ-FjQ" secondAttribute="top" id="KAT-Uh-jZV"/>
                             <constraint firstAttribute="bottom" secondItem="QMt-Rg-5Na" secondAttribute="bottom" id="NEn-My-OiO"/>
-                            <constraint firstAttribute="bottom" secondItem="X9j-Cj-DnP" secondAttribute="bottom" constant="1" id="Nqd-mW-13Y"/>
+                            <constraint firstAttribute="bottom" secondItem="X9j-Cj-DnP" secondAttribute="bottom" id="Nqd-mW-13Y"/>
                             <constraint firstAttribute="trailing" secondItem="QMt-Rg-5Na" secondAttribute="trailing" id="VFZ-bl-1I9"/>
                             <constraint firstItem="QMt-Rg-5Na" firstAttribute="leading" secondItem="X9j-Cj-DnP" secondAttribute="trailing" id="Y1g-id-SC4"/>
-                            <constraint firstItem="X9j-Cj-DnP" firstAttribute="leading" secondItem="Zno-NQ-FjQ" secondAttribute="leading" constant="1" id="a8d-0V-WFE"/>
-                            <constraint firstItem="X9j-Cj-DnP" firstAttribute="top" secondItem="Zno-NQ-FjQ" secondAttribute="top" constant="1" id="cOR-NB-3va"/>
+                            <constraint firstItem="X9j-Cj-DnP" firstAttribute="leading" secondItem="Zno-NQ-FjQ" secondAttribute="leading" id="a8d-0V-WFE"/>
+                            <constraint firstItem="X9j-Cj-DnP" firstAttribute="top" secondItem="Zno-NQ-FjQ" secondAttribute="top" id="cOR-NB-3va"/>
                         </constraints>
                     </view>
                     <constraints>
