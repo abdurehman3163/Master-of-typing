@@ -13,7 +13,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5285AC512EE80851001BE091 /* Master_of_typing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Master_of_typing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5285AC512EE80851001BE091 /* TypeZen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypeZen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -49,7 +49,7 @@
 		5285AC522EE80851001BE091 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5285AC512EE80851001BE091 /* Master_of_typing.app */,
+				5285AC512EE80851001BE091 /* TypeZen.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,7 +79,7 @@
 				5213C05A2F01917500B3CC92 /* SwiftyStoreKit */,
 			);
 			productName = Master_of_typing;
-			productReference = 5285AC512EE80851001BE091 /* Master_of_typing.app */;
+			productReference = 5285AC512EE80851001BE091 /* TypeZen.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -278,6 +278,7 @@
 				DEVELOPMENT_TEAM = 469P794984;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TypeZen;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs microphone access to transcribe your speech.";
@@ -289,7 +290,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rs.typing.master;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TypeZen;
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Master_of_typing/Helper Classes/Master_of_typing-Bridging-Header.h";
@@ -311,6 +312,7 @@
 				DEVELOPMENT_TEAM = 469P794984;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TypeZen;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs microphone access to transcribe your speech.";
@@ -322,7 +324,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rs.typing.master;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TypeZen;
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Master_of_typing/Helper Classes/Master_of_typing-Bridging-Header.h";

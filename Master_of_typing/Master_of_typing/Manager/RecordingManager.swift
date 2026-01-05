@@ -59,7 +59,7 @@ extension RecordingManager {
                 DispatchQueue.main.async { [weak self] in
                     guard let self else { return }
                  
-                    let isYes = Utility.dialogOKCancel(question: "Please allow" + "AppConstants.appName.localized()" + "to access your Microphone from device settings", yesButtonText: "Settings", noButtonText: "Cancel")
+                    let isYes = Utility.dialogOKCancel(question: "Please allow" + " \(AppConstants.AppName) " + "to access your Microphone from device settings", yesButtonText: "Settings", noButtonText: "Cancel")
                     if isYes {
                         if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Microphone") {
                             NSWorkspace.shared.open(url)
@@ -73,7 +73,7 @@ extension RecordingManager {
             guard await speechReconitionAuthorized() else {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
-                    let isYes = Utility.dialogOKCancel(question: "Please allow" + "AppConstants.appName.localized()" + "to access your Speech Recognition from device settings", yesButtonText: "Settings", noButtonText: "Cancel")
+                    let isYes = Utility.dialogOKCancel(question: "Please allow" + " \(AppConstants.AppName) " + "to access your Speech Recognition from device settings", yesButtonText: "Settings", noButtonText: "Cancel")
                     
                     if isYes {
                         if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_SpeechRecognition") {
@@ -84,7 +84,7 @@ extension RecordingManager {
                 }
                 
                 DispatchQueue.main.async { [weak self] in
-                    let isYes = Utility.dialogOKCancel(question: "Please allow" + "AppConstants.appName" + "to access your Microphone from device settings", yesButtonText: "Settings", noButtonText: "Cancel")
+                    let isYes = Utility.dialogOKCancel(question: "Please allow" + " \(AppConstants.AppName) " + "to access your Microphone from device settings", yesButtonText: "Settings", noButtonText: "Cancel")
                     if isYes {
                         if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Microphone") {
                             NSWorkspace.shared.open(url)

@@ -8,7 +8,7 @@ class AppConstants : NSObject {
     static let termsOfUseLink = URL( string: "https://sites.google.com/view/rabiasakhawatapps/terms-and-conditions")!
     static let eulaLink: String = ""
     static let supportEmail : String =  "rabiasakhawatapps@gmail.com"
-    static let AppName : String = "HandyText"
+    static let AppName : String = "TypeZen"
     static let appIDForShowingApp : String = "6757149517"
     static let appStoreURL : String = "itms-apps://apps.apple.com/app/id\(appIDForShowingApp)?action=write-review"
     static let appShareLink = "https://apps.apple.com/app/id\(appIDForShowingApp)"

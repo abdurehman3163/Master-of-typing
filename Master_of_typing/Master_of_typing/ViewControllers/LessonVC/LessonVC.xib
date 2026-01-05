@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="LessonVC" customModule="Master_of_typing" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="LessonVC" customModule="TypeZen" customModuleProvider="target">
             <connections>
                 <outlet property="CollectionViewBR" destination="uKE-23-ahV" id="gBf-op-5Lt"/>
                 <outlet property="CollectionViewDR" destination="fPe-eR-PRc" id="ucZ-ue-1y9"/>
@@ -35,8 +35,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xc6-ne-chq">
-                                <rect key="frame" x="16" y="711" width="197" height="28"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Master of  Typing" id="VrY-z6-KKy">
+                                <rect key="frame" x="16" y="711" width="192" height="28"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Master of Typing" id="VrY-z6-KKy">
                                     <font key="font" metaFont="systemBold" size="24"/>
                                     <color key="textColor" name="LabelColor"/>
                                     <color key="backgroundColor" name="ClearColor"/>
