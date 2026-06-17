@@ -1,0 +1,33 @@
+{
+  "originHash" : "ae2badbd2d0d3332f1f037fa44d8c56a9b4c5d09c39640c123bda823760c938b",
+  "pins" : [
+    {
+      "identity" : "localizationspm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Waleedsa465/LocalizationSPM.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "e44f18563e8311e486751926f02ae7352e8630eb"
+      }
+    },
+    {
+      "identity" : "reachability.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ashleymills/Reachability.swift",
+      "state" : {
+        "branch" : "master",
+        "revision" : "21d1dc412cfecbe6e34f1f4c4eb88d3f912654a6"
+      }
+    },
+    {
+      "identity" : "swiftystorekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bizz84/SwiftyStoreKit.git",
+      "state" : {
+        "revision" : "9ce911639680113dac9b554d6243e406a9758ebe",
+        "version" : "0.16.4"
+      }
+    }
+  ],
+  "version" : 3
+}

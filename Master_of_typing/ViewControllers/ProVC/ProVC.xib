@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23727" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23727"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ProVC" customModule="TypeZen" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="FS0-bo-n5k" id="Y2x-Bj-x79"/>
+                <outlet property="proBannerBox" destination="X9j-Cj-DnP" id="gYi-nD-aJe"/>
+                <outlet property="purchaseButtonBox" destination="SYU-6C-wGn" id="6kP-7M-nt2"/>
+                <outlet property="startForFreeLabel" destination="82F-zv-icm" id="PQf-qC-W51"/>
+                <outlet property="threeDayFreeTrialLabel" destination="bw3-cT-HU1" id="MdM-9h-V8w"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="1105" height="679"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <box boxType="custom" borderType="none" borderWidth="0.0" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="bcl-XV-jGm">
+                    <rect key="frame" x="0.0" y="0.0" width="1105" height="679"/>
+                    <view key="contentView" id="Zno-NQ-FjQ">
+                        <rect key="frame" x="0.0" y="0.0" width="1105" height="679"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <box boxType="custom" borderType="none" borderWidth="0.0" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="X9j-Cj-DnP">
+                                <rect key="frame" x="0.0" y="0.0" width="307" height="679"/>
+                                <view key="contentView" id="u2F-5l-PVs">
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="679"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TAv-x9-37E" customClass="LocalizableTextField" customModule="TypeZen" customModuleProvider="target">
+                                            <rect key="frame" x="3" y="549" width="301" height="70"/>
+                                            <textFieldCell key="cell" alignment="center" title="Typing Practice &amp; Speed Test" id="0pb-D2-kEj">
+                                                <font key="font" metaFont="systemBold" size="30"/>
+                                                <color key="textColor" name="WhiteColor"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="stringValueKey" value="Typing Practice &amp; Speed Test"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zJt-6V-ABu">
+                                            <rect key="frame" x="33" y="194" width="242" height="292"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="292" id="qJE-Oc-i6I"/>
+                                                <constraint firstAttribute="width" constant="242" id="xGS-Ew-DHl"/>
+                                            </constraints>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="imgProBanner" id="YhH-i9-qNu"/>
+                                            <color key="contentTintColor" name="WhiteColor"/>
+                                        </imageView>
+                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fTg-ak-L00" customClass="LocalizableTextField" customModule="TypeZen" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="60" width="291" height="38"/>
+                                            <textFieldCell key="cell" alignment="center" title="Improve typing speed and accuracy with AI-driven practice and feedback." id="lrB-k0-VA3">
+                                                <font key="font" metaFont="system" size="16"/>
+                                                <color key="textColor" name="WhiteColor"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="stringValueKey" value="Improve typing speed and accuracy with AI-driven practice and feedback."/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TAv-x9-37E" firstAttribute="leading" secondItem="u2F-5l-PVs" secondAttribute="leading" constant="5" id="0y5-Y5-Id5"/>
+                                        <constraint firstItem="zJt-6V-ABu" firstAttribute="centerX" secondItem="u2F-5l-PVs" secondAttribute="centerX" id="3FF-03-uL8"/>
+                                        <constraint firstItem="fTg-ak-L00" firstAttribute="centerX" secondItem="u2F-5l-PVs" secondAttribute="centerX" id="4S3-ae-dpA"/>
+                                        <constraint firstItem="TAv-x9-37E" firstAttribute="top" secondItem="u2F-5l-PVs" secondAttribute="top" constant="60" id="O9D-3o-S3K"/>
+                                        <constraint firstItem="fTg-ak-L00" firstAttribute="leading" secondItem="u2F-5l-PVs" secondAttribute="leading" constant="10" id="U4l-Ic-cYh"/>
+                                        <constraint firstAttribute="bottom" secondItem="fTg-ak-L00" secondAttribute="bottom" constant="60" id="YtF-0Y-caI"/>
+                                        <constraint firstAttribute="trailing" secondItem="fTg-ak-L00" secondAttribute="trailing" constant="10" id="cnI-7i-zR6"/>
+                                        <constraint firstItem="TAv-x9-37E" firstAttribute="centerX" secondItem="u2F-5l-PVs" secondAttribute="centerX" id="eha-7Q-Lii"/>
+                                        <constraint firstItem="zJt-6V-ABu" firstAttribute="centerY" secondItem="u2F-5l-PVs" secondAttribute="centerY" id="fT6-Sm-QWY"/>
+                                        <constraint firstAttribute="trailing" secondItem="TAv-x9-37E" secondAttribute="trailing" constant="5" id="zlw-U8-JRP"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="307" id="ads-r3-U0M"/>
+                                </constraints>
+                                <color key="fillColor" name="appMain"/>
+                            </box>
+                            <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="QMt-Rg-5Na">
+                                <rect key="frame" x="307" y="0.0" width="798" height="679"/>
+                                <view key="contentView" id="I4U-ai-vwO">
+                                    <rect key="frame" x="0.0" y="0.0" width="798" height="679"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RbH-Ev-07r" customClass="LocalizableTextField" customModule="TypeZen" customModuleProvider="target">
+                                            <rect key="frame" x="249" y="598" width="300" height="47"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Upgrade to PRO" id="9tn-bL-imH">
+                                                <font key="font" metaFont="systemBold" size="40"/>
+                                                <color key="textColor" name="BlackColor"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="stringValueKey" value="Upgrade to PRO"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Da-m9-LuY" customClass="LocalizableTextField" customModule="TypeZen" customModuleProvider="target">
+                                            <rect key="frame" x="175" y="573" width="449" height="19"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Unlock your typing potential with our premium subscription." id="Fnq-xU-sVR">
+                                                <font key="font" metaFont="systemMedium" size="16"/>
+                                                <color key="textColor" name="BlackColor"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="stringValueKey" value="Unlock your typing potential with our premium subscription."/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <stackView distribution="fillEqually" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W0w-Cb-j4d">
+                                            <rect key="frame" x="72" y="517" width="655" height="36"/>
+                                            <subviews>
+                                                <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="geg-yO-Le2">
+                                                    <rect key="frame" x="0.0" y="6" width="213" height="30"/>
+                                                    <view key="contentView" id="8HM-is-Qx4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="213" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jST-wf-YaQ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="30" id="Xxr-3K-y5x"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="a3b-Z0-aKW"/>
+                                                                </constraints>
+                                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="imgProTyping" id="62c-hb-PTA"/>
+                                                            </imageView>
+                                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gls-Mq-r8R" customClass="LocalizableTextField" customModule="TypeZen" customModuleProvider="target">
+                                                                <rect key="frame" x="40" y="6" width="163" height="19"/>
+                                                                <textFieldCell key="cell" lineBreakMode="truncatingMiddle" title="Unlimited typing test" id="KN6-0m-i4w">
+                                                                    <font key="font" metaFont="systemSemibold" size="16"/>
+                                                                    <color key="textColor" name="BlackColor"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="stringValueKey" value="Unlimited typing test"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="jST-wf-YaQ" firstAttribute="leading" secondItem="8HM-is-Qx4" secondAttribute="leading" id="ApZ-2z-XRV"/>
+                                                            <constraint firstItem="gls-Mq-r8R" firstAttribute="leading" secondItem="jST-wf-YaQ" secondAttribute="trailing" constant="12" id="EOQ-Rq-dJW"/>
+                                                            <constraint firstAttribute="trailing" secondItem="gls-Mq-r8R" secondAttribute="trailing" constant="12" id="Nyo-zt-Vmc"/>
+                                                            <constraint firstItem="jST-wf-YaQ" firstAttribute="top" secondItem="8HM-is-Qx4" secondAttribute="top" id="Yv8-Nm-Tco"/>
+                                                            <constraint firstAttribute="bottom" secondItem="jST-wf-YaQ" secondAttribute="bottom" id="lGz-O2-gFq"/>
+                                                            <constraint firstItem="gls-Mq-r8R" firstAttribute="centerY" secondItem="8HM-is-Qx4" secondAttribute="centerY" id="rr0-Ip-cnE"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <color key="fillColor" name="ClearColor"/>
+                                                </box>
+                                                <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="N22-Rm-LFV">
+                                                    <rect key="frame" x="221" y="6" width="213" height="30"/>
+                                                    <view key="contentView" id="3mK-KI-rku">
+                                                        <rect key="frame" x="0.0" y="0.0" width="213" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LfK-TQ-7YY">
+                                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="30" id="UAr-GZ-aAW"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="trZ-Yk-Pnz"/>
+                                                                </constraints>
+                                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="imgProStats" id="2Wd-YB-Uqs"/>
+                                                            </imageView>
+                                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="A3H-4d-UQZ" customClass="LocalizableTextField" customModule="TypeZen" customModuleProvider="target">
+                                                                <rect key="frame" x="40" y="6" width="163" height="19"/>
+                                                                <textFieldCell key="cell" lineBreakMode="truncatingMiddle" title="Statistic tracking" id="TsZ-Pj-yZO">
+                                                                    <font key="font" metaFont="systemSemibold" size="16"/>
+                                                                    <color key="textColor" name="BlackColor"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="stringValueKey" value="Statistic tracking"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="A3H-4d-UQZ" secondAttribute="trailing" constant="12" id="BE1-ym-XXp"/>
+                                                            <constraint firstItem="LfK-TQ-7YY" firstAttribute="top" secondItem="3mK-KI-rku" secondAttribute="top" id="Ntc-9g-REw"/>
+                                                            <constraint firstItem="LfK-TQ-7YY" firstAttribute="leading" secondItem="3mK-KI-rku" secondAttribute="leading" id="PTc-fB-jfs"/>
+                                                            <constraint firstAttribute="bottom" secondItem="LfK-TQ-7YY" secondAttribute="bottom" id="SKS-ff-RmX"/>
+                                                            <constraint firstItem="A3H-4d-UQZ" firstAttribute="centerY" secondItem="3mK-KI-rku" secondAttribute="centerY" id="deB-qR-tFg"/>
+                                                            <constraint firstItem="A3H-4d-UQZ" firstAttribute="leading" secondItem="LfK-TQ-7YY" secondAttribute="trailing" constant="12" id="vN5-9U-QY8"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <color key="fillColor" name="ClearColor"/>
+                                                </box>
+                                                <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="2c5-rq-L9L">
+                                                    <rect key="frame" x="442" y="6" width="213" height="30"/>
+                                                    <view key="contentView" id="0I2-KX-lQM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="213" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ymn-pk-dzO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="afa-Cb-md4"/>
+                                                                    <constraint firstAttribute="width" constant="30" id="yWD-Lb-R5o"/>
+                                                                </constraints>
+                                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="imgProAudio" id="GnK-tZ-dvx"/>
+                                                            </imageView>
+                                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tSA-Ph-OKX" customClass="LocalizableTextField" customModule="TypeZen" customModuleProvider="target">
+                                                                <rect key="frame" x="40" y="6" width="163" height="19"/>
+                                                                <textFieldCell key="cell" lineBreakMode="truncatingMiddle" title="AI audio dictation" id="Mtl-of-Glz">
+                                                                    <font key="font" metaFont="systemSemibold" size="16"/>
+                                                                    <color key="textColor" name="BlackColor"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="stringValueKey" value="AI audio dictation"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="Ymn-pk-dzO" secondAttribute="bottom" id="1YM-Nn-8cl"/>
+                                                            <constraint firstItem="Ymn-pk-dzO" firstAttribute="top" secondItem="0I2-KX-lQM" secondAttribute="top" id="6Xz-Yk-yxr"/>
+                                                            <constraint firstAttribute="trailing" secondItem="tSA-Ph-OKX" secondAttribute="trailing" constant="12" id="8hr-fU-9Uy"/>
+                                                            <constraint firstItem="tSA-Ph-OKX" firstAttribute="centerY" secondItem="0I2-KX-lQM" secondAttribute="centerY" id="Ag0-AP-f69"/>
+                                                            <constraint firstItem="Ymn-pk-dzO" firstAttribute="leading" secondItem="0I2-KX-lQM" secondAttribute="leading" id="F7L-0X-6iH"/>
+                                                            <constraint firstItem="tSA-Ph-OKX" firstAttribute="leading" secondItem="Ymn-pk-dzO" secondAttribute="trailing" constant="12" id="hkV-Fa-rMY"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <color key="fillColor" name="ClearColor"/>
+                                                </box>
+                                            </subviews>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
+                                        <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="FXm-5F-oUg">
+                                            <rect key="frame" x="210" y="475" width="379" height="30"/>
+                                            <view key="contentView" id="PjN-xj-fbP">
+                                                <rect key="frame" x="0.0" y="0.0" width="379" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="02x-73-bnJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="NkP-08-3Kb"/>
+                                                            <constraint firstAttribute="width" constant="30" id="Ps3-Lk-YkA"/>
+                                                        </constraints>
+                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="imgProAllAccess" id="um3-jV-egv"/>
+                                                    </imageView>
+                                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SeK-fb-mbv" customClass="LocalizableTextField" customModule="TypeZen" customModuleProvider="target">
+                                                        <rect key="frame" x="40" y="6" width="329" height="19"/>
+                                                        <textFieldCell key="cell" lineBreakMode="truncatingMiddle" title="Access to all lessons and practice sessions" id="gOR-tx-rBP">
+                                                            <font key="font" metaFont="systemSemibold" size="16"/>
+                                                            <color key="textColor" name="BlackColor"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="stringValueKey" value="Access to all lessons and practice sessions"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="02x-73-bnJ" secondAttribute="bottom" id="5rK-Ab-qmC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SeK-fb-mbv" secondAttribute="trailing" constant="12" id="QQR-tZ-FRj"/>
+                                                    <constraint firstItem="SeK-fb-mbv" firstAttribute="leading" secondItem="02x-73-bnJ" secondAttribute="trailing" constant="12" id="c2B-Ck-gig"/>
+                                                    <constraint firstItem="02x-73-bnJ" firstAttribute="top" secondItem="PjN-xj-fbP" secondAttribute="top" id="eEa-7y-FNh"/>
+                                                    <constraint firstItem="SeK-fb-mbv" firstAttribute="centerY" secondItem="PjN-xj-fbP" secondAttribute="centerY" id="uuL-GN-rGp"/>
+                                                    <constraint firstItem="02x-73-bnJ" firstAttribute="leading" secondItem="PjN-xj-fbP" secondAttribute="leading" id="vtT-cv-cxN"/>
+                                                </constraints>
+                                            </view>
+                                            <color key="fillColor" name="ClearColor"/>
+                                        </box>
+                                        <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="5Nj-OK-1XL">
+                                            <rect key="frame" x="12" y="245" width="775" height="195"/>
+                                            <clipView key="contentView" drawsBackground="NO" id="HP1-EZ-wx5">
+                                                <rect key="frame" x="1" y="1" width="773" height="193"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <collectionView selectable="YES" allowsEmptySelection="NO" id="FS0-bo-n5k">
+                                                        <rect key="frame" x="0.0" y="0.0" width="773" height="158"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="HiN-sI-3NP">
+                                                            <size key="itemSize" width="50" height="50"/>
+                                                        </collectionViewFlowLayout>
+                                                        <color key="primaryBackgroundColor" name="ClearColor"/>
+                                                    </collectionView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="ClearColor"/>
+                                            </clipView>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="195" id="Cgm-nJ-As3"/>
+                                                <constraint firstAttribute="width" constant="775" id="L8k-wb-Ujw"/>
+                                            </constraints>
+                                            <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="0Zf-UT-Q1u">
+                                                <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Qep-vv-7Ny">
+                                                <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                        </scrollView>
+                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bw3-cT-HU1">
+                                            <rect key="frame" x="381" y="193" width="37" height="17"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="-----" id="1PP-vy-sfC">
+                                                <font key="font" metaFont="systemSemibold" size="14"/>
+                                                <color key="textColor" name="BlackColor"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0bw-JF-na8" customClass="LocalizableTextField" customModule="TypeZen" customModuleProvider="target">
+                                            <rect key="frame" x="316" y="104" width="166" height="13"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="No commitment, cancel anytime." id="1f9-nd-yZT">
+                                                <font key="font" metaFont="systemMedium" size="10"/>
+                                                <color key="textColor" name="BorderColor"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="stringValueKey" value="No commitment, cancel anytime."/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ser-PU-uQ7" customClass="LocalizableTextField" customModule="TypeZen" customModuleProvider="target">
+                                            <rect key="frame" x="18" y="68" width="762" height="26"/>
+                                            <textFieldCell key="cell" alignment="center" id="rVO-OM-Xmt">
+                                                <font key="font" metaFont="system" size="10"/>
+                                                <string key="title">Your subscription will automatically renew unless auto-renew is turned off at least 24-hours before the end of the current subscription period. Payment will be charged to your iTunes account at confirmation of purchase.</string>
+                                                <color key="textColor" name="BorderColor"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="stringValueKey">
+                                                    <string key="value">Your subscription will automatically renew unless auto-renew is turned off at least 24-hours before the end of the current subscription period. Payment will be charged to your iTunes account at confirmation of purchase.</string>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <stackView distribution="fill" orientation="horizontal" alignment="bottom" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkW-z2-E0v">
+                                            <rect key="frame" x="148" y="34" width="503" height="19"/>
+                                            <subviews>
+                                                <button translatesAutoresizingMaskIntoConstraints="NO" id="O6r-h6-cwW" customClass="LocalizableButton" customModule="TypeZen" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="83" height="15"/>
+                                                    <buttonCell key="cell" type="bevel" title="Privacy Policy" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="EQA-oK-YTg">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="cellTitle"/>
+                                                    </buttonCell>
+                                                    <color key="contentTintColor" name="appMain"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="titleKey" value="Privacy Policy"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="privacyPolicyBtnAction:" target="-2" id="dAp-yP-wGW"/>
+                                                    </connections>
+                                                </button>
+                                                <box boxType="custom" borderWidth="0.0" cornerRadius="1" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="BqM-XJ-dO1">
+                                                    <rect key="frame" x="93" y="0.0" width="1" height="16"/>
+                                                    <view key="contentView" id="GZp-ZD-JIR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1" height="16"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="MBp-Ht-psw"/>
+                                                        <constraint firstAttribute="width" constant="1" id="TZj-e3-e1w"/>
+                                                    </constraints>
+                                                    <color key="fillColor" name="BlackColor"/>
+                                                </box>
+                                                <button translatesAutoresizingMaskIntoConstraints="NO" id="Mda-jq-0P4" customClass="LocalizableButton" customModule="TypeZen" customModuleProvider="target">
+                                                    <rect key="frame" x="104" y="0.0" width="138" height="15"/>
+                                                    <buttonCell key="cell" type="bevel" title="Continue with Free Plan" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="zeD-YU-8Ys">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="cellTitle"/>
+                                                    </buttonCell>
+                                                    <color key="contentTintColor" name="appMain"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="titleKey" value="Continue with Free Plan"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="dismissController:" target="-2" id="nw2-eX-abh"/>
+                                                    </connections>
+                                                </button>
+                                                <box boxType="custom" borderWidth="0.0" cornerRadius="1" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="TiE-zk-IZk">
+                                                    <rect key="frame" x="252" y="0.0" width="1" height="16"/>
+                                                    <view key="contentView" id="8h6-Sy-RWn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1" height="16"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="1" id="4PT-ob-xjq"/>
+                                                        <constraint firstAttribute="height" constant="16" id="yLx-DL-XKs"/>
+                                                    </constraints>
+                                                    <color key="fillColor" name="BlackColor"/>
+                                                </box>
+                                                <button translatesAutoresizingMaskIntoConstraints="NO" id="Hfz-DF-7Ki" customClass="LocalizableButton" customModule="TypeZen" customModuleProvider="target">
+                                                    <rect key="frame" x="263" y="0.0" width="104" height="15"/>
+                                                    <buttonCell key="cell" type="bevel" title="Restore Purchase" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="Zt5-dO-RSg">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="cellTitle"/>
+                                                    </buttonCell>
+                                                    <color key="contentTintColor" name="appMain"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="titleKey" value="Restore Purchase"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="purchaseRestoreBtnAction:" target="-2" id="7nO-Ia-jNQ"/>
+                                                    </connections>
+                                                </button>
+                                                <box boxType="custom" borderWidth="0.0" cornerRadius="1" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Ica-Wo-Jzw">
+                                                    <rect key="frame" x="377" y="0.0" width="1" height="16"/>
+                                                    <view key="contentView" id="O8M-df-voo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1" height="16"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="1" id="SFo-fv-eip"/>
+                                                        <constraint firstAttribute="height" constant="16" id="tdT-yA-AgY"/>
+                                                    </constraints>
+                                                    <color key="fillColor" name="BlackColor"/>
+                                                </box>
+                                                <button translatesAutoresizingMaskIntoConstraints="NO" id="rwa-Y3-mgd" customClass="LocalizableButton" customModule="TypeZen" customModuleProvider="target">
+                                                    <rect key="frame" x="388" y="0.0" width="115" height="15"/>
+                                                    <buttonCell key="cell" type="bevel" title="Terms &amp; Conditions" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="TBA-w0-2cs">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="cellTitle"/>
+                                                    </buttonCell>
+                                                    <color key="contentTintColor" name="appMain"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="titleKey" value="Terms &amp; Conditions"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="termAndConditionsBtnAction:" target="-2" id="veg-Ce-Sf8"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="19" id="WsT-JJ-sQu"/>
+                                            </constraints>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
+                                        <box boxType="custom" borderWidth="0.0" cornerRadius="10" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="SYU-6C-wGn">
+                                            <rect key="frame" x="224" y="127" width="350" height="56"/>
+                                            <view key="contentView" id="J6F-kZ-DuE" customClass="ShimmerView" customModule="TypeZen" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="56"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="82F-zv-icm" customClass="LocalizableTextField" customModule="TypeZen" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="15" width="334" height="26"/>
+                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="center" title="Start for Free" id="JDd-zN-35V">
+                                                            <font key="font" metaFont="systemBold" size="22"/>
+                                                            <color key="textColor" name="WhiteColor"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="stringValueKey" value="Start for Free"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="m7A-h0-K90">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="56"/>
+                                                        <buttonCell key="cell" type="bevel" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="CNH-Mb-3t9">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="startForFreeBtnAction:" target="-2" id="G19-dT-rWC"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="82F-zv-icm" firstAttribute="centerY" secondItem="J6F-kZ-DuE" secondAttribute="centerY" id="1Fe-2B-FIN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="m7A-h0-K90" secondAttribute="trailing" id="1qd-aq-MOa"/>
+                                                    <constraint firstItem="82F-zv-icm" firstAttribute="leading" secondItem="J6F-kZ-DuE" secondAttribute="leading" constant="10" id="GEh-FY-0Hr"/>
+                                                    <constraint firstAttribute="bottom" secondItem="m7A-h0-K90" secondAttribute="bottom" id="ItV-mN-P3v"/>
+                                                    <constraint firstAttribute="trailing" secondItem="82F-zv-icm" secondAttribute="trailing" constant="10" id="Jy1-ni-8AV"/>
+                                                    <constraint firstItem="m7A-h0-K90" firstAttribute="top" secondItem="J6F-kZ-DuE" secondAttribute="top" id="N3J-ex-1rc"/>
+                                                    <constraint firstItem="m7A-h0-K90" firstAttribute="leading" secondItem="J6F-kZ-DuE" secondAttribute="leading" id="Nar-CD-vwX"/>
+                                                    <constraint firstItem="82F-zv-icm" firstAttribute="centerX" secondItem="J6F-kZ-DuE" secondAttribute="centerX" id="oRm-Cn-eta"/>
+                                                </constraints>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="350" id="GLO-sM-1Gt"/>
+                                                <constraint firstAttribute="height" constant="56" id="iXj-dL-54l"/>
+                                            </constraints>
+                                            <color key="borderColor" name="AppRedColor"/>
+                                            <color key="fillColor" name="appMain"/>
+                                        </box>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="FXm-5F-oUg" firstAttribute="centerX" secondItem="I4U-ai-vwO" secondAttribute="centerX" id="65g-bi-afo"/>
+                                        <constraint firstItem="W0w-Cb-j4d" firstAttribute="top" secondItem="4Da-m9-LuY" secondAttribute="bottom" constant="20" id="AL9-jg-1HL"/>
+                                        <constraint firstItem="Ser-PU-uQ7" firstAttribute="top" secondItem="0bw-JF-na8" secondAttribute="bottom" constant="10" id="AzU-LY-Dhk"/>
+                                        <constraint firstItem="0bw-JF-na8" firstAttribute="centerX" secondItem="m7A-h0-K90" secondAttribute="centerX" id="Egi-sw-epN"/>
+                                        <constraint firstItem="RbH-Ev-07r" firstAttribute="top" secondItem="I4U-ai-vwO" secondAttribute="top" constant="34" id="FsS-Pj-Jkg"/>
+                                        <constraint firstItem="bkW-z2-E0v" firstAttribute="top" secondItem="Ser-PU-uQ7" secondAttribute="bottom" constant="15" id="GCq-bS-2ei"/>
+                                        <constraint firstItem="4Da-m9-LuY" firstAttribute="top" secondItem="RbH-Ev-07r" secondAttribute="bottom" constant="6" id="HQP-Nh-hZC"/>
+                                        <constraint firstItem="W0w-Cb-j4d" firstAttribute="centerX" secondItem="I4U-ai-vwO" secondAttribute="centerX" id="QdV-UV-pi6"/>
+                                        <constraint firstItem="bw3-cT-HU1" firstAttribute="centerX" secondItem="HP1-EZ-wx5" secondAttribute="centerX" id="Sym-PV-Dee"/>
+                                        <constraint firstItem="Ser-PU-uQ7" firstAttribute="leading" secondItem="I4U-ai-vwO" secondAttribute="leading" constant="20" id="ThB-Ah-MNW"/>
+                                        <constraint firstItem="5Nj-OK-1XL" firstAttribute="centerX" secondItem="FXm-5F-oUg" secondAttribute="centerX" id="ToH-On-OJ3"/>
+                                        <constraint firstItem="4Da-m9-LuY" firstAttribute="centerX" secondItem="RbH-Ev-07r" secondAttribute="centerX" id="WMB-JD-Iwj"/>
+                                        <constraint firstAttribute="bottom" secondItem="bkW-z2-E0v" secondAttribute="bottom" constant="34" id="Yyu-yY-s22"/>
+                                        <constraint firstItem="W0w-Cb-j4d" firstAttribute="centerX" secondItem="4Da-m9-LuY" secondAttribute="centerX" id="ZGO-4s-TBO"/>
+                                        <constraint firstItem="bkW-z2-E0v" firstAttribute="centerX" secondItem="I4U-ai-vwO" secondAttribute="centerX" id="dBt-kB-lMV"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ser-PU-uQ7" secondAttribute="trailing" constant="20" id="dw5-Xy-hDf"/>
+                                        <constraint firstItem="Ser-PU-uQ7" firstAttribute="centerX" secondItem="I4U-ai-vwO" secondAttribute="centerX" id="eRu-d3-YGU"/>
+                                        <constraint firstItem="bw3-cT-HU1" firstAttribute="top" secondItem="5Nj-OK-1XL" secondAttribute="bottom" constant="35" id="eUc-mg-1Qx"/>
+                                        <constraint firstItem="RbH-Ev-07r" firstAttribute="centerX" secondItem="I4U-ai-vwO" secondAttribute="centerX" id="izA-tV-fRo"/>
+                                        <constraint firstItem="FXm-5F-oUg" firstAttribute="centerX" secondItem="W0w-Cb-j4d" secondAttribute="centerX" id="kNS-nY-0WR"/>
+                                        <constraint firstItem="FXm-5F-oUg" firstAttribute="top" secondItem="W0w-Cb-j4d" secondAttribute="bottom" constant="12" id="mUx-64-2bj"/>
+                                        <constraint firstItem="0bw-JF-na8" firstAttribute="top" secondItem="SYU-6C-wGn" secondAttribute="bottom" constant="10" id="nv5-Ht-Zpd"/>
+                                        <constraint firstItem="W0w-Cb-j4d" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I4U-ai-vwO" secondAttribute="leading" constant="20" id="rbV-Rl-Y87"/>
+                                        <constraint firstItem="SYU-6C-wGn" firstAttribute="centerX" secondItem="bw3-cT-HU1" secondAttribute="centerX" id="tDv-lY-gYV"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W0w-Cb-j4d" secondAttribute="trailing" constant="20" id="wF4-1a-HXK"/>
+                                        <constraint firstItem="5Nj-OK-1XL" firstAttribute="top" secondItem="FXm-5F-oUg" secondAttribute="bottom" constant="35" id="zY5-b7-VaH"/>
+                                        <constraint firstItem="SYU-6C-wGn" firstAttribute="top" secondItem="bw3-cT-HU1" secondAttribute="bottom" constant="10" id="zZU-yo-gJb"/>
+                                    </constraints>
+                                </view>
+                                <color key="fillColor" name="WhiteColor"/>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="QMt-Rg-5Na" firstAttribute="top" secondItem="Zno-NQ-FjQ" secondAttribute="top" id="KAT-Uh-jZV"/>
+                            <constraint firstAttribute="bottom" secondItem="QMt-Rg-5Na" secondAttribute="bottom" id="NEn-My-OiO"/>
+                            <constraint firstAttribute="bottom" secondItem="X9j-Cj-DnP" secondAttribute="bottom" id="Nqd-mW-13Y"/>
+                            <constraint firstAttribute="trailing" secondItem="QMt-Rg-5Na" secondAttribute="trailing" id="VFZ-bl-1I9"/>
+                            <constraint firstItem="QMt-Rg-5Na" firstAttribute="leading" secondItem="X9j-Cj-DnP" secondAttribute="trailing" id="Y1g-id-SC4"/>
+                            <constraint firstItem="X9j-Cj-DnP" firstAttribute="leading" secondItem="Zno-NQ-FjQ" secondAttribute="leading" id="a8d-0V-WFE"/>
+                            <constraint firstItem="X9j-Cj-DnP" firstAttribute="top" secondItem="Zno-NQ-FjQ" secondAttribute="top" id="cOR-NB-3va"/>
+                        </constraints>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1105" id="3nH-xo-gDc"/>
+                        <constraint firstAttribute="height" constant="679" id="7ro-PX-cuC"/>
+                    </constraints>
+                    <color key="borderColor" name="WhiteColor"/>
+                    <color key="fillColor" name="WhiteColor"/>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstItem="bcl-XV-jGm" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="1fP-BA-QVF"/>
+                <constraint firstItem="bcl-XV-jGm" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="5Mg-7U-Epy"/>
+                <constraint firstAttribute="bottom" secondItem="bcl-XV-jGm" secondAttribute="bottom" id="CUp-Nb-grx"/>
+                <constraint firstAttribute="trailing" secondItem="bcl-XV-jGm" secondAttribute="trailing" id="OPR-Y5-E6a"/>
+            </constraints>
+            <point key="canvasLocation" x="585.5" y="102.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="imgProAllAccess" width="30" height="30"/>
+        <image name="imgProAudio" width="30" height="30"/>
+        <image name="imgProBanner" width="242.5" height="292.5"/>
+        <image name="imgProStats" width="30" height="30"/>
+        <image name="imgProTyping" width="30" height="30"/>
+        <namedColor name="AppRedColor">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BlackColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BorderColor">
+            <color red="0.68235294117647061" green="0.70196078431372544" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ClearColor">
+            <color red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WhiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="appMain">
+            <color red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

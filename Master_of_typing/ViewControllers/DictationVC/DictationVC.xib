@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23727" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23727"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="DictationVC" customModule="TypeZen" customModuleProvider="target">
+            <connections>
+                <outlet property="backBtn" destination="h1t-hU-ldo" id="tH5-xi-50p"/>
+                <outlet property="dictationCollectionView" destination="bIH-aC-Gux" id="hXi-D5-JiD"/>
+                <outlet property="mainTitle" destination="5EA-jw-D6F" id="lin-yS-QFx"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY" customClass="DisabledInteraction" customModule="TypeZen" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="j81-F2-NVZ">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+                    <view key="contentView" id="82L-DM-1hS">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyG-MM-zeK">
+                                <rect key="frame" x="20" y="42" width="440" height="169"/>
+                                <clipView key="contentView" drawsBackground="NO" id="aPI-R4-YiT">
+                                    <rect key="frame" x="0.0" y="0.0" width="440" height="169"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView selectable="YES" allowsEmptySelection="NO" id="bIH-aC-Gux">
+                                            <rect key="frame" x="0.0" y="0.0" width="440" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="eP8-PK-jxV">
+                                                <size key="itemSize" width="50" height="50"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="ClearColor"/>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="ClearColor"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="d9H-11-123">
+                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="mvW-77-KW7">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z17-qg-MZg">
+                                <rect key="frame" x="20" y="231" width="33" height="16"/>
+                                <subviews>
+                                    <button hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h1t-hU-ldo">
+                                        <rect key="frame" x="0.0" y="-11" width="24.5" height="31"/>
+                                        <buttonCell key="cell" type="bevel" title="Button" bezelStyle="rounded" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="uNq-r2-Am7">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <imageReference key="image" image="arrow.backward" catalog="system" symbolScale="large"/>
+                                        </buttonCell>
+                                        <color key="contentTintColor" name="BlackColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="7Z2-66-sx4"/>
+                                            <constraint firstAttribute="width" constant="24" id="7kJ-8K-3yR"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="backBtnAction:" target="-2" id="vPg-vm-oIK"/>
+                                        </connections>
+                                    </button>
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5EA-jw-D6F">
+                                        <rect key="frame" x="-2" y="0.0" width="37" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="zna-UY-jo8">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="BlackColor"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="qyG-MM-zeK" secondAttribute="bottom" constant="42" id="3Gt-u4-55J"/>
+                            <constraint firstAttribute="trailing" secondItem="qyG-MM-zeK" secondAttribute="trailing" constant="20" id="8dK-ty-a09"/>
+                            <constraint firstItem="z17-qg-MZg" firstAttribute="leading" secondItem="82L-DM-1hS" secondAttribute="leading" constant="20" id="S3z-tk-fTI"/>
+                            <constraint firstItem="z17-qg-MZg" firstAttribute="top" secondItem="82L-DM-1hS" secondAttribute="top" constant="25" id="Whx-sC-VYB"/>
+                            <constraint firstItem="qyG-MM-zeK" firstAttribute="top" secondItem="z17-qg-MZg" secondAttribute="bottom" constant="20" id="oK8-6o-oT3"/>
+                            <constraint firstItem="qyG-MM-zeK" firstAttribute="leading" secondItem="82L-DM-1hS" secondAttribute="leading" constant="20" id="pps-ll-7Th"/>
+                        </constraints>
+                    </view>
+                    <color key="fillColor" name="WhiteColor"/>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="j81-F2-NVZ" secondAttribute="trailing" id="3E4-tN-J6k"/>
+                <constraint firstAttribute="bottom" secondItem="j81-F2-NVZ" secondAttribute="bottom" id="75O-GO-z4s"/>
+                <constraint firstItem="j81-F2-NVZ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="JWk-Zb-Wf4"/>
+                <constraint firstItem="j81-F2-NVZ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="mFE-bu-Gjc"/>
+            </constraints>
+            <point key="canvasLocation" x="24" y="139"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="arrow.backward" catalog="system" width="20" height="16"/>
+        <namedColor name="BlackColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ClearColor">
+            <color red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WhiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
